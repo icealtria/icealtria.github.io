@@ -1,0 +1,38 @@
+<!DOCTYPE html><html lang="zh-cn"><head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="generator" content="Astro v3.1.0"><!-- Canonical URL --><link rel="canonical" href="https://example.com/blog/cloud-jellyfin/"><!-- Primary Meta Tags --><title>折腾日记：尝试将影片库到云端</title><meta name="title" content="折腾日记：尝试将影片库到云端"><meta name="description" content="简单的说下我迁移影片到云端的过程，还有坑。使用的是 alist 和天翼盘。"><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://example.com/blog/cloud-jellyfin/"><meta property="og:title" content="折腾日记：尝试将影片库到云端"><meta property="og:description" content="简单的说下我迁移影片到云端的过程，还有坑。使用的是 alist 和天翼盘。"><meta property="og:image" content="https://example.com/blog-placeholder-1.webp"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://example.com/blog/cloud-jellyfin/"><meta property="twitter:title" content="折腾日记：尝试将影片库到云端"><meta property="twitter:description" content="简单的说下我迁移影片到云端的过程，还有坑。使用的是 alist 和天翼盘。"><meta property="twitter:image" content="https://example.com/blog-placeholder-1.webp"><link rel="stylesheet" href="/assets/about.css" />
+<link rel="stylesheet" href="/assets/blog-_..3.css" />
+<style>.bg-secondary-container{--tw-text-opacity: 1;color:rgb(var(--color-on-secondary-container) / var(--tw-text-opacity))}.bg-background{--tw-text-opacity: 1;color:rgb(var(--color-on-background) / var(--tw-text-opacity))}.bg-surface{--tw-text-opacity: 1;color:rgb(var(--color-on-surface) / var(--tw-text-opacity))}.tags{margin-bottom:2rem;display:flex;gap:.5rem;font-size:.875rem;line-height:1.25rem}.tag{border-radius:.25rem;font-weight:300;transition-property:color,background-color,border-color,text-decoration-color,fill,stroke;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}.tag:hover{--tw-bg-opacity: 1;background-color:rgb(var(--color-surface-variant-hover) / var(--tw-bg-opacity))}
+.bg-secondary-container{--tw-text-opacity: 1;color:rgb(var(--color-on-secondary-container) / var(--tw-text-opacity))}.bg-background{--tw-text-opacity: 1;color:rgb(var(--color-on-background) / var(--tw-text-opacity))}.bg-surface{--tw-text-opacity: 1;color:rgb(var(--color-on-surface) / var(--tw-text-opacity))}.input{border-radius:.125rem;background-color:transparent;padding:.5rem;font-size:1.125rem;line-height:1.75rem;outline-style:solid;outline-width:1px;outline-color:rgb(var(--color-secondary) / 1)}.input:focus{outline-width:2px}.input-label{pointer-events:none;position:absolute;top:.5rem;left:.5rem;margin-bottom:.5rem;font-size:1.125rem;line-height:1.75rem;transition-property:all;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}.input-wrapper{position:relative}.input:focus~.input-label,.input:valid~.input-label{--tw-text-opacity: 1;color:rgb(var(--color-on-surface) / var(--tw-text-opacity));top:-.75rem;--tw-bg-opacity: 1;background-color:rgb(var(--color-surface) / var(--tw-bg-opacity));padding-left:.25rem;padding-right:.25rem;font-size:.875rem;line-height:1.25rem}.button-primary{--tw-text-opacity: 1;color:rgb(var(--color-on-primary) / var(--tw-text-opacity));border-radius:9999px;--tw-bg-opacity: 1;background-color:rgb(var(--color-primary) / var(--tw-bg-opacity));padding:.25rem 1rem}.button-primary:hover{--tw-bg-opacity: 1;background-color:rgb(var(--color-primary-hover) / var(--tw-bg-opacity))}
+</style></head><body class="bg-background"><header><img class="mt-4 px-2 h-28 mx-auto dark:invert" draggable="false" src="/header.svg"><nav><div class="flex justify-center my-4"><a href="/" class="header-link flex items-center gap-1"><svg viewBox="0 0 24 24" astro-icon="ic:baseline-home"><path fill="currentColor" d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>首页</a><a href="/blog" class="header-link flex items-center gap-1"><svg viewBox="0 0 24 24" astro-icon="ic:baseline-archive"><path fill="currentColor" d="m20.54 5.23-1.39-1.68C18.88 3.21 18.47 3 18 3H6c-.47 0-.88.21-1.16.55L3.46 5.23C3.17 5.57 3 6.02 3 6.5V19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6.5c0-.48-.17-.93-.46-1.27zM12 17.5 6.5 12H10v-2h4v2h3.5L12 17.5zM5.12 5l.81-1h12l.94 1H5.12z"/></svg> 归档</a><!-- <HeaderLink href="/friends">
+      <Icon name="ic:baseline-contacts" />友链
+    </HeaderLink> --><a href="/about" class="header-link flex items-center gap-1"><svg viewBox="0 0 24 24" astro-icon="ic:baseline-info"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>关于</a></div></nav></header><div class="mx-auto px-4"><main class="max-w-4xl mx-auto rounded-2xl"><img class="w-full rounded-2xl shadow-xl" src="/images/jellyfin.webp" alt="折腾日记：尝试将影片库到云端"><article><div><h1 class="mb-0">折腾日记：尝试将影片库到云端</h1><div class="text-sm font-light mt-4"><span>icealtria</span><br><time datetime="2023-02-13T00:00:00.000Z">2023. 2. 13.</time></div><div class="tags"><a class="tag" href="/tags/折腾">
+#折腾</a><a class="tag" href="/tags/NAS">
+#NAS</a></div></div><details><summary>Table of Contents</summary><div class="toc"><ul>
+<li><a href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C">准备工作</a></li>
+<li><a href="#%E8%BF%81%E7%A7%BB%E5%B7%A5%E4%BD%9C">迁移工作</a></li>
+<li><a href="#%E8%AF%84%E4%BC%B0">评估</a></li>
+<li><a href="#%E5%9D%91">坑</a></li>
+<li><a href="#%E6%80%BB%E7%BB%93">总结</a></li>
+<li><a href="#%E5%90%8E%E8%AE%B0">后记</a></li>
+</ul>
+</div></details><p>最近，我偶然发现了一个名为 alist 的项目，它能挂载多款国内的网盘，并支持 WebDav 协议。然后我想到了祖传的 10T 天翼网盘。于是，我产生了一个令人兴奋的想法：将 NAS 中的影片移动到网盘上，并使用 webdav 协议在 kodi 中进行播放。在这篇文章中，我将记录下我如何实现这个想法和坑。</p>
+<h2 id="准备工作">准备工作</h2>
+<p>首先，我们需要安装 Alist。这是一个非常简单的过程，只需遵循安装说明并进行操作即可。作为安装的方法，我选择了使用 docker compose 进行安装。</p>
+<p>天翼网盘免费版一天只有 2G 上传，想要更大的上传只能购买会员。电信用户可以到积分商城兑换，1000 积分一个月。</p>
+<p>在登录管理面板后，我们需要添加网盘。alist 支持天翼网盘和天翼网盘客户端。对于大于 4 GB 的文件，必须使用天翼网盘客户端。</p>
+<h2 id="迁移工作">迁移工作</h2>
+<p>既然 alist 支持 WebDav 了，我决定选择使用 rclone 进行文件迁移。sync 命令比通过网页传输方便得多。此外，我还有一些影片尚未刮削元数据，使用 sync 命令可以将我在本地对影片的修改同步到远端。并且如果传输过程中出现问题，也容易处理。</p>
+<h2 id="评估">评估</h2>
+<p>在使用 alist 把影片迁移到网盘后，我惊讶地发现它的播放效果非常流畅，即使是 16Mbps 的高码率视频，拖动播放进度条也能立即加载。这个体验相比许多在线流媒体服务都更出色。（会员过期后，拖动进度条缓冲时间大概为 1 秒）</p>
+<p>然而，在搜索影片的元数据时，速度可能会有所不足，需要一些等待时间。我猜测这可能是由于文件数量过多，于是我决定删除部分每集的缩略图和不必要的海报以提升速度。然后，我遇到了以下原因不明的异常行为。</p>
+<h2 id="坑">坑</h2>
+<p>我使用 rclone sync 命令，将我在 NAS 的删除操作同步到远端，但文件只被删除了一部分。命令执行的很快，执行过程中也没发生报错，到 alist 网页中看到文件被删除，但我到网盘页面看到只删除了一部分。接着我刷新 alist 的文件列表，果然还在，这个就很。。到时候再研究下怎么回事了。之前我上传文件的时候出现过几次错误，但之后重试后都顺利完成了（rclone sync 失败后会重新尝试 2 次）。</p>
+<h2 id="总结">总结</h2>
+<p>总的来说，使用网盘作为影片库与 kodi 观看的体验很不错，但是天翼盘不付费的上传体验糟糕。迁移后 NAS 硬盘空间非常充裕，可以不用买新硬盘了。但 alist 通过 WebDav 进行某些操作文件时不是很稳定，除了视频播放。</p>
+<h2 id="后记">后记</h2>
+<p>之后换了 Rclone + Jellyfin，Kodi 每次要等打开电视才扫描片库。使用 rclone mount 将 WebDav 挂载到其中一个目录，然后添加到 Jellyfin，体验要远远好于 kodi。</p></article><!-- <div class="mx-4 md:mx-8 md:py-2">
+      <div class="comment mx-auto text-center">
+        <Comment client:only="svelte" />
+        <noscript>Javascript is required</noscript>
+      </div> --></main><footer class="gap-2 my-8 flex justify-center items-center">
+Copyright &copy; 2023<span>icealtria</span>|
+<a href="/atom.xml">RSS</a></footer></div></body></html>
