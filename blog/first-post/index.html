@@ -27,7 +27,7 @@
 <h2 id="过程记录">过程记录</h2>
 <h3 id="设计">设计</h3>
 <p>起初，我打算根据 Material You 的风格来设计我的博客，也就是现在(2023) Google 的设计语言。我模仿了 Material 官网的超大的R角(Radius: 40px)，但后来我发现，过大的圆角严重影响了内容的展示。这里的逻辑是，为了看起来更协调，大圆角需要足够的留白，这就导致了内容展示的空间变少了。有空我一定要写一篇《圆角批判》!</p>
-<p>色彩方面使用了 <a href="https://m3.material.io/theme-builder">Material Theme Builder</a> 进行调色。后面为了方便使用了 <a href="https://github.com/JavierM42/tailwind-material-colors">tailwind-material-colors</a> 作为插件，只要设定一个 primary color 就能计算出其他的颜色，DarkMode 也自动适配好了。 写这篇博客的时候，使用了 <span style="background-color: #405e0d; color:white">#405e0d</span> 作为主题色。以后看心情换🌈。</p>
+<p>色彩方面使用了 <a href="https://m3.material.io/theme-builder">Material Theme Builder</a> 进行调色。后面为了方便使用了 <a href="https://github.com/JavierM42/tailwind-material-colors">tailwind-material-colors</a> 作为插件，只要设定一个 primary color 就能计算出其他的颜色，DarkMode 也自动适配好了。 写这篇博客的时候，使用了 <span style="background-color: #405e0d; color:white">#405e0d</span> 作为主题色。以后看心情换。</p>
 <h3 id="css">CSS</h3>
 <p>初版使用纯正的 CSS 进行页面布局，写着写着越来越乱了，第一次写规模稍大的页面，不知怎么管理 CSS。后面使用 Tailwind CSS 负担小了很多，首先不用 template 和 css 来回切，不知不觉找不着 tab 了。如果要问为什么不写在 <code>&#x3C;style></code>，因为我不想看到 Network 里一大堆 stylesheet（这什么强迫症），实际上对加载速度也没很大影响。</p>
 <h2 id="最后的话">最后的话</h2>
