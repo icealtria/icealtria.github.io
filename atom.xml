@@ -1,4 +1,65 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>icealtria&apos;s blog</title><description>A simple blog theme for Astro</description><link>https://icealtria.github.io/</link><item><title>我又回来了</title><link>https://icealtria.github.io/blog/first-post/</link><guid isPermaLink="true">https://icealtria.github.io/blog/first-post/</guid><description>这次要徒手搓博客</description><pubDate>Thu, 21 Sep 2023 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;曾经几度对自己的博客开了又关，最初一个博客应该是在读初中的时候建起来的，使用的是 wordpress。但都没写什么文章，每次想写点什么，就觉得没什么好写的，或者写不出来。。等域名过期或是vps过期，然后也就这么丢掉了。比起写博客还是建博客比较好玩😊况且有了生成式人工智能，写作负担会小很多。&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>icealtria&apos;s blog</title><description>A simple blog theme for Astro</description><link>https://icealtria.github.io/</link><item><title>给运行在局域网内的服务添加 https</title><link>https://icealtria.github.io/blog/https-lan/</link><guid isPermaLink="true">https://icealtria.github.io/blog/https-lan/</guid><description>使用 Tailscale 实现</description><pubDate>Mon, 06 May 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;这是一个很奇怪的需求，在大多数情况下，局域网内的设备是相互信任的，https 似乎是件没有什么必要的事情。&lt;/p&gt;
+&lt;p&gt;但是有些软件要求必须使用 HTTPS，比如 Vaultwarden，因为它依赖大多数浏览器仅在 HTTPS 才可用的 &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto&quot;&gt;SubtleCrypto API&lt;/a&gt;。[^1] 此外，一些软件在未开启 HTTPS 时，会在页面上显示不安全的提示。还有一些软件若不开启 https ，则会在页面上显示不安全的提示。这时候 https 就有必要了。&lt;/p&gt;
+&lt;p&gt;[^1]:&lt;a href=&quot;https://github.com/dani-garcia/vaultwarden/wiki/Enabling-HTTPS&quot;&gt;Enabling HTTPS · dani-garcia/vaultwarden Wiki · GitHub&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;之后我用搜索引擎搜了下有关这方面的内容，大部分都是用通过自签证书实现的。这确实是实现 HTTPS 的一种常见方法，但在多台机器上配置自签证书比较繁琐。&lt;/p&gt;
+&lt;p&gt;对于 Tailscale 用户来说，只需要少量配置即可实现 HTTPS。Tailscale 的 Tailnet 提供域名和证书生成功能，通过 &lt;code&gt;tailscale serve&lt;/code&gt; 命令，可以轻松反向代理服务并提供 HTTPS 支持。如果需要更复杂的配置，可以使用 Caddy。Caddy 遇到 &lt;code&gt;*.ts.net&lt;/code&gt; 域名时，会自动从 Tailscale 获取证书。我的个人设备几乎都连接了 Tailscale。&lt;/p&gt;
+&lt;h2&gt;如何配置&lt;/h2&gt;
+&lt;h3&gt;tailscale serve&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;打开 console 的 &lt;a href=&quot;https://login.tailscale.com/admin/dns&quot;&gt;&lt;strong&gt;DNS&lt;/strong&gt;&lt;/a&gt; 页面。&lt;/li&gt;
+&lt;li&gt;确保 MagicDNS 和 HTTPS Certificates 都为开启状态
+&lt;img src=&quot;image.png&quot; alt=&quot;DNS Settings&quot;&gt;&lt;/li&gt;
+&lt;li&gt;执行以下命令：&lt;pre&gt;&lt;code class=&quot;language-sh&quot;&gt;tailscale serve --bg --https=443 localhost:&amp;lt;port&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;之后，就可以通过在 Tailscale 设置好的域名访问服务了。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;把 serve 换成 funnel，则可以将服务暴露在互联网。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3&gt;Caddy&lt;/h3&gt;
+&lt;p&gt;从 Caddy 2.5 测试版开始，Caddy 支持与 Tailscale 集成。当 Caddy 收到 &lt;code&gt;*.ts.net&lt;/code&gt; 域名的 HTTPS 请求时，会自动从本地 Tailscale 守护程序获取证书，无需额外配置。&lt;/p&gt;
+&lt;p&gt;配置示例如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-sh&quot;&gt;machine-name.domain-alias.ts.net {
+
+  handle_path /vw/* {
+    reverse_proxy http://127.0.0.1:8089
+  }
+
+  handle_path /alist/* {
+    reverse_proxy http://127.0.0.1:5244
+  }
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+</content:encoded></item><item><title>终究还是用回了 Syncthing</title><link>https://icealtria.github.io/blog/syncthing/</link><guid isPermaLink="true">https://icealtria.github.io/blog/syncthing/</guid><description>主要是吐槽 Dropbox</description><pubDate>Wed, 10 Apr 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;我使用过的同步软件&lt;/h2&gt;
+&lt;p&gt;我在很长一段时间里一直使用 Dropbox，MegaSync 也用过一段时间。至于为什么选择这两个，是因为主流网盘中提供 Linux 客户端的除了 PCloud 就只有这两个了。&lt;/p&gt;
+&lt;p&gt;起初我在用 Mega，因为我将密码管理器从 Bitwarden 更换为 KeePassXC，我想将密码库同步到手机上，但当时 KeePass2Android 不支持。现在虽然支持了，但还没完全支持，例如无法登录开启 &lt;a href=&quot;https://github.com/PhilippC/keepass2android/issues/2415&quot;&gt;2FA&lt;/a&gt; 的账号，而 KeePassDX 也用不了。Dropbox 支持在系统的文件选择器中选择文件，因此手机上的两个软件都可以支持。&lt;/p&gt;
+&lt;p&gt;不过我最终还是放弃了这两个云同步软件，只留下了 Syncthing。Syncthing 我其实一直在用，但之前都只是在电脑上使用。对于在手机上使用，我曾担心它会耗电，但后来发现这个担心是多余的。&lt;/p&gt;
+&lt;h2&gt;批评 Dropbox&lt;/h2&gt;
+&lt;p&gt;为什么要抛弃 Dropbox，那要从我给 Obsidian 写一个插件说起。Obsidian 的插件是用 JavaScript 编写的，每个 JS 项目都会有一坨 &lt;code&gt;node_modules&lt;/code&gt;，然后它把这个文件夹同步过去。&lt;/p&gt;
+&lt;p&gt;我以为在 GUI 里设置选择性同步可以忽略掉这个文件夹，但我搞错了。Dropbox 只能用一种很别扭的方式忽略一个文件夹：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-sh&quot;&gt;# linux
+attr -s com.dropbox.ignored -V 1 &amp;#39;/home/yourname/Dropbox (Personal)/YourFileName.pdf&amp;#39;
+# windog
+Set-Content -Path &amp;#39;C:\Users\yourname\Dropbox(Personal)\YourFileName.pdf&amp;#39; -Stream com.dropbox.ignored -Value 1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这就没办法在文件创建之前忽略掉这个文件了，想忽略多个文件还要逐个操作。&lt;/p&gt;
+&lt;p&gt;而 syncthing 和 MEGA 只需要简单写个规则。&lt;/p&gt;
+&lt;p&gt;不止如此。。。&lt;/p&gt;
+&lt;p&gt;Dropbox 只能将本地的一个文件夹与服务器同步，但我不喜欢将一切都放到 &lt;del&gt;/Dropbox。我希望能将 `&lt;/del&gt;/Docs&lt;code&gt;与&lt;/code&gt;%USERPROFILE%/Docs&lt;code&gt;，&lt;/code&gt;~/Books&lt;code&gt;与&lt;/code&gt;D:/Books` 同步。&lt;/p&gt;
+&lt;p&gt;Syncthing 和 Mega 都能做到。&lt;/p&gt;
+&lt;p&gt;在 Gnome 上 Dropbox 的托盘完全是坏的，这个问题存在了数年，虽然不知道是谁的锅，但只在 Dropbox 上遇到过。右键点击托盘图标打开菜单只能随缘，即便打开显示的状态也是不更新的，永远 &amp;quot;Connecting...&amp;quot;，当然实际上工作的。它只能作为设置页的入口。&lt;/p&gt;
+&lt;p&gt;同步相关的功能比 Syncthing 和 Mega 更匮乏，但占用内存却是最大的。&lt;/p&gt;
+&lt;p&gt;槽点这么多，那干脆不用了。我都不知道为什么忍了它这么久。&lt;/p&gt;
+&lt;p&gt;(说起来 MEGAsync 算是我较为满意的一个网盘了)&lt;/p&gt;
+&lt;h2&gt;如何实现 3-2-1 备份&lt;/h2&gt;
+&lt;p&gt;我使用同步软件的其中一个原因是希望实现 3-2-1 备份，以避免本地机器故障。所谓 3-2-1 备份策略，即保存三份数据备份，使用两种不同的存储介质，并确保至少有一份备份存储在异地。&lt;/p&gt;
+&lt;p&gt;为了实现这个策略，我采用了 Restic 进行定期备份。它支持数据加密和压缩快照。还可以调用 rclone 的服务作为远程 repo。&lt;/p&gt;
+&lt;p&gt;具体来说，我编写了一个定期执行的脚本，通过 Restic 进行备份操作。为了确保备份的安全性，我将备份库（repo）的密码存储在 Gnome Keyring 中。脚本会调用 &lt;code&gt;secret-tool&lt;/code&gt; 从 Gnome Keyring 中取出密码，并用来解密备份库进行备份。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-sh&quot;&gt;restic -r rclone:&amp;lt;remote&amp;gt;:/path/to/repo backup /path/to/data --password-command &amp;#39;secret-tool lookup restic pass&amp;#39;
+&lt;/code&gt;&lt;/pre&gt;
+</content:encoded></item><item><title>我又回来了</title><link>https://icealtria.github.io/blog/first-post/</link><guid isPermaLink="true">https://icealtria.github.io/blog/first-post/</guid><description>这次要徒手搓博客</description><pubDate>Thu, 21 Sep 2023 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;曾经几度对自己的博客开了又关，最初一个博客应该是在读初中的时候建起来的，使用的是 wordpress。但都没写什么文章，每次想写点什么，就觉得没什么好写的，或者写不出来。。等域名过期或是vps过期，然后也就这么丢掉了。比起写博客还是建博客比较好玩😊况且有了生成式人工智能，写作负担会小很多。&lt;/p&gt;
 &lt;h2&gt;框架选择&lt;/h2&gt;
 &lt;p&gt;我对前端不是很熟悉，SSG(Static Site Generator) 框架除了主流的 Hexo, Hugo, Jekyll 之外，我几乎不认识其他的。这几个框架在我看来都不是很灵活（不好整活）。&lt;/p&gt;
 &lt;p&gt;正好我发现某位页面仔群友也在用重写博客，使用了 Astro。之后我也去了解一下关于这框架的 features，令我比较感兴趣的是 &lt;a href=&quot;https://docs.astro.build/en/concepts/islands/&quot;&gt;Component Islands&lt;/a&gt;，它可以使用任何被支持的UI框架（比如 React, Svelte, Vue）作为组件，还有 MDX，这就相当有利于整活。SSR 的支持也是有的，以后可能会用来显示动态内容，比如评论。于是就选择了 Astro。&lt;/p&gt;
