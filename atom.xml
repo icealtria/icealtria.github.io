@@ -1,4 +1,178 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>icealtria&apos;s blog</title><description>A simple blog theme for Astro</description><link>https://icealtria.github.io/</link><follow_challenge><feedId>60885767001155584</feedId><userId>41755107772433408</userId></follow_challenge><item><title>影响汇率的因素</title><link>https://icealtria.github.io/blog/exchange-rate/</link><guid isPermaLink="true">https://icealtria.github.io/blog/exchange-rate/</guid><description>怎么写金融的文章了(</description><pubDate>Mon, 25 Nov 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;应该算笔记。&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>icealtria&apos;s blog</title><description>A simple blog theme for Astro</description><link>https://icealtria.github.io/</link><follow_challenge><feedId>60885767001155584</feedId><userId>41755107772433408</userId></follow_challenge><item><title>如何实现一个简单的 Passkey 登录</title><link>https://icealtria.github.io/blog/passkey-101/</link><guid isPermaLink="true">https://icealtria.github.io/blog/passkey-101/</guid><description>使用 Tailscale 实现</description><pubDate>Mon, 09 Dec 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;最近糊了个 &lt;a href=&quot;https://meow-counter.icealtria.workers.dev/&quot;&gt;meow-counter&lt;/a&gt;（&lt;a href=&quot;#footer&quot;&gt;Footer&lt;/a&gt; 那个，魔改自 &lt;a href=&quot;https://github.com/kotx/moco&quot;&gt;moco&lt;/a&gt;），但是统计面板不想公开，所以自然需要一个鉴权方式。我选择了 &lt;strong&gt;Passkey&lt;/strong&gt;，也借此搞通了 Passkey 的验证流程。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;为什么选择 Passkey?&lt;/h2&gt;
+&lt;p&gt;我不喜欢输密码，基于公钥认证的系统让我感觉更安心。就像使用 SSH，我也是仅支持公钥验证，完全不需要密码，安全性更高且劝退暴力破解者。&lt;/p&gt;
+&lt;p&gt;对于普通用户，Passkey 解决了密码泄露、钓鱼攻击等问题，简化了身份验证流程（无需额外的 2FA）。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;不足之处&lt;/h2&gt;
+&lt;p&gt;Passkey 通常绑定到设备或其生态系统（如 iCloud、Google 账号）。目前，除了使用 &lt;strong&gt;KeePassXC&lt;/strong&gt; 外，几乎没有导出和导入的手段。 更换设备或丢失绑定设备时，可能会面临身份验证困难。 &lt;a href=&quot;https://blog.1password.com/fido-alliance-import-export-passkeys-draft-specs/&quot;&gt;未来或许会有更多密码管理器支持&lt;/a&gt;。  &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https://fidoalliance.org/specs/cx/cxf-v1.0-wd-20240522.html&quot;&gt;Credential Exchange Format&lt;/a&gt;。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2&gt;注册与登录流程&lt;/h2&gt;
+&lt;h3&gt;注册流程&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&quot;language-d2&quot;&gt;shape: sequence_diagram
+
+User -&amp;gt; Frontend: Username
+Frontend -&amp;gt; Backend: /api/registerStart (username)
+Backend -&amp;gt; Frontend: publicKeyCredentialCreationOptions
+Frontend -&amp;gt; User: Trigger credentials.create
+User -&amp;gt; Frontend: User auth
+Frontend -&amp;gt; Backend: /api/registerFinish (attestation)
+Backend -&amp;gt; Backend: VerifyAndSave (attestation)
+Backend -&amp;gt; Frontend: Creation 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;登录流程&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&quot;language-d2&quot;&gt;shape: sequence_diagram
+
+User -&amp;gt; Frontend: Username (optional)
+Frontend -&amp;gt; Backend: /api/loginStart (username)
+Backend -&amp;gt; Frontend: publicKeyCredentialRequestOptions
+Frontend -&amp;gt; User: Trigger credentials.get
+User -&amp;gt; Frontend: User auth
+Frontend -&amp;gt; Backend: /api/loginFinish (assertion)
+Backend -&amp;gt; Backend: Verify (assertion)
+Backend -&amp;gt; Frontend: Login successful
+&lt;/code&gt;&lt;/pre&gt;
+&lt;hr&gt;
+&lt;h2&gt;API 使用指南&lt;/h2&gt;
+&lt;h3&gt;环境要求&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;服务端需要支持 &lt;strong&gt;HTTPS&lt;/strong&gt;，也可以是 &lt;code&gt;localhost&lt;/code&gt;（WebAuthn 需要 &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/Security/Secure_Contexts&quot;&gt;Secure contexts&lt;/a&gt;）。&lt;/li&gt;
+&lt;li&gt;后端推荐使用现成的库，比如 Node.js 的 &lt;a href=&quot;https://github.com/MasterKale/SimpleWebAuthn&quot;&gt;simplewebauthn&lt;/a&gt;。不然验证挺繁琐的。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;下面都算伪代码，实际操作中 ArrayBuffer 编码为 Base64URL &lt;/p&gt;
+&lt;hr&gt;
+&lt;h3&gt;用户注册&lt;/h3&gt;
+&lt;p&gt;前端需要输入用户名，请求 &lt;code&gt;/api/registerStart&lt;/code&gt;，获取 &lt;code&gt;publicKeyCredentialCreationOptions&lt;/code&gt;。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const publicKeyCredentialCreationOptions = {
+    challenge: Uint8Array.from(
+        randomStringFromServer, c =&amp;gt; c.charCodeAt(0)), 
+    rp: {
+        name: &amp;quot;Meow Counter&amp;quot;,
+        id: &amp;quot;example.com&amp;quot;, // 浏览器会验证当前域名与 RP ID 是否匹配
+    },
+    user: {
+        id: Uint8Array.from(
+            &amp;quot;UZSL85T9AFC&amp;quot;, c =&amp;gt; c.charCodeAt(0)),
+        name: &amp;quot;lee@example.com&amp;quot;,
+        displayName: &amp;quot;Lee&amp;quot;, 
+    },
+    pubKeyCredParams: [{ alg: -7, type: &amp;quot;public-key&amp;quot; }], // 接受的算法
+    authenticatorSelection: {
+        authenticatorAttachment: &amp;quot;cross-platform&amp;quot;, // 平台外部认证器
+    },
+    timeout: 60000,
+    attestation: &amp;quot;direct&amp;quot;
+};
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;challenge&lt;/strong&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;challenge&lt;/code&gt; 应该是一次性且短期有效的，使用后作废&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;challenge 在 KV 中存储，应使用 Expired key。&lt;/li&gt;
+&lt;li&gt;每次请求新的 challenge，旧 challenge 立即作废。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;rp&lt;/strong&gt;: &lt;/p&gt;
+&lt;p&gt;假设你的 RP ID 设置为 example.com，只有在 example.com 或其子域 login.example.com 上调用 Passkey，验证会成功。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;authenticatorAttachment&lt;/strong&gt;: &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;platform：使用本地认证器（如 Windows Hello、Face ID）。&lt;/li&gt;
+&lt;li&gt;cross-platform：使用外部认证器（如 YubiKey，密码管理器）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;前端创建凭据&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&quot;language-js&quot;&gt;const credential = await navigator.credentials.create({
+    publicKey: publicKeyCredentialCreationOptions
+});
+
+console.log(credential);
+
+PublicKeyCredential {
+    id: &amp;#39;ADSUllKQmbqdGtpu4sjseh4cg2TxSvrbcHDTBsv4NSSX9...&amp;#39;,
+    rawId: ArrayBuffer(59),
+    response: AuthenticatorAttestationResponse {
+        clientDataJSON: ArrayBuffer(121),
+        attestationObject: ArrayBuffer(306),
+    },
+    type: &amp;#39;public-key&amp;#39;
+}
+
+post(&amp;#39;/api/registerFinish&amp;#39;, { credential });
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4&gt;服务端验证注册&lt;/h4&gt;
+&lt;p&gt;服务端需要保存 &lt;code&gt;challenge&lt;/code&gt;，以供验证使用。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const { verifyRegistrationResponse } = require(&amp;#39;@simplewebauthn/server&amp;#39;);
+
+const verification = verifyRegistrationResponse({
+    response: clientResponse,         // 前端返回的凭证数据
+    expectedChallenge: storedChallenge, 
+    expectedOrigin: &amp;quot;https://example.com&amp;quot;,
+    expectedRPID: &amp;quot;example.com&amp;quot;,
+});
+
+if (verification.verified) {
+    saveToDatabase({
+        credentialID: verification.registrationInfo.credentialID,
+        publicKey: verification.registrationInfo.credentialPublicKey,
+    });
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;verifyRegistrationResponse&lt;/code&gt; 会解析 &lt;code&gt;clientDataJSON&lt;/code&gt;，将 &lt;code&gt;challenge&lt;/code&gt; 与之前保存的进行比较以验证是否对应于当前注册事件。然后从 &lt;code&gt;attestationObject&lt;/code&gt; 中获取 &lt;code&gt;credential.id&lt;/code&gt; 和 &lt;code&gt;publicKey&lt;/code&gt;，并将它们存储到数据库中。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3&gt;用户登录&lt;/h3&gt;
+&lt;h4&gt;服务端生成 challenge&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const publicKeyCredentialRequestOptions = {
+    challenge: Uint8Array.from(
+        randomStringFromServer, c =&amp;gt; c.charCodeAt(0)),
+    allowCredentials: [{
+        id: Uint8Array.from(
+            credentialId, c =&amp;gt; c.charCodeAt(0)),// optional，注册时保存的 credentialID
+        type: &amp;quot;public-key&amp;quot;,
+        transports: [&amp;quot;usb&amp;quot;, &amp;quot;ble&amp;quot;, &amp;quot;nfc&amp;quot;], // 支持的认证器传输方式
+    }],
+    timeout: 60000,
+};
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4&gt;前端触发认证&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const assertion = await navigator.credentials.get({
+    publicKey: publicKeyCredentialRequestOptions
+});
+
+console.log(assertion);
+
+PublicKeyCredential {
+    id: &amp;#39;ADSUllKQmbqdGtpu4sjseh4cg2TxSvrbcHDTBsv4NSSX9...&amp;#39;,
+    rawId: ArrayBuffer(59),
+    response: AuthenticatorAssertionResponse {
+        authenticatorData: ArrayBuffer(191),
+        clientDataJSON: ArrayBuffer(118),
+        signature: ArrayBuffer(70),
+        userHandle: ArrayBuffer(10), // optional, 注册时提供的用户ID。用于与服务器上的用户关联起来。服务端未提供 allowCredentialDescriptorList 的时候，服务端可以通过 userHandle 确定用户。
+    },
+    type: &amp;#39;public-key&amp;#39;
+}
+
+post(&amp;#39;/api/loginFinish&amp;#39;, { assertion });
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4&gt;服务端验证登录&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const { verifyAuthenticationResponse } = require(&amp;#39;@simplewebauthn/server&amp;#39;);
+
+const verification = verifyAuthenticationResponse({
+    response: clientResponse,        // 前端返回的数据
+    expectedChallenge: storedChallenge, 
+    expectedOrigin: &amp;quot;https://example.com&amp;quot;,
+    expectedRPID: &amp;quot;example.com&amp;quot;,
+    credential: storedCredential,    // 注册时保存的 credentialId 和 publicKey
+});
+
+if (verification.verified) {
+    // 用户验证成功
+    grantAccessToUser();
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;verifyAuthenticationResponse 验证 signature 和 clientDataJSON 是否与存储的 publicKey 匹配，确认登录成功。&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;hidden-text&quot;&gt;其实 Meow Counter 的 Passkey 没有完全实装，后端只是对比 public key 是否存在于数据库（&lt;/span&gt;&lt;/p&gt;
+</content:encoded></item><item><title>影响汇率的因素</title><link>https://icealtria.github.io/blog/exchange-rate/</link><guid isPermaLink="true">https://icealtria.github.io/blog/exchange-rate/</guid><description>怎么写金融的文章了(</description><pubDate>Mon, 25 Nov 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;应该算笔记。&lt;/p&gt;
 &lt;h2&gt;物价&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;购买力平价理论（PPP）&lt;/strong&gt;&lt;br&gt;购买力平价理论认为，长期汇率由不同国家的物价水平决定。然而，因贸易成本、管制等实际因素，PPP 实际偏离较大。&lt;/p&gt;
