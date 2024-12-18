@@ -63,7 +63,7 @@
 &lt;/ul&gt;
 &lt;h2&gt;风险&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;政治风险&lt;/strong&gt;&lt;br&gt;政局不稳会引发资本外逃，导致货币贬值。&lt;br&gt;例子：英国脱欧、土耳其政策的不确定性和地缘政治风险。&lt;span class=&quot;line-through bg-gray text-gray hover:bg-background transition-colors&quot;&gt;毕竟 interest rates are the mother of all evils&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;政治风险&lt;/strong&gt;&lt;br&gt;政局不稳会引发资本外逃，导致货币贬值。&lt;br&gt;例子：英国脱欧、土耳其政策的不确定性和地缘政治风险。&lt;span class=&quot;hidden-text&quot;&gt;interest rates are the mother of all evils (&lt;/span&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;自然灾害与意外事件&lt;/strong&gt;&lt;br&gt;通常会引起货币贬值。不过这也有些不寻常之事：2011年日本海啸后，日元反而升值。由于借入日元的成本低，它成为了套利交易的基础货币。风险来临之际，通常会有大量套利交易平仓以避险，从而推升日元价值。&lt;/li&gt;
 &lt;/ul&gt;
 </content:encoded></item><item><title>给运行在局域网内的服务添加 https</title><link>https://icealtria.github.io/blog/https-lan/</link><guid isPermaLink="true">https://icealtria.github.io/blog/https-lan/</guid><description>使用 Tailscale 实现</description><pubDate>Mon, 06 May 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;这是一个很奇怪的需求，在大多数情况下，局域网内的设备是相互信任的，https 似乎是件没有什么必要的事情。&lt;/p&gt;
