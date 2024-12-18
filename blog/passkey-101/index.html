@@ -1,25 +1,21 @@
-<!DOCTYPE html><html lang="zh-cn"> <head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="generator" content="Astro v4.16.16"><!-- Canonical URL --><link rel="canonical" href="https://icealtria.github.io/blog/passkey-101/"><!-- Primary Meta Tags --><title>如何实现一个简单的 Passkey 登录</title><meta name="title" content="如何实现一个简单的 Passkey 登录"><meta name="description" content="使用 Tailscale 实现"><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://icealtria.github.io/blog/passkey-101/"><meta property="og:title" content="如何实现一个简单的 Passkey 登录"><meta property="og:description" content="使用 Tailscale 实现"><meta property="og:image" content="https://icealtria.github.io/assets/passkey.png"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://icealtria.github.io/blog/passkey-101/"><meta property="twitter:title" content="如何实现一个简单的 Passkey 登录"><meta property="twitter:description" content="使用 Tailscale 实现"><meta property="twitter:image" content="https://icealtria.github.io/assets/passkey.png"><link rel="stylesheet" href="/assets/about.css">
+<!DOCTYPE html><html lang="zh-cn"> <head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="generator" content="Astro v4.16.16"><!-- Canonical URL --><link rel="canonical" href="https://icealtria.github.io/blog/passkey-101/"><!-- Primary Meta Tags --><title>如何实现一个简单的 Passkey 登录</title><meta name="title" content="如何实现一个简单的 Passkey 登录"><meta name="description"><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://icealtria.github.io/blog/passkey-101/"><meta property="og:title" content="如何实现一个简单的 Passkey 登录"><meta property="og:description"><meta property="og:image" content="https://icealtria.github.io/assets/passkey.png"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://icealtria.github.io/blog/passkey-101/"><meta property="twitter:title" content="如何实现一个简单的 Passkey 登录"><meta property="twitter:description"><meta property="twitter:image" content="https://icealtria.github.io/assets/passkey.png"><link rel="stylesheet" href="/assets/about.css">
 <link rel="stylesheet" href="/assets/about-1.css"></head> <body class="bg-background"> <header> <img class="mt-4 px-2 h-28 mx-auto dark:invert" draggable="false" src="/header.svg" alt="header"> <nav> <div class="flex justify-center my-4"> <a href="/" class="header-link flex items-center gap-1"> <svg width="1em" height="1em" data-icon="ic:baseline-home">   <symbol id="ai:ic:baseline-home" viewBox="0 0 24 24"><path fill="currentColor" d="M10 20v-6h4v6h5v-8h3L12 3L2 12h3v8z"/></symbol><use href="#ai:ic:baseline-home"></use>  </svg>首页 </a> <a href="/blog" class="header-link flex items-center gap-1"> <svg width="1em" height="1em" data-icon="ic:baseline-archive">   <symbol id="ai:ic:baseline-archive" viewBox="0 0 24 24"><path fill="currentColor" d="m20.54 5.23l-1.39-1.68C18.88 3.21 18.47 3 18 3H6c-.47 0-.88.21-1.16.55L3.46 5.23C3.17 5.57 3 6.02 3 6.5V19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6.5c0-.48-.17-.93-.46-1.27M12 17.5L6.5 12H10v-2h4v2h3.5zM5.12 5l.81-1h12l.94 1z"/></symbol><use href="#ai:ic:baseline-archive"></use>  </svg> 归档 </a> <a href="/friends" class="header-link flex items-center gap-1">  <svg width="1em" height="1em" data-icon="ic:baseline-contacts">   <symbol id="ai:ic:baseline-contacts" viewBox="0 0 24 24"><path fill="currentColor" d="M20 0H4v2h16zM4 24h16v-2H4zM20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2m-8 2.75c1.24 0 2.25 1.01 2.25 2.25s-1.01 2.25-2.25 2.25S9.75 10.24 9.75 9S10.76 6.75 12 6.75M17 17H7v-1.5c0-1.67 3.33-2.5 5-2.5s5 .83 5 2.5z"/></symbol><use href="#ai:ic:baseline-contacts"></use>  </svg>友链
  </a> <a href="/about" class="header-link flex items-center gap-1"> <svg width="1em" height="1em" data-icon="ic:baseline-info">   <symbol id="ai:ic:baseline-info" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m1 15h-2v-6h2zm0-8h-2V7h2z"/></symbol><use href="#ai:ic:baseline-info"></use>  </svg>关于 </a> </div> </nav> </header> <div class="mx-auto px-4">  <main class="max-w-4xl mx-auto rounded-2xl"> <img src="/assets/passkey_1NlNsi.avif" class="w-full rounded-2xl shadow-xl" alt="img of 如何实现一个简单的 Passkey 登录" loading="eager" width="1000" height="462" decoding="async"> <article> <div> <h1 class="mb-0">如何实现一个简单的 Passkey 登录</h1> <div class="text-sm font-light mt-4"> <span>icealtria</span><br> <time datetime="2024-12-09T00:00:00.000Z"> 2024. 12. 9. </time> </div> <div class="tags"><a class="tag" href="/tags/security">
 #security</a><a class="tag" href="/tags/passkey">
 #passkey</a></div> </div> <p>最近糊了个 <a href="https://meow-counter.icealtria.workers.dev/">meow-counter</a>（<a href="#footer">Footer</a> 那个，魔改自 <a href="https://github.com/kotx/moco">moco</a>），但是统计面板不想公开，所以自然需要一个鉴权方式。我选择了 <strong>Passkey</strong>，也借此搞通了 Passkey 的验证流程。</p>
-<hr>
 <h2 id="为什么选择-passkey">为什么选择 Passkey?</h2>
 <p>我不喜欢输密码，基于公钥认证的系统让我感觉更安心。就像使用 SSH，我也是仅支持公钥验证，完全不需要密码，安全性更高且劝退暴力破解者。</p>
 <p>对于普通用户，Passkey 解决了密码泄露、钓鱼攻击等问题，简化了身份验证流程（无需额外的 2FA）。</p>
-<hr>
 <h2 id="不足之处">不足之处</h2>
 <p>Passkey 通常绑定到设备或其生态系统（如 iCloud、Google 账号）。目前，除了使用 <strong>KeePassXC</strong> 外，几乎没有导出和导入的手段。 更换设备或丢失绑定设备时，可能会面临身份验证困难。 <a href="https://blog.1password.com/fido-alliance-import-export-passkeys-draft-specs/">未来或许会有更多密码管理器支持</a>。</p>
 <blockquote>
 <p><a href="https://fidoalliance.org/specs/cx/cxf-v1.0-wd-20240522.html">Credential Exchange Format</a>。</p>
 </blockquote>
-<hr>
 <h2 id="注册与登录流程">注册与登录流程</h2>
 <h3 id="注册流程">注册流程</h3>
 <img alt="注册流程" decoding="async" loading="lazy" src="/d2/blog/passkey-101/index-0.svg" width="929" height="893">
 <h3 id="登录流程">登录流程</h3>
 <img alt="登录流程" decoding="async" loading="lazy" src="/d2/blog/passkey-101/index-1.svg" width="812" height="893">
-<hr>
 <h2 id="api-使用指南">API 使用指南</h2>
 <h3 id="环境要求">环境要求</h3>
 <ul>
@@ -27,7 +23,6 @@
 <li>后端推荐使用现成的库，比如 Node.js 的 <a href="https://github.com/MasterKale/SimpleWebAuthn">simplewebauthn</a>。不然验证挺繁琐的。</li>
 </ul>
 <p>下面都算伪代码，实际操作中 ArrayBuffer 编码为 Base64URL</p>
-<hr>
 <h3 id="用户注册">用户注册</h3>
 <p>前端需要输入用户名，请求 <code>/api/registerStart</code>，获取 <code>publicKeyCredentialCreationOptions</code>。</p>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> publicKeyCredentialCreationOptions</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> {</span></span>
@@ -103,7 +98,6 @@
 <span class="line"></span>
 <span class="line"></span></code></pre>
 <p><code>verifyRegistrationResponse</code> 会解析 <code>clientDataJSON</code>，将 <code>challenge</code> 与之前保存的进行比较以验证是否对应于当前注册事件。然后从 <code>attestationObject</code> 中获取 <code>credential.id</code> 和 <code>publicKey</code>，并将它们存储到数据库中。</p>
-<hr>
 <h3 id="用户登录">用户登录</h3>
 <h4 id="服务端生成-challenge">服务端生成 challenge</h4>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> publicKeyCredentialRequestOptions</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> {</span></span>
@@ -155,7 +149,6 @@
 <span class="line"><span style="color:#B392F0">    grantAccessToUser</span><span style="color:#E1E4E8">();</span></span>
 <span class="line"><span style="color:#E1E4E8">}</span></span>
 <span class="line"></span></code></pre>
-<p>verifyAuthenticationResponse 验证 signature 和 clientDataJSON 是否与存储的 publicKey 匹配，确认登录成功。</p>
-<p><span class="hidden-text">其实 Meow Counter 的 Passkey 没有完全实装，后端只是对比 public key 是否存在于数据库（</span></p> </article> <div class="mx-4 my-12 md:mx-8 md:py-2"> <div class="comment mx-auto text-center"> <script src="https://giscus.app/client.js" data-repo="icealtria/astro-mylike-blog" data-repo-id="R_kgDOKISnYg" data-category="Announcements" data-category-id="DIC_kwDOKISnYs4CZLRJ" data-mapping="pathname" data-strict="0" data-reactions-enabled="0" data-emit-metadata="0" data-input-position="bottom" data-theme="preferred_color_scheme" data-lang="en" crossorigin="anonymous" async></script> <noscript>Javascript is required</noscript> </div> </div> </main>  <footer id="footer" class="flex my-8 flex-col items-center"> <img class="h-20" src="https://meow-counter.icealtria.workers.dev/get/passkey-101" alt="meow counter"> <div class="gap-2 flex justify-center items-center">
+<p>verifyAuthenticationResponse 验证 signature 和 clientDataJSON 是否与存储的 publicKey 匹配，确认登录成功。</p> </article> <div class="mx-4 my-12 md:mx-8 md:py-2"> <div class="comment mx-auto text-center"> <script src="https://giscus.app/client.js" data-repo="icealtria/astro-mylike-blog" data-repo-id="R_kgDOKISnYg" data-category="Announcements" data-category-id="DIC_kwDOKISnYs4CZLRJ" data-mapping="pathname" data-strict="0" data-reactions-enabled="0" data-emit-metadata="0" data-input-position="bottom" data-theme="preferred_color_scheme" data-lang="en" crossorigin="anonymous" async></script> <noscript>Javascript is required</noscript> </div> </div> </main>  <footer id="footer" class="flex my-8 flex-col items-center"> <img class="h-20" src="https://meow-counter.icealtria.workers.dev/get/passkey-101" alt="meow counter"> <div class="gap-2 flex justify-center items-center">
 Copyright &copy; 2024 <span>icealtria</span>|
 <a href="/atom.xml">RSS</a> </div> </footer> </div> </body></html>

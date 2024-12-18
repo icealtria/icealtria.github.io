@@ -1,15 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>icealtria&apos;s blog</title><description>A simple blog theme for Astro</description><link>https://icealtria.github.io/</link><follow_challenge><feedId>60885767001155584</feedId><userId>41755107772433408</userId></follow_challenge><item><title>如何实现一个简单的 Passkey 登录</title><link>https://icealtria.github.io/blog/passkey-101/</link><guid isPermaLink="true">https://icealtria.github.io/blog/passkey-101/</guid><description>使用 Tailscale 实现</description><pubDate>Mon, 09 Dec 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;最近糊了个 &lt;a href=&quot;https://meow-counter.icealtria.workers.dev/&quot;&gt;meow-counter&lt;/a&gt;（&lt;a href=&quot;#footer&quot;&gt;Footer&lt;/a&gt; 那个，魔改自 &lt;a href=&quot;https://github.com/kotx/moco&quot;&gt;moco&lt;/a&gt;），但是统计面板不想公开，所以自然需要一个鉴权方式。我选择了 &lt;strong&gt;Passkey&lt;/strong&gt;，也借此搞通了 Passkey 的验证流程。&lt;/p&gt;
-&lt;hr&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>icealtria&apos;s blog</title><description>A simple blog theme for Astro</description><link>https://icealtria.github.io/</link><follow_challenge><feedId>60885767001155584</feedId><userId>41755107772433408</userId></follow_challenge><item><title>如何实现一个简单的 Passkey 登录</title><link>https://icealtria.github.io/blog/passkey-101/</link><guid isPermaLink="true">https://icealtria.github.io/blog/passkey-101/</guid><pubDate>Mon, 09 Dec 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;最近糊了个 &lt;a href=&quot;https://meow-counter.icealtria.workers.dev/&quot;&gt;meow-counter&lt;/a&gt;（&lt;a href=&quot;#footer&quot;&gt;Footer&lt;/a&gt; 那个，魔改自 &lt;a href=&quot;https://github.com/kotx/moco&quot;&gt;moco&lt;/a&gt;），但是统计面板不想公开，所以自然需要一个鉴权方式。我选择了 &lt;strong&gt;Passkey&lt;/strong&gt;，也借此搞通了 Passkey 的验证流程。&lt;/p&gt;
 &lt;h2&gt;为什么选择 Passkey?&lt;/h2&gt;
 &lt;p&gt;我不喜欢输密码，基于公钥认证的系统让我感觉更安心。就像使用 SSH，我也是仅支持公钥验证，完全不需要密码，安全性更高且劝退暴力破解者。&lt;/p&gt;
 &lt;p&gt;对于普通用户，Passkey 解决了密码泄露、钓鱼攻击等问题，简化了身份验证流程（无需额外的 2FA）。&lt;/p&gt;
-&lt;hr&gt;
 &lt;h2&gt;不足之处&lt;/h2&gt;
 &lt;p&gt;Passkey 通常绑定到设备或其生态系统（如 iCloud、Google 账号）。目前，除了使用 &lt;strong&gt;KeePassXC&lt;/strong&gt; 外，几乎没有导出和导入的手段。 更换设备或丢失绑定设备时，可能会面临身份验证困难。 &lt;a href=&quot;https://blog.1password.com/fido-alliance-import-export-passkeys-draft-specs/&quot;&gt;未来或许会有更多密码管理器支持&lt;/a&gt;。  &lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;a href=&quot;https://fidoalliance.org/specs/cx/cxf-v1.0-wd-20240522.html&quot;&gt;Credential Exchange Format&lt;/a&gt;。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;hr&gt;
 &lt;h2&gt;注册与登录流程&lt;/h2&gt;
 &lt;h3&gt;注册流程&lt;/h3&gt;
 &lt;pre&gt;&lt;code class=&quot;language-d2&quot;&gt;shape: sequence_diagram
@@ -35,7 +32,6 @@ Frontend -&amp;gt; Backend: /api/loginFinish (assertion)
 Backend -&amp;gt; Backend: Verify (assertion)
 Backend -&amp;gt; Frontend: Login successful
 &lt;/code&gt;&lt;/pre&gt;
-&lt;hr&gt;
 &lt;h2&gt;API 使用指南&lt;/h2&gt;
 &lt;h3&gt;环境要求&lt;/h3&gt;
 &lt;ul&gt;
@@ -43,7 +39,6 @@ Backend -&amp;gt; Frontend: Login successful
 &lt;li&gt;后端推荐使用现成的库，比如 Node.js 的 &lt;a href=&quot;https://github.com/MasterKale/SimpleWebAuthn&quot;&gt;simplewebauthn&lt;/a&gt;。不然验证挺繁琐的。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;下面都算伪代码，实际操作中 ArrayBuffer 编码为 Base64URL &lt;/p&gt;
-&lt;hr&gt;
 &lt;h3&gt;用户注册&lt;/h3&gt;
 &lt;p&gt;前端需要输入用户名，请求 &lt;code&gt;/api/registerStart&lt;/code&gt;，获取 &lt;code&gt;publicKeyCredentialCreationOptions&lt;/code&gt;。&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const publicKeyCredentialCreationOptions = {
@@ -118,7 +113,6 @@ if (verification.verified) {
 }
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;code&gt;verifyRegistrationResponse&lt;/code&gt; 会解析 &lt;code&gt;clientDataJSON&lt;/code&gt;，将 &lt;code&gt;challenge&lt;/code&gt; 与之前保存的进行比较以验证是否对应于当前注册事件。然后从 &lt;code&gt;attestationObject&lt;/code&gt; 中获取 &lt;code&gt;credential.id&lt;/code&gt; 和 &lt;code&gt;publicKey&lt;/code&gt;，并将它们存储到数据库中。&lt;/p&gt;
-&lt;hr&gt;
 &lt;h3&gt;用户登录&lt;/h3&gt;
 &lt;h4&gt;服务端生成 challenge&lt;/h4&gt;
 &lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const publicKeyCredentialRequestOptions = {
@@ -171,7 +165,6 @@ if (verification.verified) {
 }
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;verifyAuthenticationResponse 验证 signature 和 clientDataJSON 是否与存储的 publicKey 匹配，确认登录成功。&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;hidden-text&quot;&gt;其实 Meow Counter 的 Passkey 没有完全实装，后端只是对比 public key 是否存在于数据库（&lt;/span&gt;&lt;/p&gt;
 </content:encoded></item><item><title>影响汇率的因素</title><link>https://icealtria.github.io/blog/exchange-rate/</link><guid isPermaLink="true">https://icealtria.github.io/blog/exchange-rate/</guid><description>怎么写金融的文章了(</description><pubDate>Mon, 25 Nov 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;应该算笔记。&lt;/p&gt;
 &lt;h2&gt;物价&lt;/h2&gt;
 &lt;ol&gt;
