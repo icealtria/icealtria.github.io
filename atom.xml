@@ -4,8 +4,10 @@
 &lt;p&gt;对于普通用户，Passkey 解决了密码泄露、钓鱼攻击等问题，简化了身份验证流程（无需额外的 2FA）。&lt;/p&gt;
 &lt;h2&gt;不足之处&lt;/h2&gt;
 &lt;p&gt;Passkey 通常绑定到设备或其生态系统（如 iCloud、Google 账号）。目前，除了使用 &lt;strong&gt;KeePassXC&lt;/strong&gt; 外，几乎没有导出和导入的手段。 更换设备或丢失绑定设备时，可能会面临身份验证困难。 &lt;a href=&quot;https://blog.1password.com/fido-alliance-import-export-passkeys-draft-specs/&quot;&gt;未来或许会有更多密码管理器支持&lt;/a&gt;。  &lt;/p&gt;
+&lt;p&gt;Passkey 必需依赖 Javascript&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&quot;https://fidoalliance.org/specs/cx/cxf-v1.0-wd-20240522.html&quot;&gt;Credential Exchange Format&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://fidoalliance.org/specs/cx/cxf-v1.0-wd-20240522.html&quot;&gt;Credential Exchange Format&lt;/a&gt;。
+&lt;a href=&quot;https://github.com/w3c/webauthn/issues/1255&quot;&gt;Add a way to use webauthn without Javascript · Issue #1255 · w3c/webauthn&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2&gt;注册与登录流程&lt;/h2&gt;
 &lt;h3&gt;注册流程&lt;/h3&gt;
