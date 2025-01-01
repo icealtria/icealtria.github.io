@@ -1,0 +1,13 @@
+/
+  max-age: 3600
+  vary: Accept-Encoding
+  content-encoding: gzip
+
+/assets/*
+  Cache-Control: public, max-age=31536000
+
+/d2/*
+  Cache-Control: public, max-age=31536000
+
+/fonts/*
+  Cache-Control: public, max-age=31536000
