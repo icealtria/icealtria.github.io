@@ -64,9 +64,10 @@ Backend -&amp;gt; Frontend: Login successful
   passkeys.user_id -&amp;gt; users.user_id
 }
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;code&gt;sign_count&lt;/code&gt; 用于防止 passkey 被复制。比如 yubikey 每次使用签名都会计数，key 返回的计数如果小于记录的 &lt;code&gt;sign_count&lt;/code&gt;，则说明该 key 可能被复制了。&lt;/p&gt;
-&lt;p&gt;但是水果和一众密码管理器都没实现这个特征（返回 0），或许是同步计数器比较麻烦。&lt;/p&gt;
-&lt;p&gt;&lt;del&gt;容易被复制的软件实现都没实现（密码管理器的同步功能做的事情确实是在复制），难以复制的硬件反而有&lt;/del&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sign_count&lt;/code&gt; 用于防止 passkey 被克隆。比如 yubikey 每次签名都会计数，key 返回的计数如果小于记录的计数，则说明存在克隆的 key。&lt;/p&gt;
+&lt;p&gt;但是水果和一众密码管理器都没实现这个特征（返回 0），或许是同步计数器比较麻烦。[^3]&lt;/p&gt;
+&lt;p&gt;&lt;del&gt;容易被克隆的软件实现都没实现（密码管理器的同步功能做的事情确实是在克隆），难以克隆的硬件反而有&lt;/del&gt;
+[^3]:&lt;a href=&quot;https://www.reddit.com/r/Bitwarden/comments/1819doj/passkeys_and_the_signature_counter/&quot;&gt;Passkeys and the signature counter : r/Bitwarden&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;API 使用指南&lt;/h2&gt;
 &lt;h3&gt;环境要求&lt;/h3&gt;
 &lt;ul&gt;
