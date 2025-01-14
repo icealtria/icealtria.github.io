@@ -1,4 +1,35 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>icealtria&apos;s blog</title><description>嗷呜</description><link>https://icealtria.github.io/</link><follow_challenge><feedId>60885767001155584</feedId><userId>41755107772433408</userId></follow_challenge><item><title>如何实现一个简单的 Passkey 登录</title><link>https://icealtria.github.io/blog/passkey-101/</link><guid isPermaLink="true">https://icealtria.github.io/blog/passkey-101/</guid><pubDate>Mon, 09 Dec 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;最近糊了个
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>icealtria&apos;s blog</title><description>嗷呜</description><link>https://icealtria.github.io/</link><follow_challenge><feedId>60885767001155584</feedId><userId>41755107772433408</userId></follow_challenge><item><title>如何识别 Brave 浏览器</title><link>https://icealtria.github.io/blog/brave-detect/</link><guid isPermaLink="true">https://icealtria.github.io/blog/brave-detect/</guid><pubDate>Sun, 12 Jan 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;最近在访问 &lt;a href=&quot;https://lobste.rs&quot;&gt;Lobste.rs&lt;/a&gt; 时（后面用 🦞 代替），网站会禁止 Brave 浏览器的访问。有一点我感到很困惑，因为 Brave 在隐藏用户特征方面做了很多努力，其中包括伪装用户代理信息。这让我产生了一个疑问：🦞 是如何识别出 Brave 的？其实我也在愁统计不到 Brave。&lt;/p&gt;
+&lt;h2&gt;探索&lt;/h2&gt;
+&lt;h3&gt;利用前端 JavaScript 识别 Brave&lt;/h3&gt;
+&lt;p&gt;起初，我以为 🦞 是通过前端 JS 进行识别的。因为在禁用 JS 后，我发现可以正常访问 🦞。Brave 浏览器提供了一些独特的 API，比如 Wallet，甚至还提供了一个 &lt;code&gt;isBrave&lt;/code&gt; 函数。通过这些 API，很容易在前端检测到用户是否在使用 Brave 浏览器。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-js&quot;&gt;console.log(window.braveEthereum); // Brave 独有的 Wallet API
+console.log(navigator.Brave.isBrave); // 检测是否为 Brave 浏览器
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;然而，在进一步分析中，我并未在页面发现任何 JS 代码。尤其是在未登录的情况下，🦞 不会加载任何 JS。表明这并非其识别手段。&lt;/p&gt;
+&lt;h3&gt;基于链接参数移除的推断&lt;/h3&gt;
+&lt;p&gt;在 🦞 相关的 &lt;a href=&quot;https://github.com/lobsters/lobsters/issues/761&quot;&gt;Issue&lt;/a&gt; 中，我发现了一种&lt;a href=&quot;https://www.ctrl.blog/entry/brave-user-agent-detection.html&quot;&gt;基于链接参数的识别方法&lt;/a&gt;。Brave 的隐私保护策略之一是自动移除一些常见的跟踪参数。例如：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;/detect-brave?gclid=3&amp;amp;fbclid=2&amp;amp;sub=marine
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;如果后端检测到 &lt;code&gt;gclid&lt;/code&gt; 和 &lt;code&gt;fbclid&lt;/code&gt; 等参数被移除，可以推断用户可能使用的是 Brave 浏览器。&lt;/p&gt;
+&lt;p&gt;但这种方法并不可靠。其他工具（例如 Firefox 安装 ClearURLs 扩展后）也会移除这些参数，导致误判。&lt;/p&gt;
+&lt;h3&gt;通过 Client Hint 的识别&lt;/h3&gt;
+&lt;p&gt;在分析请求头时，我注意到了一组没见过的 Header —— &lt;code&gt;sec-ch-ua&lt;/code&gt; 包含 Brave，这是 Client Hint 的一部分，用于替代传统的 User-Agent 字符串。目前也只有 Chromium 系浏览器支持，估计是作为 Privacy Sandbox 的一部分，遭到了 Mozilla 和 Apple 的反对。&lt;/p&gt;
+&lt;p&gt;Client Hint 的目的是为网站提供更精确的设备信息，例如屏幕宽度也能加到 Header。Client Hint 默认不会发送所有的信息，只有在服务器显式请求后，浏览器才会返回相关信息。&lt;strong&gt;但是&lt;/strong&gt;浏览器和平台的信息默认是会发送的。&lt;/p&gt;
+&lt;p&gt;Client Hint 默认会提供的信息：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Sec-CH-UA: &amp;quot;Brave&amp;quot;;v=&amp;quot;131&amp;quot;, &amp;quot;Chromium&amp;quot;;v=&amp;quot;131&amp;quot;, &amp;quot;Not_A Brand&amp;quot;;v=&amp;quot;24&amp;quot;
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: &amp;quot;Windows&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;我通过 HTTPie 模拟了请求，结果证实 🦞 确实是通过 &lt;code&gt;Sec-CH-UA&lt;/code&gt; 识别 Brave 浏览器的。&lt;/p&gt;
+&lt;p&gt;有趣的是，禁用 JavaScript 后，Brave 不再发送 Client Hint 的头，这也是为什么禁用 JS 后能够成功访问 🦞 的原因。&lt;/p&gt;
+&lt;p&gt;（伪装成 Chrome，但又没有完全伪装&lt;/p&gt;
+&lt;h2&gt;尝试 Client Hint&lt;/h2&gt;
+&lt;p&gt;之后我尝试用 Client Hint 统计浏览器，发现某些国产浏览器 (比如 UC) &lt;code&gt;User-Agent&lt;/code&gt; 显示其正确名字，&lt;code&gt;Sec-CH-UA&lt;/code&gt; 却返回一个 Chromium? like Chrome? 如果只用 &lt;code&gt;Sec-CH-UA&lt;/code&gt; 的话目前比传统 UA 更不靠谱。&lt;/p&gt;
+&lt;h2&gt;结&lt;/h2&gt;
+&lt;p&gt;2024（确实 2024）年还能看到有网站在跟浏览器玩猫捉老鼠的游戏就挺搞的，最终不过是重复 Mozilla/5.0 的历史（大家都变成 Chrome 就好了，实际上也差不多了）。尽管我也很讨厌 Brave 塞的那些币圈垃圾。&lt;/p&gt;
+&lt;p&gt;Vivaldi 也是因为收到太多不兼容的报告，被迫默认改为跟 Chrome 一致的 UA。&lt;/p&gt;
+&lt;p&gt;中途我还发现 Brave 维护了一个长长的&lt;a href=&quot;https://github.com/brave/adblock-lists/blob/6d2ed09f951d89085dd3e186acc4a7f881346d3f/brave-unbreak.txt#L722&quot;&gt;清单&lt;/a&gt;，禁止 Brave 的网站都会被拉到清单里，对清单里的网站会隐藏自身独特的 API 防止被检测到。&lt;/p&gt;
+</content:encoded></item><item><title>如何实现一个简单的 Passkey 登录</title><link>https://icealtria.github.io/blog/passkey-101/</link><guid isPermaLink="true">https://icealtria.github.io/blog/passkey-101/</guid><pubDate>Mon, 09 Dec 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;最近糊了个
 &lt;a href=&quot;https://meow-counter.icealtria.workers.dev/&quot;&gt;meow-counter&lt;/a&gt;（&lt;a href=&quot;#footer&quot;&gt;Footer&lt;/a&gt;
 那个，魔改自
 &lt;a href=&quot;https://github.com/kotx/moco&quot;&gt;moco&lt;/a&gt;），但是统计面板不想公开，所以自然需要一个鉴权方式。我选择了
