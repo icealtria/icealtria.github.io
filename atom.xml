@@ -1,50 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>icealtria&apos;s blog</title><description>嗷呜</description><link>https://icealtria.github.io/</link><follow_challenge><feedId>111979049320282112</feedId><userId>41755107772433408</userId></follow_challenge><item><title>如何识别 Brave 浏览器</title><link>https://icealtria.github.io/blog/brave-detect/</link><guid isPermaLink="true">https://icealtria.github.io/blog/brave-detect/</guid><pubDate>Sun, 12 Jan 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;最近在访问 &lt;a href=&quot;https://lobste.rs&quot;&gt;Lobste.rs&lt;/a&gt; 时（后面用 🦞 代替），网站会禁止 Brave 浏览器的访问。有一点我感到很困惑，因为 Brave 在隐藏用户特征方面做了很多努力，其中包括伪装用户代理信息。这让我产生了一个疑问：🦞 是如何识别出 Brave 的？其实我也在愁统计不到 Brave。&lt;/p&gt;
-&lt;h2&gt;探索&lt;/h2&gt;
-&lt;h3&gt;利用前端 JavaScript 识别 Brave&lt;/h3&gt;
-&lt;p&gt;起初，我以为 🦞 是通过前端 JS 进行识别的。因为在禁用 JS 后，我发现可以正常访问 🦞。Brave 浏览器提供了一些独特的 API，比如 Wallet，甚至还提供了一个 &lt;code&gt;isBrave&lt;/code&gt; 函数。通过这些 API，很容易在前端检测到用户是否在使用 Brave 浏览器。&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-js&quot;&gt;console.log(window.braveEthereum); // Brave 独有的 Wallet API
-console.log(navigator.Brave.isBrave); // 检测是否为 Brave 浏览器
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;然而，在进一步分析中，我并未在页面发现任何 JS 代码。尤其是在未登录的情况下，🦞 不会加载任何 JS。表明这并非其识别手段。&lt;/p&gt;
-&lt;h3&gt;基于链接参数移除的推断&lt;/h3&gt;
-&lt;p&gt;在 🦞 相关的 &lt;a href=&quot;https://github.com/lobsters/lobsters/issues/761&quot;&gt;Issue&lt;/a&gt; 中，我发现了一种&lt;a href=&quot;https://www.ctrl.blog/entry/brave-user-agent-detection.html&quot;&gt;基于链接参数的识别方法&lt;/a&gt;。Brave 的隐私保护策略之一是自动移除一些常见的跟踪参数。例如：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;/detect-brave?gclid=3&amp;amp;fbclid=2&amp;amp;sub=marine
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;如果后端检测到 &lt;code&gt;gclid&lt;/code&gt; 和 &lt;code&gt;fbclid&lt;/code&gt; 等参数被移除，可以推断用户可能使用的是 Brave 浏览器。&lt;/p&gt;
-&lt;p&gt;但这种方法并不可靠。其他工具（例如 Firefox 安装 ClearURLs 扩展后）也会移除这些参数，导致误判。&lt;/p&gt;
-&lt;h3&gt;通过 Client Hint 的识别&lt;/h3&gt;
-&lt;p&gt;在分析请求头时，我注意到了一组没见过的 Header —— &lt;code&gt;sec-ch-ua&lt;/code&gt; 包含 Brave，这是 Client Hint 的一部分，用于替代传统的 User-Agent 字符串。目前也只有 Chromium 系浏览器支持，估计是作为 Privacy Sandbox 的一部分，遭到了 Mozilla 和 Apple 的反对。&lt;/p&gt;
-&lt;p&gt;Client Hint 的目的是为网站提供更精确的设备信息，例如屏幕宽度也能加到 Header。Client Hint 默认不会发送所有的信息，只有在服务器显式请求后，浏览器才会返回相关信息。&lt;strong&gt;但是&lt;/strong&gt;浏览器和平台的信息默认是会发送的。&lt;/p&gt;
-&lt;p&gt;Client Hint 默认会提供的信息：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;Sec-CH-UA: &amp;quot;Brave&amp;quot;;v=&amp;quot;131&amp;quot;, &amp;quot;Chromium&amp;quot;;v=&amp;quot;131&amp;quot;, &amp;quot;Not_A Brand&amp;quot;;v=&amp;quot;24&amp;quot;
-sec-ch-ua-mobile: ?0
-sec-ch-ua-platform: &amp;quot;Windows&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;我通过 HTTPie 模拟了请求，结果证实 🦞 确实是通过 &lt;code&gt;Sec-CH-UA&lt;/code&gt; 识别 Brave 浏览器的。&lt;/p&gt;
-&lt;p&gt;有趣的是，禁用 JavaScript 后，Brave 不再发送 Client Hint 的头，这也是为什么禁用 JS 后能够成功访问 🦞 的原因。&lt;/p&gt;
-&lt;p&gt;（伪装成 Chrome，但又没有完全伪装&lt;/p&gt;
-&lt;h2&gt;尝试 Client Hint&lt;/h2&gt;
-&lt;p&gt;之后我尝试用 Client Hint 统计浏览器，发现某些国产浏览器 (比如 UC) &lt;code&gt;User-Agent&lt;/code&gt; 显示其正确名字，&lt;code&gt;Sec-CH-UA&lt;/code&gt; 却返回一个 Chromium? like Chrome? 如果只用 &lt;code&gt;Sec-CH-UA&lt;/code&gt; 的话目前比传统 UA 更不靠谱。&lt;/p&gt;
-&lt;h2&gt;结&lt;/h2&gt;
-&lt;p&gt;2024（确实 2024）年还能看到有网站在跟浏览器玩猫捉老鼠的游戏就挺搞的，最终不过是重复 Mozilla/5.0 的历史（大家都变成 Chrome 就好了，实际上也差不多了）。尽管我也很讨厌 Brave 塞的那些币圈垃圾。&lt;/p&gt;
-&lt;p&gt;Vivaldi 也是因为收到太多不兼容的报告，被迫默认改为跟 Chrome 一致的 UA。&lt;/p&gt;
-&lt;p&gt;中途我还发现 Brave 维护了一个长长的&lt;a href=&quot;https://github.com/brave/adblock-lists/blob/6d2ed09f951d89085dd3e186acc4a7f881346d3f/brave-unbreak.txt#L722&quot;&gt;清单&lt;/a&gt;，禁止 Brave 的网站都会被拉到清单里，对清单里的网站会隐藏自身独特的 API 防止被检测到。&lt;/p&gt;
-</content:encoded></item><item><title>如何实现一个简单的 Passkey 登录</title><link>https://icealtria.github.io/blog/passkey-101/</link><guid isPermaLink="true">https://icealtria.github.io/blog/passkey-101/</guid><pubDate>Mon, 09 Dec 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;最近糊了个
-&lt;a href=&quot;https://meow-counter.icealtria.workers.dev/&quot;&gt;meow-counter&lt;/a&gt;（&lt;a href=&quot;#footer&quot;&gt;Footer&lt;/a&gt;
-那个，魔改自
-&lt;a href=&quot;https://github.com/kotx/moco&quot;&gt;moco&lt;/a&gt;），但是统计面板不想公开，所以自然需要一个鉴权方式。我选择了
-&lt;strong&gt;Passkey&lt;/strong&gt;，也借此搞通了 Passkey 的验证流程。&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>icealtria&apos;s blog</title><description>嗷呜</description><link>https://icealtria.github.io/</link><follow_challenge><feedId>60885767001155584</feedId><userId>41755107772433408</userId></follow_challenge><item><title>如何实现一个简单的 Passkey 登录</title><link>https://icealtria.github.io/blog/passkey-101/</link><guid isPermaLink="true">https://icealtria.github.io/blog/passkey-101/</guid><pubDate>Mon, 09 Dec 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;最近糊了个 &lt;a href=&quot;https://meow-counter.icealtria.workers.dev/&quot;&gt;meow-counter&lt;/a&gt;（&lt;a href=&quot;#footer&quot;&gt;Footer&lt;/a&gt; 那个，魔改自 &lt;a href=&quot;https://github.com/kotx/moco&quot;&gt;moco&lt;/a&gt;），但是统计面板不想公开，所以自然需要一个鉴权方式。我选择了 &lt;strong&gt;Passkey&lt;/strong&gt;，也借此搞通了 Passkey 的验证流程。&lt;/p&gt;
 &lt;h2&gt;为什么选择 Passkey?&lt;/h2&gt;
-&lt;p&gt;我不喜欢输密码，基于公钥认证的系统让我感觉更安心。就像使用
-SSH，我也是仅支持公钥验证，完全不需要密码，安全性更高且劝退暴力破解者。&lt;/p&gt;
-&lt;p&gt;对于普通用户，Passkey
-解决了密码泄露、钓鱼攻击等问题，简化了身份验证流程（无需额外的 2FA）。&lt;/p&gt;
+&lt;p&gt;我不喜欢输密码，基于公钥认证的系统让我感觉更安心。就像使用 SSH，我也是仅支持公钥验证，完全不需要密码，安全性更高且劝退暴力破解者。&lt;/p&gt;
+&lt;p&gt;对于普通用户，Passkey 解决了密码泄露、钓鱼攻击等问题，简化了身份验证流程（无需额外的 2FA）。&lt;/p&gt;
 &lt;h2&gt;不足之处&lt;/h2&gt;
-&lt;p&gt;Passkey 通常绑定到设备或其生态系统（如 iCloud、Google 账号）。目前，除了使用
-&lt;strong&gt;KeePassXC&lt;/strong&gt; 外，几乎没有导出和导入的手段。
-更换设备或丢失绑定设备时，可能会面临身份验证困难。
-&lt;a href=&quot;https://blog.1password.com/fido-alliance-import-export-passkeys-draft-specs/&quot;&gt;未来或许会有更多密码管理器支持&lt;/a&gt;。
-[^1]&lt;/p&gt;
+&lt;p&gt;Passkey 通常绑定到设备或其生态系统（如 iCloud、Google 账号）。目前，除了使用 &lt;strong&gt;KeePassXC&lt;/strong&gt; 外，几乎没有导出和导入的手段。 更换设备或丢失绑定设备时，可能会面临身份验证困难。 &lt;a href=&quot;https://blog.1password.com/fido-alliance-import-export-passkeys-draft-specs/&quot;&gt;未来或许会有更多密码管理器支持&lt;/a&gt;。  [^1]&lt;/p&gt;
 &lt;p&gt;Passkey 必需依赖 Javascript，不能纯 HTML 了。 [^2]&lt;/p&gt;
 &lt;p&gt;[^1]: &lt;a href=&quot;https://fidoalliance.org/specs/cx/cxf-v1.0-wd-20240522.html&quot;&gt;Credential Exchange Format&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;[^2]: &lt;a href=&quot;https://github.com/w3c/webauthn/issues/1255&quot;&gt;Add a way to use webauthn without Javascript · Issue #1255 · w3c/webauthn&lt;/a&gt;&lt;/p&gt;
@@ -59,7 +18,7 @@ Frontend -&amp;gt; User: Trigger credentials.create
 User -&amp;gt; Frontend: User auth
 Frontend -&amp;gt; Backend: /api/registerFinish (attestation)
 Backend -&amp;gt; Backend: VerifyAndSave (attestation)
-Backend -&amp;gt; Frontend: Creation
+Backend -&amp;gt; Frontend: Creation 
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h3&gt;登录流程&lt;/h3&gt;
 &lt;pre&gt;&lt;code class=&quot;language-d2&quot;&gt;shape: sequence_diagram
@@ -73,67 +32,34 @@ Frontend -&amp;gt; Backend: /api/loginFinish (assertion)
 Backend -&amp;gt; Backend: Verify (assertion)
 Backend -&amp;gt; Frontend: Login successful
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h3&gt;数据库&lt;/h3&gt;
-&lt;pre&gt;&lt;code class=&quot;language-d2&quot;&gt;cloud: {
-  users: {
-    shape: sql_table
-    user_id: int {constraint: primary_key}
-    username: text {constraint: unique}
-    created_at: datetime
-  }
-
-  passkeys: {
-    shape: sql_table
-    passkey_id: int {constraint: primary_key}
-    user_id: int {constraint: foreign_key}
-    credential_id: text
-    public_key: text
-    sign_count: int
-    created_at: datetime
-  }
-
-  passkeys.user_id -&amp;gt; users.user_id
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;code&gt;sign_count&lt;/code&gt; 用于防止 passkey 被克隆。比如 yubikey 每次签名都会计数，key 返回的计数如果小于记录的计数，则说明存在克隆的 key。&lt;/p&gt;
-&lt;p&gt;但是水果和一众密码管理器都没实现这个特征（返回 0），或许是同步计数器比较麻烦。[^3]&lt;/p&gt;
-&lt;p&gt;&lt;del&gt;容易被克隆的软件实现都没实现（密码管理器的同步功能做的事情确实是在克隆），难以克隆的硬件反而有&lt;/del&gt;
-[^3]:&lt;a href=&quot;https://www.reddit.com/r/Bitwarden/comments/1819doj/passkeys_and_the_signature_counter/&quot;&gt;Passkeys and the signature counter : r/Bitwarden&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;API 使用指南&lt;/h2&gt;
 &lt;h3&gt;环境要求&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;服务端需要支持 &lt;strong&gt;HTTPS&lt;/strong&gt;，也可以是 &lt;code&gt;localhost&lt;/code&gt;（WebAuthn 需要
-&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/Security/Secure_Contexts&quot;&gt;Secure contexts&lt;/a&gt;）。&lt;/li&gt;
-&lt;li&gt;后端推荐使用现成的库，比如 Node.js 的
-&lt;a href=&quot;https://github.com/MasterKale/SimpleWebAuthn&quot;&gt;simplewebauthn&lt;/a&gt;。不然验证挺繁琐的。&lt;/li&gt;
+&lt;li&gt;服务端需要支持 &lt;strong&gt;HTTPS&lt;/strong&gt;，也可以是 &lt;code&gt;localhost&lt;/code&gt;（WebAuthn 需要 &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/Security/Secure_Contexts&quot;&gt;Secure contexts&lt;/a&gt;）。&lt;/li&gt;
+&lt;li&gt;后端推荐使用现成的库，比如 Node.js 的 &lt;a href=&quot;https://github.com/MasterKale/SimpleWebAuthn&quot;&gt;simplewebauthn&lt;/a&gt;。不然验证挺繁琐的。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;下面都算伪代码，实际操作中 ArrayBuffer 编码为 Base64URL&lt;/p&gt;
+&lt;p&gt;下面都算伪代码，实际操作中 ArrayBuffer 编码为 Base64URL &lt;/p&gt;
 &lt;h3&gt;用户注册&lt;/h3&gt;
-&lt;p&gt;前端需要输入用户名，请求 &lt;code&gt;/api/registerStart&lt;/code&gt;，获取
-&lt;code&gt;publicKeyCredentialCreationOptions&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;前端需要输入用户名，请求 &lt;code&gt;/api/registerStart&lt;/code&gt;，获取 &lt;code&gt;publicKeyCredentialCreationOptions&lt;/code&gt;。&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const publicKeyCredentialCreationOptions = {
     challenge: Uint8Array.from(
-        randomStringFromServer,
-        (c) =&amp;gt; c.charCodeAt(0),
-    ),
+        randomStringFromServer, c =&amp;gt; c.charCodeAt(0)), 
     rp: {
         name: &amp;quot;Meow Counter&amp;quot;,
         id: &amp;quot;example.com&amp;quot;, // 浏览器会验证当前域名与 RP ID 是否匹配
     },
     user: {
         id: Uint8Array.from(
-            &amp;quot;UZSL85T9AFC&amp;quot;,
-            (c) =&amp;gt; c.charCodeAt(0),
-        ),
+            &amp;quot;UZSL85T9AFC&amp;quot;, c =&amp;gt; c.charCodeAt(0)),
         name: &amp;quot;lee@example.com&amp;quot;,
-        displayName: &amp;quot;Lee&amp;quot;,
+        displayName: &amp;quot;Lee&amp;quot;, 
     },
     pubKeyCredParams: [{ alg: -7, type: &amp;quot;public-key&amp;quot; }], // 接受的算法
     authenticatorSelection: {
         authenticatorAttachment: &amp;quot;cross-platform&amp;quot;, // 平台外部认证器
     },
     timeout: 60000,
-    attestation: &amp;quot;direct&amp;quot;,
+    attestation: &amp;quot;direct&amp;quot;
 };
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;strong&gt;challenge&lt;/strong&gt;:&lt;/p&gt;
@@ -142,10 +68,9 @@ Backend -&amp;gt; Frontend: Login successful
 &lt;li&gt;challenge 在 KV 中存储，应使用 Expired key。&lt;/li&gt;
 &lt;li&gt;每次请求新的 challenge，旧 challenge 立即作废。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;rp&lt;/strong&gt;:&lt;/p&gt;
-&lt;p&gt;假设你的 RP ID 设置为 example.com，只有在 example.com 或其子域 login.example.com
-上调用 Passkey，验证会成功。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;authenticatorAttachment&lt;/strong&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;rp&lt;/strong&gt;: &lt;/p&gt;
+&lt;p&gt;假设你的 RP ID 设置为 example.com，只有在 example.com 或其子域 login.example.com 上调用 Passkey，验证会成功。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;authenticatorAttachment&lt;/strong&gt;: &lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;platform：使用本地认证器（如 Windows Hello、Face ID）。&lt;/li&gt;
 &lt;li&gt;cross-platform：使用外部认证器（如 YubiKey，密码管理器）。&lt;/li&gt;
@@ -171,11 +96,11 @@ post(&amp;#39;/api/registerFinish&amp;#39;, { credential });
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h4&gt;服务端验证注册&lt;/h4&gt;
 &lt;p&gt;服务端需要保存 &lt;code&gt;challenge&lt;/code&gt;，以供验证使用。&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const { verifyRegistrationResponse } = require(&amp;quot;@simplewebauthn/server&amp;quot;);
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const { verifyRegistrationResponse } = require(&amp;#39;@simplewebauthn/server&amp;#39;);
 
 const verification = verifyRegistrationResponse({
-    response: clientResponse, // 前端返回的凭证数据
-    expectedChallenge: storedChallenge,
+    response: clientResponse,         // 前端返回的凭证数据
+    expectedChallenge: storedChallenge, 
     expectedOrigin: &amp;quot;https://example.com&amp;quot;,
     expectedRPID: &amp;quot;example.com&amp;quot;,
 });
@@ -187,21 +112,15 @@ if (verification.verified) {
     });
 }
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;code&gt;verifyRegistrationResponse&lt;/code&gt; 会解析 &lt;code&gt;clientDataJSON&lt;/code&gt;，将 &lt;code&gt;challenge&lt;/code&gt;
-与之前保存的进行比较以验证是否对应于当前注册事件。然后从 &lt;code&gt;attestationObject&lt;/code&gt;
-中获取 &lt;code&gt;credential.id&lt;/code&gt; 和 &lt;code&gt;publicKey&lt;/code&gt;，并将它们存储到数据库中。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;verifyRegistrationResponse&lt;/code&gt; 会解析 &lt;code&gt;clientDataJSON&lt;/code&gt;，将 &lt;code&gt;challenge&lt;/code&gt; 与之前保存的进行比较以验证是否对应于当前注册事件。然后从 &lt;code&gt;attestationObject&lt;/code&gt; 中获取 &lt;code&gt;credential.id&lt;/code&gt; 和 &lt;code&gt;publicKey&lt;/code&gt;，并将它们存储到数据库中。&lt;/p&gt;
 &lt;h3&gt;用户登录&lt;/h3&gt;
 &lt;h4&gt;服务端生成 challenge&lt;/h4&gt;
 &lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const publicKeyCredentialRequestOptions = {
     challenge: Uint8Array.from(
-        randomStringFromServer,
-        (c) =&amp;gt; c.charCodeAt(0),
-    ),
+        randomStringFromServer, c =&amp;gt; c.charCodeAt(0)),
     allowCredentials: [{
         id: Uint8Array.from(
-            credentialId,
-            (c) =&amp;gt; c.charCodeAt(0),
-        ), // optional，注册时保存的 credentialID
+            credentialId, c =&amp;gt; c.charCodeAt(0)),// optional，注册时保存的 credentialID
         type: &amp;quot;public-key&amp;quot;,
         transports: [&amp;quot;usb&amp;quot;, &amp;quot;ble&amp;quot;, &amp;quot;nfc&amp;quot;], // 支持的认证器传输方式
     }],
@@ -230,14 +149,14 @@ PublicKeyCredential {
 post(&amp;#39;/api/loginFinish&amp;#39;, { assertion });
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h4&gt;服务端验证登录&lt;/h4&gt;
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const { verifyAuthenticationResponse } = require(&amp;quot;@simplewebauthn/server&amp;quot;);
+&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const { verifyAuthenticationResponse } = require(&amp;#39;@simplewebauthn/server&amp;#39;);
 
 const verification = verifyAuthenticationResponse({
-    response: clientResponse, // 前端返回的数据
-    expectedChallenge: storedChallenge,
+    response: clientResponse,        // 前端返回的数据
+    expectedChallenge: storedChallenge, 
     expectedOrigin: &amp;quot;https://example.com&amp;quot;,
     expectedRPID: &amp;quot;example.com&amp;quot;,
-    credential: storedCredential, // 注册时保存的 credentialId 和 publicKey
+    credential: storedCredential,    // 注册时保存的 credentialId 和 publicKey
 });
 
 if (verification.verified) {
@@ -245,8 +164,7 @@ if (verification.verified) {
     grantAccessToUser();
 }
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;verifyAuthenticationResponse 验证 signature 和 clientDataJSON 是否与存储的
-publicKey 匹配，确认登录成功。&lt;/p&gt;
+&lt;p&gt;verifyAuthenticationResponse 验证 signature 和 clientDataJSON 是否与存储的 publicKey 匹配，确认登录成功。&lt;/p&gt;
 </content:encoded></item><item><title>影响汇率的因素</title><link>https://icealtria.github.io/blog/exchange-rate/</link><guid isPermaLink="true">https://icealtria.github.io/blog/exchange-rate/</guid><description>怎么写金融的文章了(</description><pubDate>Mon, 25 Nov 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;应该算笔记。&lt;/p&gt;
 &lt;h2&gt;物价&lt;/h2&gt;
 &lt;ol&gt;
