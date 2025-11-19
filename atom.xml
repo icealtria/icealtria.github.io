@@ -1,4 +1,287 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>icealtria&apos;s blog</title><description>icealtria&apos;s blog</description><link>https://kururin.cc/</link><follow_challenge><feedId>111979049320282112</feedId><userId>41755107772433408</userId></follow_challenge><item><title>如何识别 Brave 浏览器</title><link>https://kururin.cc/blog/brave-detect/</link><guid isPermaLink="true">https://kururin.cc/blog/brave-detect/</guid><pubDate>Sun, 12 Jan 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;最近在访问 &lt;a href=&quot;https://lobste.rs&quot;&gt;Lobste.rs&lt;/a&gt; 时（后面用 🦞 代替），网站会禁止 Brave 浏览器的访问。有一点我感到很困惑，因为 Brave 在隐藏用户特征方面做了很多努力，其中包括伪装用户代理信息。这让我产生了一个疑问：🦞 是如何识别出 Brave 的？其实我也在愁统计不到 Brave。&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>icealtria&apos;s blog</title><description>icealtria&apos;s blog</description><link>https://kururin.cc/</link><follow_challenge><feedId>111979049320282112</feedId><userId>41755107772433408</userId></follow_challenge><item><title>告别linter驱动编程(※怎么可能) - Rust生命周期</title><link>https://kururin.cc/blog/rust-lifetime/</link><guid isPermaLink="true">https://kururin.cc/blog/rust-lifetime/</guid><pubDate>Wed, 19 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span class=&quot;hidden-text&quot;&gt;草，第一次感觉需要给 blog 加一个 Toc。还有不喜欢这个 typography。&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;学习 Rust 很长一段时间，我虽然理解「生命周期」这个概念，但在实际写代码时，往往不知道什么时候该标注，标注有时也看不懂💦，都是靠 linter 提示，我甚至觉得编译器有能力推断出大部分生命周期。&lt;/p&gt;
+&lt;p&gt;这次借助&lt;a href=&quot;https://academy.jetbrains.com/?tag=Rust&amp;source=MARKETPLACE&quot;&gt;喷气大脑学院&lt;/a&gt;的课程重新学习了下。&lt;/p&gt;
+&lt;p&gt;前置知识：所有权和借用&lt;/p&gt;
+&lt;p&gt;这个在单线程的模型里应该比较好理解，感觉没必要写了。&lt;/p&gt;
+&lt;h2&gt;为什么要有生命周期？&lt;/h2&gt;
+&lt;p&gt;在大多数有 GC（垃圾回收）的语言中，我们不需要关心对象活多久。但在 Rust 中，为了保证内存安全且无需 GC，编译器必须确保：引用的数据在引用被使用期间必须是有效的，换句话说引用的生命周期不能长于它所引用的数据的生命周期，这是为了防止悬垂指针。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-rust&quot;&gt;fn main() {
+    let i = 3; // Lifetime for `i` starts. ────────────────┐
+    {                                                      │
+        let borrow = &amp;amp;i; // `borrow` lifetime starts.   ──┐│
+        println!(&amp;quot;borrow: {}&amp;quot;, borrow);                   ││
+    } // `borrow` ends. ──────────────────────────────────┘│
+}   // Lifetime ends. ─────────────────────────────────────┘
+&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;虽然此处 &lt;code&gt;borrow&lt;/code&gt; 的作用域到花括号结束，但在现代 Rust (NLL) 中，引用的实际有效生命周期是在最后一次使用处结束。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;自动省略规则（什么时候可以不写）&lt;/h2&gt;
+&lt;p&gt;Rust 有一组&lt;a href=&quot;https://doc.rust-lang.org/reference/lifetime-elision.html&quot;&gt;借用省略规则&lt;/a&gt;（lifetime elision），所以常见简单情况不需显式标注。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;第一条规则是每一个是引用的参数都有它自己的生命周期参数。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;如果只有一个输入生命周期参数，那么它被赋予所有输出生命周期参数：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-rust&quot;&gt;fn foo(x: &amp;amp;str) -&amp;gt; &amp;amp;str { x }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;编译器自动把返回值和输入 &lt;code&gt;x&lt;/code&gt; 绑定。&lt;/p&gt;
+&lt;ol start=&quot;3&quot;&gt;
+&lt;li&gt;如果输入参数中有 &amp;amp;self 或 &amp;amp;mut self，那么 self 的生命周期会被赋给所有输出生命周期参数。&lt;pre&gt;&lt;code class=&quot;language-rust&quot;&gt;impl A {
+    fn name(&amp;amp;self) -&amp;gt; &amp;amp;str { &amp;amp;self.field }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;编译器假设返回值的生命周期与 &lt;code&gt;self&lt;/code&gt; 相同。&lt;/p&gt;
+&lt;h2&gt;生命周期标注&lt;/h2&gt;
+&lt;p&gt;当函数返回的引用可能来自多个输入引用时，这类签名无法套用生命周期省略规则，编译器也无法自动推断，必须显式标注。&lt;/p&gt;
+&lt;p&gt;典型情况是“两个输入引用，返回其中一个”：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-rust&quot;&gt;fn pick(x: &amp;amp;str, y: &amp;amp;str) -&amp;gt; &amp;amp;str {
+    if x.len() &amp;gt; y.len() { x } else { y }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;   | fn pick(x: &amp;amp;str, y: &amp;amp;str) -&amp;gt; &amp;amp;str {
+   |            ----     -----     ^ expected named lifetime parameter
+   |
+   = help: this function&amp;#39;s return type contains a borrowed value, but the signature does not say whether it is borrowed from `x` or `y`
+help: consider introducing a named lifetime parameter
+   |
+   | fn pick&amp;lt;&amp;#39;a&amp;gt;(x: &amp;amp;&amp;#39;a str, y: &amp;amp;&amp;#39;a  str) -&amp;gt; &amp;amp;&amp;#39;a str {
+   |        ++++     ++          ++           ++
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这时编译器建议了让函数的两个输入使用相同的生命周期&lt;code&gt;&amp;#39;a&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-rust&quot;&gt;fn pick&amp;lt;&amp;#39;a&amp;gt;(x: &amp;amp;&amp;#39;a str, y: &amp;amp;&amp;#39;a str) -&amp;gt; &amp;amp;&amp;#39;a str {
+    if x.len() &amp;gt; y.len() { x } else { y }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这段标注的真实含义是什么？
+有人会误以为这里的“相同”意味着输入的生命周期真的一样长。它们当然可能不一样长，标注只是让编译器把它们放进“同一约束里”而已。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;对输入的约束：x 和 y 的生命周期必须涵盖&lt;code&gt;&amp;#39;a&lt;/code&gt;。换句话说，&lt;code&gt;&amp;#39;a&lt;/code&gt; 是 &lt;code&gt;x&lt;/code&gt; 和 &lt;code&gt;y&lt;/code&gt; 生命周期的交集（即两者中较短的那个生命周期）。&lt;/li&gt;
+&lt;li&gt;对输出的约束：返回值的生命周期也不会超过 &lt;code&gt;&amp;#39;a&lt;/code&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;生命周期标注&lt;strong&gt;不会改变&lt;/strong&gt;任何引用的实际存活时间，它只是&lt;strong&gt;在类型签名中描述引用之间的关系&lt;/strong&gt;，以便编译器进行安全检查。&lt;/p&gt;
+&lt;p&gt;回到调用处：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-rust&quot;&gt;fn main() {
+    let ret: &amp;amp;str;
+    let a = String::from(&amp;quot;Hello&amp;quot;);
+    {
+        let b = String::from(&amp;quot;World!!&amp;quot;);
+        ret = pick(a.as_str(), b.as_str());
+    }
+    println!(&amp;quot;{}&amp;quot;, ret);
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;编译器在检查 &lt;code&gt;pick&lt;/code&gt; 的调用时，会执行以下逻辑：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;确定 &lt;code&gt;&amp;#39;a&lt;/code&gt; 的范围：&lt;ul&gt;
+&lt;li&gt;输入 &lt;code&gt;x&lt;/code&gt; 来自 &lt;code&gt;a&lt;/code&gt;（活到 &lt;code&gt;main&lt;/code&gt; 结束）。&lt;/li&gt;
+&lt;li&gt;输入 &lt;code&gt;y&lt;/code&gt; 来自 &lt;code&gt;b&lt;/code&gt;（活到内部花括号 &lt;code&gt;}&lt;/code&gt; 结束）。&lt;/li&gt;
+&lt;li&gt;根据签名 &lt;code&gt;fn pick&amp;lt;&amp;#39;a&amp;gt;(x: &amp;amp;&amp;#39;a str, y: &amp;amp;&amp;#39;a str)&lt;/code&gt;，&lt;code&gt;&amp;#39;a&lt;/code&gt; 必须能同时被两个输入满足。因此，编译器推断 &lt;code&gt;&amp;#39;a&lt;/code&gt; 的长度不能超过 &lt;strong&gt;两者中较短的那个&lt;/strong&gt;（即 &lt;code&gt;b&lt;/code&gt; 的生命周期）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;检查返回值的有效性：&lt;ul&gt;
+&lt;li&gt;函数签名承诺返回值的生命周期也是 &lt;code&gt;&amp;#39;a&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;这意味着 &lt;code&gt;ret&lt;/code&gt; 的有效性被限制在了内部花括号之内。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;发现冲突&lt;ul&gt;
+&lt;li&gt;代码试图在内部花括号之外（&lt;code&gt;println!&lt;/code&gt; 处）使用 &lt;code&gt;ret&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;编译器发现 &lt;code&gt;ret&lt;/code&gt; 的推断生命周期（&lt;code&gt;&amp;#39;a&lt;/code&gt;，即内部作用域）无法覆盖实际使用的地方。&lt;/li&gt;
+&lt;li&gt;报错：&lt;code&gt;b&lt;/code&gt; 活得不够久。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;在这个例子中，&lt;code&gt;x&lt;/code&gt; (&amp;quot;Hello&amp;quot;) 长度 5，&lt;code&gt;y&lt;/code&gt; (&amp;quot;World!!&amp;quot;) 长度 7。函数逻辑实际会返回 &lt;code&gt;y&lt;/code&gt;。&lt;code&gt;y&lt;/code&gt; 确实销毁了，报错是应该的。但如果我反过来，让逻辑返回长命的 &lt;code&gt;x&lt;/code&gt; 呢？&lt;/p&gt;
+&lt;p&gt;即使逻辑上返回的是 &lt;code&gt;x&lt;/code&gt;，编译器依然会报错。&lt;/p&gt;
+&lt;p&gt;因为 Rust 的编译器在编译阶段只看函数签名，不看函数体内的运行时逻辑。签名 &lt;code&gt;-&amp;gt; &amp;amp;&amp;#39;a str&lt;/code&gt; 告诉编译器：“返回值可能引用了 &lt;code&gt;x&lt;/code&gt;，也可能引用了 &lt;code&gt;y&lt;/code&gt;”。为了保证内存安全，编译器必须假设最坏的情况——即返回值引用了那个生命周期最短的数据。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Rust的编译器或许有能力从函数体推导出生命周期，但它不会这么做。除了确定性的省略规则，其余情况都是需要标注生命周期。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3&gt;结构体定义中的生命周期标注&lt;/h3&gt;
+&lt;p&gt;如果一个结构体的字段包含引用（reference），那么该结构体的定义必须包含生命周期参数。&lt;/p&gt;
+&lt;p&gt;这归根结底还是为了避免悬垂引用，结构体本身（借用方）的存活时间，不能超过它所引用的数据（出借方）的存活时间。&lt;/p&gt;
+&lt;p&gt;因此，我们需要在定义结构体时显式声明生命周期参数（如 &lt;code&gt;&amp;#39;a&lt;/code&gt;），并将其应用到对应的引用字段上。这意味着：“该结构体实例的存活时间，不能超过生命周期 &lt;code&gt;&amp;#39;a&lt;/code&gt;”。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-rust&quot;&gt;// 1. 在结构体名称后声明生命周期参数 &amp;lt;&amp;#39;a&amp;gt;
+// 2. 在引用类型的字段中使用该生命周期 &amp;amp;&amp;#39;a str
+struct ImportantExcerpt&amp;lt;&amp;#39;a&amp;gt; {
+    part: &amp;amp;&amp;#39;a str,
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;方法定义中的生命周期标注&lt;/h3&gt;
+&lt;p&gt;当我们在具有生命周期的结构体上实现方法时，语法可能会让人感到一点点繁琐，因为我们需要在两个地方声明生命周期：&lt;code&gt;impl&lt;/code&gt; 关键字之后和方法签名中。&lt;/p&gt;
+&lt;h4&gt;&lt;code&gt;impl&lt;/code&gt; 块的标注&lt;/h4&gt;
+&lt;p&gt;如果是给一个带有生命周期的结构体写方法，必须在 &lt;code&gt;impl&lt;/code&gt; 之后声明生命周期，以便在结构体名称中使用它。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-rust&quot;&gt;struct ImportantExcerpt&amp;lt;&amp;#39;a&amp;gt; {
+    part: &amp;amp;&amp;#39;a str,
+}
+
+// 这里的 &amp;lt;&amp;#39;a&amp;gt; 是为了声明 impl 块中用到的生命周期
+// 后面的 ImportantExcerpt&amp;lt;&amp;#39;a&amp;gt; 是在使用这个生命周期
+impl&amp;lt;&amp;#39;a&amp;gt; ImportantExcerpt&amp;lt;&amp;#39;a&amp;gt; {
+    
+    // 根据省略规则，返回值的生命周期默认与 &amp;amp;self 相同（如果返回值是引用）
+    fn level(&amp;amp;self) -&amp;gt; i32 {
+        3
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4&gt;方法签名的独立生命周期&lt;/h4&gt;
+&lt;p&gt;有时候，方法参数的生命周期和结构体本身的生命周期（&lt;code&gt;&amp;#39;a&lt;/code&gt;）是独立的。这时我们可以在方法名称后声明新的生命周期参数。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-rust&quot;&gt;impl&amp;lt;&amp;#39;a&amp;gt; ImportantExcerpt&amp;lt;&amp;#39;a&amp;gt; {
+    // 这里声明了新的生命周期 &amp;#39;b
+    // 根据省略规则，如果不写标注，返回值的生命周期会默认跟 &amp;amp;self 一样是 &amp;#39;a
+    // 但如果我们想明确指定返回值跟第二个参数 announcement 绑定，就需要手动标注
+    fn announce_and_return_part&amp;lt;&amp;#39;b&amp;gt;(
+        &amp;amp;self, 
+        announcement: &amp;amp;&amp;#39;b str
+    ) -&amp;gt; &amp;amp;&amp;#39;b str {
+        println!(&amp;quot;Attention please: {}&amp;quot;, announcement);
+        announcement // 返回值的生命周期是 &amp;#39;b
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;在这个例子中，编译器清楚地知道：&lt;code&gt;ImportantExcerpt&lt;/code&gt; 实例活多久（&lt;code&gt;&amp;#39;a&lt;/code&gt;）与 &lt;code&gt;announcement&lt;/code&gt; 活多久（&lt;code&gt;&amp;#39;b&lt;/code&gt;）没有必然联系，且返回值跟随的是 &lt;code&gt;announcement&lt;/code&gt;。&lt;/p&gt;
+&lt;h3&gt;Trait 实现中的生命周期&lt;/h3&gt;
+&lt;p&gt;有时我们需要为&lt;strong&gt;引用类型&lt;/strong&gt;实现 Trait，比如为了实现 &lt;code&gt;for x in &amp;amp;collection&lt;/code&gt;，我们需要为 &lt;code&gt;&amp;amp;&amp;#39;a TicketStore&lt;/code&gt; 实现 &lt;code&gt;IntoIterator&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;此时，Trait 内部的&lt;strong&gt;关联类型&lt;/strong&gt;（如 &lt;code&gt;Item&lt;/code&gt; 和 &lt;code&gt;IntoIter&lt;/code&gt;）也必须带上生命周期，显式告诉编译器：迭代器产生的数据，其存活时间与原始引用 &lt;code&gt;&amp;#39;a&lt;/code&gt; 是一致的。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-rust&quot;&gt;// 1. 声明生命周期 &amp;lt;&amp;#39;a&amp;gt;，并在目标类型中使用 &amp;amp;&amp;#39;a
+impl&amp;lt;&amp;#39;a&amp;gt; IntoIterator for &amp;amp;&amp;#39;a TicketStore {
+    
+    // 2. 产生的元素是引用，必须标注 &amp;amp;&amp;#39;a
+    type Item = &amp;amp;&amp;#39;a Ticket;
+    
+    // 3. 迭代器内部持有引用，也必须标注 &amp;lt;&amp;#39;a&amp;gt;
+    type IntoIter = std::slice::Iter&amp;lt;&amp;#39;a, Ticket&amp;gt;;
+
+    fn into_iter(self) -&amp;gt; Self::IntoIter {
+        self.tickets.iter()
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这里的关键在于：&lt;code&gt;impl&lt;/code&gt; 声明了 &lt;code&gt;&amp;#39;a&lt;/code&gt;，&lt;code&gt;&amp;amp;TicketStore&lt;/code&gt;, &lt;code&gt;Item&lt;/code&gt; 的生命周期都标记为 &lt;code&gt;&amp;#39;a&lt;/code&gt;， 这样编译器就能确保：只要迭代器还在用，原始的 &lt;code&gt;TicketStore&lt;/code&gt; 就不能被销毁。&lt;/p&gt;
+&lt;h2&gt;变型 强制转换&lt;/h2&gt;
+&lt;p&gt;通常我们说 Rust 没有传统 OOP 那样基于类的继承（Inheritance），因此也没有结构体层面的子类型。但是，在生命周期的范畴内，Rust 确实存在子类型（Subtyping）的概念。&lt;/p&gt;
+&lt;h3&gt;生命周期的子类型&lt;/h3&gt;
+&lt;p&gt;规则非常直观：&lt;strong&gt;生命周期越长，它是越具体的子类型。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;如果 &lt;code&gt;&amp;#39;long&lt;/code&gt; 的生命周期比 &lt;code&gt;&amp;#39;short&lt;/code&gt; 更长（&lt;code&gt;&amp;#39;long: &amp;#39;short&lt;/code&gt;），那么：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;&amp;#39;long&lt;/code&gt; 是 &lt;code&gt;&amp;#39;short&lt;/code&gt; 的 &lt;strong&gt;子类型&lt;/strong&gt;（subtype）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;#39;short&lt;/code&gt; 是 &lt;code&gt;&amp;#39;long&lt;/code&gt; 的 &lt;strong&gt;超类型&lt;/strong&gt;（supertype）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;#39;static&lt;/code&gt; 是所有生命周期的子类型，&lt;code&gt;&amp;#39;static&lt;/code&gt; 表示该引用指向的数据在程序的整个剩余运行期间都有效&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;换句话说：&lt;strong&gt;更长的生命周期是更具体的类型，是子类型&lt;/strong&gt;。&lt;/p&gt;
+&lt;h3&gt;变型 (Variance)&lt;/h3&gt;
+&lt;p&gt;变型描述的是&lt;strong&gt;复合类型&lt;/strong&gt;（如 &lt;code&gt;&amp;amp;&amp;#39;a T&lt;/code&gt; 或 &lt;code&gt;Vec&amp;lt;T&amp;gt;&lt;/code&gt;）相对于其&lt;strong&gt;内部类型&lt;/strong&gt;（&lt;code&gt;&amp;#39;a&lt;/code&gt; 或 &lt;code&gt;T&lt;/code&gt;）的兼容性关系。&lt;/p&gt;
+&lt;p&gt;简单来说就是：如果 &lt;code&gt;A&lt;/code&gt; 是 &lt;code&gt;B&lt;/code&gt; 的子类型，那么 &lt;code&gt;Box&amp;lt;A&amp;gt;&lt;/code&gt; 还是 &lt;code&gt;Box&amp;lt;B&amp;gt;&lt;/code&gt; 的子类型吗？&lt;/p&gt;
+&lt;p&gt;主要有三种变型：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;协变 (Covariant)&lt;/strong&gt;：如果 &lt;code&gt;A&lt;/code&gt; 是 &lt;code&gt;B&lt;/code&gt; 的子类型，那么 &lt;code&gt;Wrapper&amp;lt;A&amp;gt;&lt;/code&gt; 也是 &lt;code&gt;Wrapper&amp;lt;B&amp;gt;&lt;/code&gt; 的子类型。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;逆变 (Contravariant)&lt;/strong&gt;：如果 &lt;code&gt;A&lt;/code&gt; 是 &lt;code&gt;B&lt;/code&gt; 的子类型，那么 &lt;code&gt;Wrapper&amp;lt;B&amp;gt;&lt;/code&gt; 才是 &lt;code&gt;Wrapper&amp;lt;A&amp;gt;&lt;/code&gt; 的子类型。&lt;ul&gt;
+&lt;li&gt;只出现在&lt;strong&gt;函数的参数&lt;/strong&gt;中。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;不变 (Invariant)&lt;/strong&gt;：&lt;strong&gt;“不能替”&lt;/strong&gt;。必须完全匹配，不能互相替代。&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;&amp;amp;mut T&lt;/code&gt;，为了防止将短生命周期的数据写入长生命周期的容器中。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;常见类型的变型表：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&quot;left&quot;&gt;类型&lt;/th&gt;
+&lt;th align=&quot;left&quot;&gt;&amp;#39;a&lt;/th&gt;
+&lt;th align=&quot;left&quot;&gt;T&lt;/th&gt;
+&lt;th align=&quot;left&quot;&gt;U&lt;/th&gt;
+&lt;th align=&quot;left&quot;&gt;说明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;code&gt;&amp;amp;&amp;#39;a T&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;协变&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;协变&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;只读引用，生命周期和类型都可缩小范围&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;code&gt;&amp;amp;&amp;#39;a mut T&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;协变&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;strong&gt;不变&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;strong&gt;重要&lt;/strong&gt;：可变引用的内容类型不能变，防止写入错误&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;code&gt;Box&amp;lt;T&amp;gt;&lt;/code&gt; / &lt;code&gt;Vec&amp;lt;T&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;协变&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;拥有所有权的容器通常是协变的&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;code&gt;UnsafeCell&amp;lt;T&amp;gt;&lt;/code&gt; / &lt;code&gt;Cell&amp;lt;T&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;strong&gt;不变&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;内部可变性类型必须不变&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;code&gt;fn(T) -&amp;gt; U&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;strong&gt;逆变&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;协变&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;参数逆变，返回值协变&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;code&gt;*const T&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;协变&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;code&gt;*mut T&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;strong&gt;不变&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;h3&gt;函数中的强制转换（Coercion）&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt; fn(T) -&amp;gt; U&lt;/code&gt; 中 U 上是协变的&lt;/p&gt;
+&lt;p&gt;这意味着函数实际返回的生命周期，可以比函数签名声明的生命周期更长。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-rust&quot;&gt;// `&amp;lt;&amp;#39;a: &amp;#39;b&amp;gt;` 表示 &amp;#39;a 至少和 &amp;#39;b 一样长（&amp;#39;a 是 &amp;#39;b 的子类型）
+fn choose_first&amp;lt;&amp;#39;a: &amp;#39;b, &amp;#39;b&amp;gt;(first: &amp;amp;&amp;#39;a i32, _: &amp;amp;&amp;#39;b i32) -&amp;gt; &amp;amp;&amp;#39;b i32 {
+    // 既然 &amp;amp;&amp;#39;a i32 是 &amp;amp;&amp;#39;b i32 的子类型，它就可以替代 &amp;amp;&amp;#39;b i32 被返回。
+    first 
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;&lt;code&gt;&amp;#39;static&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;这也意味着，返回一个 &lt;code&gt;&amp;#39;static&lt;/code&gt; 也是合法的&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-rust&quot;&gt;fn pick&amp;lt;&amp;#39;a&amp;gt;(x: &amp;amp;&amp;#39;a str, y: &amp;amp;&amp;#39;a str) -&amp;gt; &amp;amp;&amp;#39;a str {
+    &amp;quot;I am static string constant&amp;quot; // 这是一个 &amp;amp;&amp;#39;static str
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;然而，必须注意的是：&lt;strong&gt;Rust 编译器在检查调用端的安全性时，只看函数签名，不看函数体实现。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;即使 pick 实际上返回了 &lt;code&gt;&amp;#39;static&lt;/code&gt;，调用者看到的签名依然是 &lt;code&gt;-&amp;gt; &amp;amp;&amp;#39;a str&lt;/code&gt;。编译器必须假设最坏的情况——即返回值可能只是其中一个输入参数的引用。&lt;/p&gt;
+&lt;p&gt;因此，下面这段代码依然无法通过编译：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-rust&quot;&gt;fn main() {
+    let ret: &amp;amp;str;
+    let a = String::from(&amp;quot;Hello&amp;quot;);
+    {
+        let b = String::from(&amp;quot;World!!&amp;quot;);
+        ret = pick(a.as_str(), b.as_str());
+    }
+    println!(&amp;quot;{}&amp;quot;, ret);
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;参考&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://doc.rust-lang.org/book/ch10-03-lifetime-syntax.html&quot;&gt;Validating References with Lifetimes - The Rust Programming Language&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://doc.rust-lang.org/nomicon/lifetime-elision.html&quot;&gt;Lifetime Elision - The Rustonomicon&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://doc.rust-lang.org/rust-by-example/scope/lifetime/lifetime_coercion.html&quot;&gt;Coercion - Rust By Example&lt;/a&gt;&lt;/p&gt;
+</content:encoded></item><item><title>如何识别 Brave 浏览器</title><link>https://kururin.cc/blog/brave-detect/</link><guid isPermaLink="true">https://kururin.cc/blog/brave-detect/</guid><pubDate>Sun, 12 Jan 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;最近在访问 &lt;a href=&quot;https://lobste.rs&quot;&gt;Lobste.rs&lt;/a&gt; 时（后面用 🦞 代替），网站会禁止 Brave 浏览器的访问。有一点我感到很困惑，因为 Brave 在隐藏用户特征方面做了很多努力，其中包括伪装用户代理信息。这让我产生了一个疑问：🦞 是如何识别出 Brave 的？其实我也在愁统计不到 Brave。&lt;/p&gt;
 &lt;h2&gt;探索&lt;/h2&gt;
 &lt;h3&gt;利用前端 JavaScript 识别 Brave&lt;/h3&gt;
 &lt;p&gt;起初，我以为 🦞 是通过前端 JS 进行识别的。因为在禁用 JS 后，我发现可以正常访问 🦞。Brave 浏览器提供了一些独特的 API，比如 Wallet，甚至还提供了一个 &lt;code&gt;isBrave&lt;/code&gt; 函数。通过这些 API，很容易在前端检测到用户是否在使用 Brave 浏览器。&lt;/p&gt;
