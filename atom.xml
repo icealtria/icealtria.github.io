@@ -1,4 +1,19 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>凛ノホーム</title><description>凛ノホーム</description><link>https://kururin.cc/</link><follow_challenge><feedId>111979049320282112</feedId><userId>41755107772433408</userId></follow_challenge><item><title>行动力不足源于精确度不足</title><link>https://kururin.cc/blog/acc-opening-hk/</link><guid isPermaLink="true">https://kururin.cc/blog/acc-opening-hk/</guid><pubDate>Thu, 27 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;无须在意标题，这其实是一篇记录港卡开户的文章。&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>凛ノホーム</title><description>凛ノホーム</description><link>https://kururin.cc/</link><follow_challenge><feedId>111979049320282112</feedId><userId>41755107772433408</userId></follow_challenge><item><title>Re: Hasunosora</title><link>https://kururin.cc/blog/new-theme-2025/</link><guid isPermaLink="true">https://kururin.cc/blog/new-theme-2025/</guid><pubDate>Fri, 28 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;终于把那个看了很久的圆角主题给扬掉了。其实很早就想把博客做成方方正正、棱角分明的样子。&lt;/p&gt;
+&lt;p&gt;回想两年前我&lt;a href=&quot;/blog/first-post/&quot;&gt;重拾博客&lt;/a&gt;时，本想写一篇《圆角批判》。。。也没啥好批判的了。&lt;/p&gt;
+&lt;p&gt;旧主题是我自行设计的&amp;quot;mylike&amp;quot;（其实是 Material You Like 的意思），曾试图把手机上Material 3的那套设计语言搬到博客上。这套主题一直是开源在 &lt;a href=&quot;https://github.com/icealtria/astro-mylike-blog/&quot;&gt;GitHub&lt;/a&gt; 上，连个Star都没有（笑）。初版圆角超大的，现在克制了很多，经过几次迭代并最终定格在&lt;a href=&quot;https://mylike-blog.vercel.app/&quot;&gt;现在的样子&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;对于Material 3在手机上的表现，我依然是满意的。但在 2025 年，当桌面操作系统和应用都开始泛滥大圆角设计，拼命向手机体验靠拢时，我反而想反其道而行。我不希望我的博客在电脑上看，是一个被放大的手机 App。&lt;/p&gt;
+&lt;h2&gt;遇见莲之空&lt;/h2&gt;
+&lt;p&gt;新外观“致敬”了 LoveLive! 莲之空官网的设计风格。起初是在 &lt;a href=&quot;https://blog.mikan.ac.cn&quot;&gt;blog.mikan.ac.cn&lt;/a&gt; 看到的，第一眼就觉得符合我口味。侧边导航配合主页大图的设计，很有轻小说或者Anime官网的感觉。后来顺藤摸瓜，发现确实源自LoveLive! 莲之空女学院学园偶像俱乐部的官网：&lt;a href=&quot;https://www.lovelive-anime.jp/hasunosora/%E3%80%82&quot;&gt;https://www.lovelive-anime.jp/hasunosora/。&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;虽然 mikan 的博主开源了&lt;a href=&quot;https://github.com/mitian233/astro-theme-lotus&quot;&gt;代码&lt;/a&gt;，但我 Clone 下来研究后，发现和我的需求不太匹配，还是决定自己动手。&lt;/p&gt;
+&lt;p&gt;现有的移植版还原度很高，但看起来也照搬了原站的JS，CSS依赖，原站在无JS环境下无法显示的特点也继承了过来。对于博客这种以内容为主的站点，我个人有那么点“洁癖”，没有JS页面无法工作肯定是不可以的。&lt;/p&gt;
+&lt;p&gt;二来是代码维护的考虑。我的文章数据结构 (content collection) 和目前的 Astro 程序存在些许耦合，如果要硬搬进现有的移植版，适配工作量可能比在我原有代码基础上修改还要大。还是自己写的代码更好维护。&lt;/p&gt;
+&lt;p&gt;于是，我花了一些时间，重新复刻了这套主题。&lt;/p&gt;
+&lt;p&gt;咱的实现完全没有用到JS，不过用上更现代CSS也就意味着放弃了对旧浏览器的兼容，不过本来也不想着兼容。针对博客的阅读场景，我特意增加了最大宽度限制——毕竟原站是官网展示，在大屏下全宽显示没问题，但作为 Blog 阅读长文时，如果文字拉得太长，可读性会打折扣。&lt;/p&gt;
+&lt;p&gt;以前我对网页的FCP和体积有点执念，总想着把页面控制在100k以内（不压缩）。这次为了视觉效果，我做了一些让步——首页塞进了大图，也用上了Web Font。毕竟，如果一直固守传统的精简主义，某种程度上也会限制我在前端领域的探索。&lt;/p&gt;
+&lt;p&gt;不过好在，现在的页面大小依然控制得很好，即使加上了这些“负担”，首页体积依然控制在200k以内，Lighthouse跑分依旧是满分。在JS的使用上，我依然保持克制。我认为，声明式才是构建界面的未来。&lt;/p&gt;
+&lt;p&gt;配色上我也没照搬原站，而是沿用了之前脚本生成的Material Colors，这样我可以根据心情随时更换色彩风格。&lt;/p&gt;
+&lt;p&gt;当然这套主题未来也会开源，待我修缮下屎山代码。&lt;/p&gt;
+</content:encoded></item><item><title>行动力不足源于精确度不足</title><link>https://kururin.cc/blog/acc-opening-hk/</link><guid isPermaLink="true">https://kururin.cc/blog/acc-opening-hk/</guid><pubDate>Thu, 27 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;无须在意标题，这其实是一篇记录港卡开户的文章。&lt;/p&gt;
 &lt;p&gt;港卡的计划其实在去年就列入了清单。至于为什么拖到现在？如果不是看了一眼通行证发现签注快过期了（虽说续签也不麻烦），我可能还会继续无限期搁置。&lt;/p&gt;
 &lt;p&gt;中间其实有过几次契机。有个朋友也有开港卡的意向，本来想拉上一起的，总觉得有人陪同动力会足一些，结果对方又说没空，这事就搁浅了。&lt;/p&gt;
 &lt;p&gt;汇丰曾短暂支持大陆在线开户，然后90天内到香港境内激活下就可以了，结果刚开放几天就关门（指的是 one）了。当天我就下好 app，就能直接开户，不知为何犹豫了。&lt;/p&gt;
@@ -732,29 +747,37 @@ Set-Content -Path &amp;#39;C:\Users\yourname\Dropbox(Personal)\YourFileName.pdf&
 &lt;p&gt;总的来说，使用网盘作为影片库与 kodi 观看的体验很不错，但是天翼盘不付费的上传体验糟糕。迁移后 NAS 硬盘空间非常充裕，可以不用买新硬盘了。但 alist 通过 WebDav 进行某些操作文件时不是很稳定，除了视频播放。&lt;/p&gt;
 &lt;h2&gt;后记&lt;/h2&gt;
 &lt;p&gt;之后换了 Rclone + Jellyfin，Kodi 每次要等打开电视才扫描片库。使用 rclone mount 将 WebDav 挂载到其中一个目录，然后添加到 Jellyfin，体验要远远好于 kodi。&lt;/p&gt;
-</content:encoded></item><item><title>CanoKey NFC-A 开箱体验</title><link>https://kururin.cc/blog/canokey-unboxing/</link><guid isPermaLink="true">https://kururin.cc/blog/canokey-unboxing/</guid><description>Yubikey 平替</description><pubDate>Tue, 02 Feb 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;strong&gt;这是 eraly bird，不是 pigeon。&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;说下购买的原因，我一直想买一个替代Key，无奈Yubikey售价太高，然后恰好在某群组看到Canokey发售的消息。&lt;/p&gt;
-&lt;p&gt;目前发售的CanoKey拥有Yubikey 5 NFC大部分功能，早起的鸟儿只需要79+10（运费），价格不到Yubikey的四分一。正式版据说也不会太贵。&lt;/p&gt;
-&lt;h2&gt;开箱&lt;/h2&gt;
-&lt;p&gt;外包装是牛皮纸，看上去很环保。本体有滴胶保护，防水且坚固。
-&lt;img src=&quot;https://github.com/icealtria/picx-images-hosting/raw/images/20231022/CanoKey.webp&quot; alt=&quot;Canokey&quot;&gt;&lt;/p&gt;
-&lt;h2&gt;它能做什么&lt;/h2&gt;
-&lt;p&gt;支持的协议&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;U2F / FIDO2&lt;/li&gt;
-&lt;li&gt;OpenPGP&lt;/li&gt;
-&lt;li&gt;PIV&lt;/li&gt;
-&lt;li&gt;HOTP / TOTP&lt;/li&gt;
-&lt;li&gt;NDEF&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Yubikey能做的Canokey基本都能做。我自己平时用的功能大多都覆盖到，除了KeepassXC中的Challenge-Response。并且大部分功能使用方法跟Yubikey一致，甚至还可以使用ykman（YubiKey Manager CLI）管理PIV。所以Canokey支持的特性很多都可以参考&lt;a href=&quot;https://github.com/drduh/YubiKey-Guide&quot;&gt;Yubikey Guide&lt;/a&gt;。&lt;/p&gt;
-&lt;p&gt;个人最常用的还是U2F，OpenPGP Card。使用U2F作为MFA的一种方式，相比TOTP能更好地对抗钓鱼，社工。而OpenPGP Card可以保护私钥不被盗取。&lt;/p&gt;
-&lt;p&gt;另外支持64个FIDO2 resident keys，相比之下Yubikey 5只有25个。&lt;/p&gt;
-&lt;h2&gt;不爽的地方&lt;/h2&gt;
-&lt;p&gt;客户端是网页的，需要Chromium内核的浏览器。我觉得还是有个本地运行的客户端更好，不过客户端开源，可以clone项目到本地，在node环境运行。&lt;/p&gt;
-&lt;p&gt;目前TOTP只在网页使用，很不方便。&lt;/p&gt;
-&lt;p&gt;OpenSSH 8.2版本开始支持FIDO/U2F安全密钥。但Canokey只支持ecdsa-sk，不支持ed25519-sk。有点遗憾，但也还好。&lt;/p&gt;
-&lt;p&gt;NFC灵敏度要比Yubikey低很多，偶尔会出现失败的现象。&lt;/p&gt;
-&lt;h2&gt;总结&lt;/h2&gt;
-&lt;p&gt;目前市面上在单个硬件实现多种协议的Key并不多，而且价格对比Yubikey也没有优势。CanoKey能够支持其大部分核心功能，日常使用基本能够满足需求，后续正式版价格不高的话非常值得入手。&lt;/p&gt;
+</content:encoded></item><item><title>Linux 下使用 gpg 作为 Mailvelope 的后端</title><link>https://kururin.cc/blog/mailvelope/</link><guid isPermaLink="true">https://kururin.cc/blog/mailvelope/</guid><pubDate>Sun, 15 Aug 2021 17:22:41 GMT</pubDate><content:encoded>&lt;p&gt;Mailvelope 是一个开源的浏览器扩展，可以为网页版电子邮箱提供加密和签名。&lt;/p&gt;
+&lt;p&gt;软件默认使用自己的Keyring，后端也不是gpg，使用起来很不方便。这也意味着不能用硬件 Key 进行操作。&lt;/p&gt;
+&lt;p&gt;如果要在 Mailvelope 使用 gpg，Windows 下可以开箱即用，Linux 下的浏览器安装完是调用不了 gpg 的，就需要手动配置下了。
+安装 gpgme&lt;/p&gt;
+&lt;p&gt;需要安装 gpgme 才能与 gpg 通讯，部分发行版已经带了 gpgme 的包。&lt;/p&gt;
+&lt;p&gt;对于我自己用的 Arch&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-sh&quot;&gt;sudo pacman -S gpgme
+Firefox
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;创建一个文件，如果没有文件夹就先创建一个&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;~/.mozilla/native-messaging-hosts/gpgmejson.json&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;然后写入下面内容&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-json&quot;&gt;{
+  &amp;quot;name&amp;quot;: &amp;quot;gpgmejson&amp;quot;,
+  &amp;quot;description&amp;quot;: &amp;quot;JavaScript binding for GnuPG&amp;quot;,
+  &amp;quot;path&amp;quot;: &amp;quot;/usr/bin/gpgme-json&amp;quot;,
+  &amp;quot;type&amp;quot;: &amp;quot;stdio&amp;quot;,
+  &amp;quot;allowed_extensions&amp;quot;: [&amp;quot;jid1-AQqSMBYb0a8ADg@jetpack&amp;quot;]
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Chromium&lt;/p&gt;
+&lt;p&gt;跟 Firefox 操作差不多&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;~/.config/chromium/NativeMessagingHosts/gpgmejson.json&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-json&quot;&gt;{
+  &amp;quot;name&amp;quot;: &amp;quot;gpgmejson&amp;quot;,
+  &amp;quot;description&amp;quot;: &amp;quot;JavaScript binding for GnuPG&amp;quot;,
+  &amp;quot;path&amp;quot;: &amp;quot;/usr/bin/gpgme-json&amp;quot;,
+  &amp;quot;type&amp;quot;: &amp;quot;stdio&amp;quot;,
+  &amp;quot;allowed_origins&amp;quot;: [&amp;quot;chrome-extension://kajibbejlbohfaggdiogboambcijhkke/&amp;quot;]
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;参考&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/mailvelope/mailvelope/wiki/Mailvelope-GnuPG-integration&quot;&gt;https://github.com/mailvelope/mailvelope/wiki/Mailvelope-GnuPG-integration&lt;/a&gt;&lt;/p&gt;
 </content:encoded></item></channel></rss>
