@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>凛ノブログ</title><description>凛ノ部落格</description><link>https://kururin.cc/</link><follow_challenge><feedId>111979049320282112</feedId><userId>41755107772433408</userId></follow_challenge><item><title>Re: Hasunosora</title><link>https://kururin.cc/blog/new-theme-2025/</link><guid isPermaLink="true">https://kururin.cc/blog/new-theme-2025/</guid><pubDate>Fri, 28 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;终于把那个看了很久的圆角主题给扬掉了。其实很早就想把博客做成方方正正、棱角分明的样子。&lt;/p&gt;
 &lt;p&gt;回想两年前我&lt;a href=&quot;/blog/first-post/&quot;&gt;重拾博客&lt;/a&gt;时，本想写一篇《圆角批判》。。。也没啥好批判的了。&lt;/p&gt;
-&lt;p&gt;旧主题是我自行设计的&amp;quot;mylike&amp;quot;（其实是 Material You Like 的意思），曾试图把手机上Material 3的那套设计语言搬到博客上。这套主题一直是开源在 &lt;a href=&quot;https://github.com/icealtria/astro-mylike-blog/&quot;&gt;GitHub&lt;/a&gt; 上，连个Star都没有（笑）。初版圆角超大的，现在克制了很多，经过几次迭代并最终定格在&lt;a href=&quot;https://mylike-blog.vercel.app/&quot;&gt;现在的样子&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;旧主题是我自行设计的”mylike”（其实是 Material You Like 的意思），曾试图把手机上Material 3的那套设计语言搬到博客上。这套主题一直是开源在 &lt;a href=&quot;https://github.com/icealtria/astro-mylike-blog/&quot;&gt;GitHub&lt;/a&gt; 上，连个Star都没有（笑）。初版圆角超大的，现在克制了很多，经过几次迭代并最终定格在&lt;a href=&quot;https://mylike-blog.vercel.app/&quot;&gt;现在的样子&lt;/a&gt;。&lt;/p&gt;
 &lt;p&gt;对于Material 3在手机上的表现，我依然是满意的。但在 2025 年，当桌面操作系统和应用都开始泛滥大圆角设计，拼命向手机体验靠拢时，我反而想反其道而行。我不希望我的博客在电脑上看，是一个被放大的手机 App。&lt;/p&gt;
-&lt;h2&gt;遇见莲之空&lt;/h2&gt;
+&lt;h2 id=&quot;遇见莲之空&quot;&gt;遇见莲之空&lt;/h2&gt;
 &lt;p&gt;新外观“致敬”了 LoveLive! 莲之空官网的设计风格。起初是在 &lt;a href=&quot;https://blog.mikan.ac.cn&quot;&gt;blog.mikan.ac.cn&lt;/a&gt; 看到的，第一眼就觉得符合我口味。侧边导航配合主页大图的设计，很有轻小说或者Anime官网的感觉。后来顺藤摸瓜，发现确实源自LoveLive! 莲之空女学院学园偶像俱乐部的官网：&lt;a href=&quot;https://www.lovelive-anime.jp/hasunosora/%E3%80%82&quot;&gt;https://www.lovelive-anime.jp/hasunosora/。&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;虽然 mikan 的博主开源了&lt;a href=&quot;https://github.com/mitian233/astro-theme-lotus&quot;&gt;代码&lt;/a&gt;，但我 Clone 下来研究后，发现和我的需求不太匹配，还是决定自己动手。&lt;/p&gt;
 &lt;p&gt;现有的移植版还原度很高，但看起来也照搬了原站的JS，CSS依赖，原站在无JS环境下无法显示的特点也继承了过来。对于博客这种以内容为主的站点，我个人有那么点“洁癖”，没有JS页面无法工作肯定是不可以的。&lt;/p&gt;
@@ -12,40 +12,72 @@
 &lt;p&gt;以前我对网页的FCP和体积有点执念，总想着把页面控制在100k以内（不压缩）。这次为了视觉效果，我做了一些让步——首页塞进了大图，也用上了Web Font。毕竟，如果一直固守传统的精简主义，某种程度上也会限制我在前端领域的探索。&lt;/p&gt;
 &lt;p&gt;不过好在，现在的页面大小依然控制得很好，即使加上了这些“负担”，首页体积依然控制在200k以内，Lighthouse跑分依旧是满分。在JS的使用上，我依然保持克制。我认为，声明式才是构建界面的未来。&lt;/p&gt;
 &lt;p&gt;配色上我也没照搬原站，而是沿用了之前脚本生成的Material Colors，这样我可以根据心情随时更换色彩风格。&lt;/p&gt;
-&lt;p&gt;当然这套主题未来也会开源，待我修缮下屎山代码，打磨下细节。&lt;/p&gt;
-</content:encoded></item><item><title>行动力不足源于精确度不足</title><link>https://kururin.cc/blog/acc-opening-hk/</link><guid isPermaLink="true">https://kururin.cc/blog/acc-opening-hk/</guid><description>港卡开户经历</description><pubDate>Thu, 27 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;无须在意标题，这其实是一篇记录港卡开户的文章。&lt;/p&gt;
+&lt;p&gt;当然这套主题未来也会开源，待我修缮下屎山代码，打磨下细节。&lt;/p&gt;</content:encoded></item><item><title>行动力不足源于精确度不足</title><link>https://kururin.cc/blog/acc-opening-hk/</link><guid isPermaLink="true">https://kururin.cc/blog/acc-opening-hk/</guid><description>港卡开户经历</description><pubDate>Thu, 27 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;无须在意标题，这其实是一篇记录港卡开户的文章。&lt;/p&gt;
 &lt;p&gt;港卡的计划其实在去年就列入了清单。至于为什么拖到现在？如果不是看了一眼通行证发现签注快过期了（虽说续签也不麻烦），我可能还会继续无限期搁置。&lt;/p&gt;
 &lt;p&gt;中间其实有过几次契机。有个朋友也有开港卡的意向，本来想拉上一起的，总觉得有人陪同动力会足一些，结果对方又说没空，这事就搁浅了。&lt;/p&gt;
 &lt;p&gt;汇丰曾短暂支持大陆在线开户，然后90天内到香港境内激活下就可以了，结果刚开放几天就关门（指的是 one）了。当天我就下好 app，就能直接开户，不知为何犹豫了。&lt;/p&gt;
 &lt;p&gt;不过并无大碍，反正开户都要去香港，到香港再在线开户也差不多，都不用到支行。&lt;/p&gt;
 &lt;p&gt;但是脑子不这么觉得，“办港卡”不是一个动作，而是一团模糊的、高认知负担的复合物：它是“规划香港行程 + 协调空闲时间 + 计算交通成本 + 社交恐惧”的总和。大脑厌恶这种模糊的不确定性，潜意识直接选择了“拖延”。&lt;/p&gt;
 &lt;p&gt;坏消息接踵而至：2025 年 9 月起，盈透证券（IBKR）将要求大陆客户提供“海外居住证明”。港卡的一大作用，美股券商出入金会方便很多，ibkr汇率也比银行优秀。这下办理港卡的意义又少了一个。&lt;/p&gt;
-&lt;h2&gt;计划&lt;/h2&gt;
+&lt;h2 id=&quot;计划&quot;&gt;计划&lt;/h2&gt;
 &lt;p&gt;现在想着趁着签注到期之前还是办了吧，接着就开始计划了，通行证一早就办好了的，一般一个星期就能办下来，没什么门槛。&lt;/p&gt;
 &lt;p&gt;接着签注，办理通行证的时候可以顺便签注，不过口岸附近的地方也有自助签注机（这个附近没有很近），去香港前可以去续签。&lt;/p&gt;
 &lt;p&gt;网络方面，可以在支付宝/淘宝的飞猪上面买一个一天3GB的流量包，价格10元。一般过境后能自动启动，实在不行也可以手动选择网络 CMHK。3GB流量很够用了，完成开户+导航+中途查找资料也就用了500MB&lt;/p&gt;
 &lt;p&gt;根据以往经验，省内出行最经济的是大巴，接着就到某书寻找大巴线路，然后我发现有的线路能直接到达福田/罗湖口岸附近。也省去了转车的麻烦。我的路线选择是到达罗湖口岸，然后从罗湖搭地铁到上水站，找个地方坐下来办理。&lt;/p&gt;
 &lt;p&gt;我当时在彩園廣場外面找了个地方坐着，地铁出站就能看到彩園廣場。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;IMG_1459~2.JPG&quot; alt=&quot;上水彩园路&quot;&gt;&lt;/p&gt;
-&lt;h2&gt;开戶前&lt;/h2&gt;
+&lt;figure class=&quot;livephoto&quot; data-astro-cid-nvr62e2s&gt; &lt;img src=&quot;/assets/IMG_1459_1Lmx78.webp&quot; alt data-astro-cid-nvr62e2s=&quot;true&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; fetchpriority=&quot;auto&quot; width=&quot;2252&quot; height=&quot;2376&quot; class=&quot;livephoto__image&quot;&gt; &lt;span class=&quot;absolute text-white top-2 left-2 z-10&quot; data-astro-cid-nvr62e2s&gt; &lt;svg width=&quot;1em&quot; height=&quot;1em&quot; data-astro-cid-nvr62e2s=&quot;true&quot; data-icon=&quot;mdi:image-filter-tilt-shift&quot;&gt;   &lt;symbol id=&quot;ai:mdi:image-filter-tilt-shift&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;path fill=&quot;currentColor&quot; d=&quot;M5.68 19.74A10 10 0 0 0 11 21.95v-2.02a7.94 7.94 0 0 1-3.9-1.62m5.9 1.62v2.02c2-.2 3.84-1 5.32-2.21l-1.43-1.43c-1.1.86-2.43 1.44-3.89 1.62m5.31-3.03l1.43 1.43c1.21-1.48 2.01-3.33 2.21-5.33h-2.02a7.94 7.94 0 0 1-1.62 3.9M15 12a3 3 0 0 0-3-3a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3M4.07 13H2.05c.2 2 1 3.84 2.21 5.32l1.43-1.43A7.87 7.87 0 0 1 4.07 13m1.62-5.9L4.26 5.68A10 10 0 0 0 2.05 11h2.02c.18-1.46.76-2.79 1.62-3.9M19.93 11h2.02c-.2-2-1-3.84-2.21-5.32L18.31 7.1a7.94 7.94 0 0 1 1.62 3.9m-1.61-6.74A10 10 0 0 0 13 2.05v2.02c1.46.18 2.79.76 3.9 1.62M11 4.07V2.05c-2 .2-3.84 1-5.32 2.21L7.1 5.69A7.94 7.94 0 0 1 11 4.07&quot;/&gt;&lt;/symbol&gt;&lt;use href=&quot;#ai:mdi:image-filter-tilt-shift&quot;&gt;&lt;/use&gt;  &lt;/svg&gt; &lt;/span&gt; &lt;video src=&quot;/assets/IMG_1459.webm&quot; muted class=&quot;livephoto__video&quot; data-astro-cid-nvr62e2s&gt;&lt;/video&gt; &lt;figcaption data-astro-cid-nvr62e2s&gt;上水彩园路&lt;/figcaption&gt; &lt;/figure&gt;  &lt;script&gt;
+    document.addEventListener(&quot;DOMContentLoaded&quot;, () =&gt; {
+        const lives = document.querySelectorAll(&quot;.livephoto&quot;);
+
+        lives.forEach((lp) =&gt; {
+            const video = lp.querySelector(&quot;video&quot;);
+
+            // Play on hover
+            lp.addEventListener(&quot;mouseenter&quot;, () =&gt; {
+                lp.classList.add(&quot;playing&quot;);
+                video.currentTime = 0;
+                video.play();
+            });
+
+            // Stop on leave
+            lp.addEventListener(&quot;mouseleave&quot;, () =&gt; {
+                lp.classList.remove(&quot;playing&quot;);
+                video.pause();
+                sleep(100);
+                video.currentTime = 0;
+            });
+
+            // Revert to photo when video finishes
+            video.addEventListener(&quot;ended&quot;, () =&gt; {
+                lp.classList.remove(&quot;playing&quot;);
+                sleep(100);
+                video.currentTime = 0;
+            });
+        });
+    });
+&lt;/script&gt;
+&lt;h2 id=&quot;开戶前&quot;&gt;开戶前&lt;/h2&gt;
 &lt;p&gt;如果有人想以咱的文章作为攻略，那你不一定要按照我的步骤来，开户完后发现还有更优解。&lt;/p&gt;
 &lt;p&gt;我图省事直接开了汇丰One和中银自在理财，其实应该开卓越理财和中银那个什么来着，先冲高端，再降级才对。&lt;/p&gt;
 &lt;p&gt;卓越理财可以在国内尝试开户，然后90天内到香港激活就可以了。后面存款不足可以降级，只不过又要跑一趟香港，但是可以用于申请pulse信用卡（4.4%返现），中银的万事达借记卡似乎也能得到0.5%返利。另外卓越理财帐户尾号是888，One是833。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;后面我再仔细了解了一下，卓越要开pulse还是需要10万港币，但是比正常的one升卓越(1M HKD)要求低很多。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h3&gt;物资清单&lt;/h3&gt;
+&lt;h3 id=&quot;物资清单&quot;&gt;物资清单&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;App 准备&lt;ul&gt;
+&lt;li&gt;App 准备
+&lt;ul&gt;
 &lt;li&gt;提前在境内下载好「HSBC HK」、「中银香港」、「ZA Bank」&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;确保通行证有效期需大于六个月&lt;/li&gt;
-&lt;li&gt;出入境记录（关键材料），是一个带有数字签名PDF文件&lt;ul&gt;
+&lt;li&gt;出入境记录（关键材料），是一个带有数字签名PDF文件
+&lt;ul&gt;
 &lt;li&gt;可通过「12367」小程序查询，入境后一阵就有，有的人也试过两三小时的&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;内地银行卡（众安专用）&lt;ul&gt;
+&lt;li&gt;内地银行卡（众安专用）
+&lt;ul&gt;
 &lt;li&gt;准备一张内地储蓄卡卡号&lt;/li&gt;
 &lt;li&gt;众安注册时填写的手机号，必须与这张内地卡在银行预留的手机号完全一致，需要接收验证码&lt;/li&gt;
 &lt;/ul&gt;
@@ -54,19 +86,22 @@
 &lt;li&gt;银行都是要绑定E-mail的&lt;/li&gt;
 &lt;li&gt;连接香港本地网络（漫游或当地Wi-Fi均可）&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;香港上海匯豐銀行 HSBC&lt;/h2&gt;
+&lt;h2 id=&quot;香港上海匯豐銀行-hsbc&quot;&gt;香港上海匯豐銀行 HSBC&lt;/h2&gt;
 &lt;p&gt;开户步骤：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;打开 App，选择开立账户。&lt;/li&gt;
-&lt;li&gt;填写信息时注意以下细节：&lt;ul&gt;
+&lt;li&gt;填写信息时注意以下细节：
+&lt;ul&gt;
 &lt;li&gt;证件类型：选择「中国大陆身份证」&lt;/li&gt;
 &lt;li&gt;开户目的：选择「在港储蓄 / 投资」&lt;/li&gt;
 &lt;li&gt;出入境记录&lt;/li&gt;
-&lt;li&gt;地址：需中英文双语填写&lt;ul&gt;
+&lt;li&gt;地址：需中英文双语填写
+&lt;ul&gt;
 &lt;li&gt;不会写英文地址的，可用LLM翻译下&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;职业信息：可如实填写&lt;ul&gt;
+&lt;li&gt;职业信息：可如实填写
+&lt;ul&gt;
 &lt;li&gt;例如填写「待业」也可顺利通过&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -79,17 +114,17 @@
 &lt;p&gt;申请汇丰万事达借记卡（蓝狮子）
 操作路径：App → 银行卡页面 → 申请 → 等待邮寄&lt;/p&gt;
 &lt;p&gt;第二天凌晨就收到了 hello 邮件，这意味着卡即将邮寄&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;IMG_1570.webp&quot; alt=&quot;汇丰ATM卡&quot;&gt;&lt;/p&gt;
-&lt;h3&gt;關於密码函&lt;/h3&gt;
+&lt;figure&gt;&lt;img src=&quot;/assets/IMG_1570_ZjEyif.webp&quot; alt=&quot;汇丰ATM卡&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; fetchpriority=&quot;auto&quot; width=&quot;2016&quot; height=&quot;1512&quot;&gt;&lt;figcaption&gt;汇丰ATM卡&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;關於密码函&quot;&gt;關於密码函&lt;/h3&gt;
 &lt;p&gt;由于密码函是通过平邮（airmail）送出，现在很多人都没有信箱，也没电话联系，存在一定丢件风险。可以提前联系邮局的人留意一下。&lt;/p&gt;
 &lt;p&gt;当时十几天没收到自己亲自跑了一趟邮局，邮局的人告诉我我的地址并没有收到国际邮件，然后工作人员让我登记一下电话号码有邮件会通知我，之后过了两天就打电话给我说收到了。&lt;/p&gt;
-&lt;h3&gt;卡片激活&lt;/h3&gt;
+&lt;h3 id=&quot;卡片激活&quot;&gt;卡片激活&lt;/h3&gt;
 &lt;p&gt;蓝狮子（借记卡）激活方法：App → 银行卡 → 管理借记卡 → 激活&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;输入卡的到期时间即可激活&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;红狮子（自动柜员机卡）激活方法：App → 线上对话 → 输入「激活卡片」→ 选择「自动柜员机卡」 → 「新卡」 → 「海外」→ 输入卡片前 6 位号码→ 输入卡片正面右下角最后 1 位数字→ 激活完成&lt;/p&gt;
-&lt;h2&gt;中銀香港 BOC HK&lt;/h2&gt;
+&lt;h2 id=&quot;中銀香港-boc-hk&quot;&gt;中銀香港 BOC HK&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;打开「中银香港」App → 选择「开立账户」&lt;/li&gt;
 &lt;li&gt;证件类型选择「内地身份证」&lt;/li&gt;
@@ -99,9 +134,9 @@
 &lt;li&gt;按提示完成证件上传、入境记录上传、人脸识别&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;刚开通两三天是打开APP的中银卡会提示亲临分行，其实不用的，等个几天就能用了，然后实体卡也会自动邮寄。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;IMG_1565.JPG&quot; alt=&quot;中银卡&quot;&gt;&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&quot;/assets/IMG_1565_VdG7b.webp&quot; alt=&quot;中银卡&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; fetchpriority=&quot;auto&quot; width=&quot;3905&quot; height=&quot;2563&quot;&gt;&lt;figcaption&gt;中银卡&lt;/figcaption&gt;&lt;/figure&gt;
 &lt;p&gt;中银的实体卡疑似挂号信，跟汇丰密码函同一天收到。收到卡的时候邮递员告诉我有一张是挂号信，汇丰的两张信确定是普通 airmail，中银卡的信封没看到 registered 的字样，但似乎那张挂号信就是中银的。&lt;/p&gt;
-&lt;h2&gt;眾安銀行 ZA Bank&lt;/h2&gt;
+&lt;h2 id=&quot;眾安銀行-za-bank&quot;&gt;眾安銀行 ZA Bank&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;开户需要一张大陆的储蓄卡卡号和该卡的银行预留号码，而且众安的注册手机号要和大陆储蓄卡的預留手机号一致&lt;/li&gt;
 &lt;li&gt;到香港后打开 App 即可开户&lt;/li&gt;
@@ -110,7 +145,7 @@
 &lt;p&gt;邀请码可以填我的：&lt;code&gt;TSX5X7&lt;/code&gt;，开户送 50 HKD，提款用的visa实体卡需要支付 35 HKD， 我选择不领，虚拟卡够了。&lt;/p&gt;
 &lt;p&gt;开户完成后建议开通股票和基金功能，虽然可能用不上，这两个功能必须在香港才能开通，以后想开又要跑一趟香港。&lt;/p&gt;
 &lt;p&gt;众安卡有一个消费返股票的激励，也可能需要开通股票才能用？&lt;/p&gt;
-&lt;h2&gt;尾&lt;/h2&gt;
+&lt;h2 id=&quot;尾&quot;&gt;尾&lt;/h2&gt;
 &lt;p&gt;整个线上开户的流程相当顺利，进入香港一个多小时就完成三家银行开户。算上路途也就花了半天时间。&lt;/p&gt;
 &lt;p&gt;后面想着到彩园广场的M记吃点东西，发现一直都很多人。结果还是回深圳进食了。&lt;/p&gt;
 &lt;p&gt;接下来就是等待实体卡邮寄了，可以参考一下。&lt;/p&gt;
@@ -122,393 +157,341 @@
 &lt;/ul&gt;
 &lt;blockquote&gt;
 &lt;p&gt;后来我想通了，其实我对炒股没这么大热情。大陆人办理港卡也只能投资和储蓄，不能用于其他用途，我还指望能用它收钱呢，还挺失望的。&lt;/p&gt;
-&lt;/blockquote&gt;
-</content:encoded></item><item><title>告别linter驱动编程(※怎么可能) - Rust生命周期</title><link>https://kururin.cc/blog/rust-lifetime/</link><guid isPermaLink="true">https://kururin.cc/blog/rust-lifetime/</guid><pubDate>Wed, 19 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span class=&quot;hidden-text&quot;&gt;草，第一次感觉需要给 blog 加一个 Toc。还有不喜欢这个 typography。&lt;/span&gt;&lt;/p&gt;
+&lt;/blockquote&gt;</content:encoded></item><item><title>告别linter驱动编程(※怎么可能) - Rust生命周期</title><link>https://kururin.cc/blog/rust-lifetime/</link><guid isPermaLink="true">https://kururin.cc/blog/rust-lifetime/</guid><pubDate>Wed, 19 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span class=&quot;hidden-text&quot;&gt;草，第一次感觉需要给 blog 加一个 Toc。还有不喜欢这个 typography。&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;学习 Rust 很长一段时间，我虽然理解「生命周期」这个概念，但在实际写代码时，往往不知道什么时候该标注，标注有时也看不懂💦，都是靠 linter 提示，我甚至觉得编译器有能力推断出大部分生命周期。&lt;/p&gt;
-&lt;p&gt;这次借助&lt;a href=&quot;https://academy.jetbrains.com/?tag=Rust&amp;source=MARKETPLACE&quot;&gt;喷气大脑学院&lt;/a&gt;的课程重新学习了下。&lt;/p&gt;
+&lt;p&gt;这次借助&lt;a href=&quot;https://academy.jetbrains.com/?tag=Rust&amp;#x26;source=MARKETPLACE&quot;&gt;喷气大脑学院&lt;/a&gt;的课程重新学习了下。&lt;/p&gt;
 &lt;p&gt;前置知识：所有权和借用&lt;/p&gt;
 &lt;p&gt;这个在单线程的模型里应该比较好理解，感觉没必要写了。&lt;/p&gt;
-&lt;h2&gt;为什么要有生命周期？&lt;/h2&gt;
+&lt;h2 id=&quot;为什么要有生命周期&quot;&gt;为什么要有生命周期？&lt;/h2&gt;
 &lt;p&gt;在大多数有 GC（垃圾回收）的语言中，我们不需要关心对象活多久。但在 Rust 中，为了保证内存安全且无需 GC，编译器必须确保：引用的数据在引用被使用期间必须是有效的，换句话说引用的生命周期不能长于它所引用的数据的生命周期，这是为了防止悬垂指针。&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-rust&quot;&gt;fn main() {
-    let i = 3; // Lifetime for `i` starts. ────────────────┐
-    {                                                      │
-        let borrow = &amp;amp;i; // `borrow` lifetime starts.   ──┐│
-        println!(&amp;quot;borrow: {}&amp;quot;, borrow);                   ││
-    } // `borrow` ends. ──────────────────────────────────┘│
-}   // Lifetime ends. ─────────────────────────────────────┘
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;astro-code monokai&quot; style=&quot;background-color:#272822;color:#F8F8F2; overflow-x: auto;&quot; tabindex=&quot;0&quot; data-language=&quot;rust&quot;&gt;&lt;code&gt;&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F92672&quot;&gt;fn&lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt; main&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;() {&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#66D9EF;font-style:italic&quot;&gt;    let&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt; i &lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color:#AE81FF&quot;&gt; 3&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;; &lt;/span&gt;&lt;span style=&quot;color:#88846F&quot;&gt;// Lifetime for `i` starts. ────────────────┐&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    {                                                      │&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#66D9EF;font-style:italic&quot;&gt;        let&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt; borrow &lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt; &amp;#x26;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;i; &lt;/span&gt;&lt;span style=&quot;color:#88846F&quot;&gt;// `borrow` lifetime starts.   ──┐│&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt;        println!&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt;&quot;borrow: {}&quot;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;, borrow);                   ││&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    } &lt;/span&gt;&lt;span style=&quot;color:#88846F&quot;&gt;// `borrow` ends. ──────────────────────────────────┘│&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;}   &lt;/span&gt;&lt;span style=&quot;color:#88846F&quot;&gt;// Lifetime ends. ─────────────────────────────────────┘&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;blockquote&gt;
 &lt;p&gt;虽然此处 &lt;code&gt;borrow&lt;/code&gt; 的作用域到花括号结束，但在现代 Rust (NLL) 中，引用的实际有效生命周期是在最后一次使用处结束。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h2&gt;自动省略规则（什么时候可以不写）&lt;/h2&gt;
+&lt;h2 id=&quot;自动省略规则什么时候可以不写&quot;&gt;自动省略规则（什么时候可以不写）&lt;/h2&gt;
 &lt;p&gt;Rust 有一组&lt;a href=&quot;https://doc.rust-lang.org/reference/lifetime-elision.html&quot;&gt;借用省略规则&lt;/a&gt;（lifetime elision），所以常见简单情况不需显式标注。&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;第一条规则是每一个是引用的参数都有它自己的生命周期参数。&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;第一条规则是每一个是引用的参数都有它自己的生命周期参数。&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;如果只有一个输入生命周期参数，那么它被赋予所有输出生命周期参数：&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-rust&quot;&gt;fn foo(x: &amp;amp;str) -&amp;gt; &amp;amp;str { x }
-&lt;/code&gt;&lt;/pre&gt;
+&lt;li&gt;
+&lt;p&gt;如果只有一个输入生命周期参数，那么它被赋予所有输出生命周期参数：&lt;/p&gt;
+&lt;pre class=&quot;astro-code monokai&quot; style=&quot;background-color:#272822;color:#F8F8F2; overflow-x: auto;&quot; tabindex=&quot;0&quot; data-language=&quot;rust&quot;&gt;&lt;code&gt;&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F92672&quot;&gt;fn&lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt; foo&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;(x&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;:&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt; &amp;#x26;&lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;str&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;) &lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;-&gt;&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt; &amp;#x26;&lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;str&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt; { x }&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;编译器自动把返回值和输入 &lt;code&gt;x&lt;/code&gt; 绑定。&lt;/p&gt;
 &lt;ol start=&quot;3&quot;&gt;
-&lt;li&gt;如果输入参数中有 &amp;amp;self 或 &amp;amp;mut self，那么 self 的生命周期会被赋给所有输出生命周期参数。&lt;pre&gt;&lt;code class=&quot;language-rust&quot;&gt;impl A {
-    fn name(&amp;amp;self) -&amp;gt; &amp;amp;str { &amp;amp;self.field }
-}
-&lt;/code&gt;&lt;/pre&gt;
+&lt;li&gt;如果输入参数中有 &amp;#x26;self 或 &amp;#x26;mut self，那么 self 的生命周期会被赋给所有输出生命周期参数。
+&lt;pre class=&quot;astro-code monokai&quot; style=&quot;background-color:#272822;color:#F8F8F2; overflow-x: auto;&quot; tabindex=&quot;0&quot; data-language=&quot;rust&quot;&gt;&lt;code&gt;&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F92672&quot;&gt;impl&lt;/span&gt;&lt;span&gt; &lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;A&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt; {&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F92672&quot;&gt;    fn&lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt; name&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;&amp;#x26;&lt;/span&gt;&lt;span style=&quot;color:#FD971F&quot;&gt;self&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;) &lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;-&gt;&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt; &amp;#x26;&lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;str&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt; { &lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;&amp;#x26;&lt;/span&gt;&lt;span style=&quot;color:#FD971F&quot;&gt;self&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;field }&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;编译器假设返回值的生命周期与 &lt;code&gt;self&lt;/code&gt; 相同。&lt;/p&gt;
-&lt;h2&gt;生命周期标注&lt;/h2&gt;
+&lt;h2 id=&quot;生命周期标注&quot;&gt;生命周期标注&lt;/h2&gt;
 &lt;p&gt;当函数返回的引用可能来自多个输入引用时，这类签名无法套用生命周期省略规则，编译器也无法自动推断，必须显式标注。&lt;/p&gt;
 &lt;p&gt;典型情况是“两个输入引用，返回其中一个”：&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-rust&quot;&gt;fn pick(x: &amp;amp;str, y: &amp;amp;str) -&amp;gt; &amp;amp;str {
-    if x.len() &amp;gt; y.len() { x } else { y }
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;   | fn pick(x: &amp;amp;str, y: &amp;amp;str) -&amp;gt; &amp;amp;str {
-   |            ----     -----     ^ expected named lifetime parameter
-   |
-   = help: this function&amp;#39;s return type contains a borrowed value, but the signature does not say whether it is borrowed from `x` or `y`
-help: consider introducing a named lifetime parameter
-   |
-   | fn pick&amp;lt;&amp;#39;a&amp;gt;(x: &amp;amp;&amp;#39;a str, y: &amp;amp;&amp;#39;a  str) -&amp;gt; &amp;amp;&amp;#39;a str {
-   |        ++++     ++          ++           ++
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;这时编译器建议了让函数的两个输入使用相同的生命周期&lt;code&gt;&amp;#39;a&lt;/code&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-rust&quot;&gt;fn pick&amp;lt;&amp;#39;a&amp;gt;(x: &amp;amp;&amp;#39;a str, y: &amp;amp;&amp;#39;a str) -&amp;gt; &amp;amp;&amp;#39;a str {
-    if x.len() &amp;gt; y.len() { x } else { y }
-}
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;astro-code monokai&quot; style=&quot;background-color:#272822;color:#F8F8F2; overflow-x: auto;&quot; tabindex=&quot;0&quot; data-language=&quot;rust&quot;&gt;&lt;code&gt;&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F92672&quot;&gt;fn&lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt; pick&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;(x&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;:&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt; &amp;#x26;&lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;str&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;, y&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;:&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt; &amp;#x26;&lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;str&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;) &lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;-&gt;&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt; &amp;#x26;&lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;str&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt; {&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F92672&quot;&gt;    if&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt; x&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt;len&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;() &gt; y&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt;len&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;() { x } &lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;else&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt; { y }&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;astro-code monokai&quot; style=&quot;background-color:#272822;color:#F8F8F2; overflow-x: auto;&quot; tabindex=&quot;0&quot; data-language=&quot;plaintext&quot;&gt;&lt;code&gt;&lt;span class=&quot;line&quot;&gt;&lt;span&gt;   | fn pick(x: &amp;#x26;str, y: &amp;#x26;str) -&gt; &amp;#x26;str {&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span&gt;   |            ----     -----     ^ expected named lifetime parameter&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span&gt;   |&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span&gt;   = help: this function&apos;s return type contains a borrowed value, but the signature does not say whether it is borrowed from `x` or `y`&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span&gt;help: consider introducing a named lifetime parameter&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span&gt;   |&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span&gt;   | fn pick&amp;#x3C;&apos;a&gt;(x: &amp;#x26;&apos;a str, y: &amp;#x26;&apos;a  str) -&gt; &amp;#x26;&apos;a str {&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span&gt;   |        ++++     ++          ++           ++&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这时编译器建议了让函数的两个输入使用相同的生命周期&lt;code&gt;&apos;a&lt;/code&gt;&lt;/p&gt;
+&lt;pre class=&quot;astro-code monokai&quot; style=&quot;background-color:#272822;color:#F8F8F2; overflow-x: auto;&quot; tabindex=&quot;0&quot; data-language=&quot;rust&quot;&gt;&lt;code&gt;&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F92672&quot;&gt;fn&lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt; pick&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&amp;#x3C;&apos;&lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;a&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&gt;(x&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;:&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt; &amp;#x26;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&apos;&lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;a&lt;/span&gt;&lt;span&gt; &lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;str&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;, y&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;:&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt; &amp;#x26;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&apos;&lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;a&lt;/span&gt;&lt;span&gt; &lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;str&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;) &lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;-&gt;&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt; &amp;#x26;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&apos;&lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;a&lt;/span&gt;&lt;span&gt; &lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;str&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt; {&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F92672&quot;&gt;    if&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt; x&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt;len&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;() &gt; y&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt;len&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;() { x } &lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;else&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt; { y }&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;这段标注的真实含义是什么？
 有人会误以为这里的“相同”意味着输入的生命周期真的一样长。它们当然可能不一样长，标注只是让编译器把它们放进“同一约束里”而已。&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;对输入的约束：x 和 y 的生命周期必须涵盖&lt;code&gt;&amp;#39;a&lt;/code&gt;。换句话说，&lt;code&gt;&amp;#39;a&lt;/code&gt; 是 &lt;code&gt;x&lt;/code&gt; 和 &lt;code&gt;y&lt;/code&gt; 生命周期的交集（即两者中较短的那个生命周期）。&lt;/li&gt;
-&lt;li&gt;对输出的约束：返回值的生命周期也不会超过 &lt;code&gt;&amp;#39;a&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;对输入的约束：x 和 y 的生命周期必须涵盖&lt;code&gt;&apos;a&lt;/code&gt;。换句话说，&lt;code&gt;&apos;a&lt;/code&gt; 是 &lt;code&gt;x&lt;/code&gt; 和 &lt;code&gt;y&lt;/code&gt; 生命周期的交集（即两者中较短的那个生命周期）。&lt;/li&gt;
+&lt;li&gt;对输出的约束：返回值的生命周期也不会超过 &lt;code&gt;&apos;a&lt;/code&gt;。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;生命周期标注&lt;strong&gt;不会改变&lt;/strong&gt;任何引用的实际存活时间，它只是&lt;strong&gt;在类型签名中描述引用之间的关系&lt;/strong&gt;，以便编译器进行安全检查。&lt;/p&gt;
 &lt;p&gt;回到调用处：&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-rust&quot;&gt;fn main() {
-    let ret: &amp;amp;str;
-    let a = String::from(&amp;quot;Hello&amp;quot;);
-    {
-        let b = String::from(&amp;quot;World!!&amp;quot;);
-        ret = pick(a.as_str(), b.as_str());
-    }
-    println!(&amp;quot;{}&amp;quot;, ret);
-}
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;astro-code monokai&quot; style=&quot;background-color:#272822;color:#F8F8F2; overflow-x: auto;&quot; tabindex=&quot;0&quot; data-language=&quot;rust&quot;&gt;&lt;code&gt;&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F92672&quot;&gt;fn&lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt; main&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;() {&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#66D9EF;font-style:italic&quot;&gt;    let&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt; ret&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;:&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt; &amp;#x26;&lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;str&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#66D9EF;font-style:italic&quot;&gt;    let&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt; a &lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;=&lt;/span&gt;&lt;span&gt; &lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;String&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;::&lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt;from&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt;&quot;Hello&quot;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;);&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    {&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#66D9EF;font-style:italic&quot;&gt;        let&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt; b &lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;=&lt;/span&gt;&lt;span&gt; &lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;String&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;::&lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt;from&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt;&quot;World!!&quot;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;);&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;        ret &lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt; pick&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;(a&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt;as_str&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;(), b&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt;as_str&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;());&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    }&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt;    println!&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt;&quot;{}&quot;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;, ret);&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;编译器在检查 &lt;code&gt;pick&lt;/code&gt; 的调用时，会执行以下逻辑：&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;确定 &lt;code&gt;&amp;#39;a&lt;/code&gt; 的范围：&lt;ul&gt;
+&lt;li&gt;确定 &lt;code&gt;&apos;a&lt;/code&gt; 的范围：
+&lt;ul&gt;
 &lt;li&gt;输入 &lt;code&gt;x&lt;/code&gt; 来自 &lt;code&gt;a&lt;/code&gt;（活到 &lt;code&gt;main&lt;/code&gt; 结束）。&lt;/li&gt;
 &lt;li&gt;输入 &lt;code&gt;y&lt;/code&gt; 来自 &lt;code&gt;b&lt;/code&gt;（活到内部花括号 &lt;code&gt;}&lt;/code&gt; 结束）。&lt;/li&gt;
-&lt;li&gt;根据签名 &lt;code&gt;fn pick&amp;lt;&amp;#39;a&amp;gt;(x: &amp;amp;&amp;#39;a str, y: &amp;amp;&amp;#39;a str)&lt;/code&gt;，&lt;code&gt;&amp;#39;a&lt;/code&gt; 必须能同时被两个输入满足。因此，编译器推断 &lt;code&gt;&amp;#39;a&lt;/code&gt; 的长度不能超过 &lt;strong&gt;两者中较短的那个&lt;/strong&gt;（即 &lt;code&gt;b&lt;/code&gt; 的生命周期）。&lt;/li&gt;
+&lt;li&gt;根据签名 &lt;code&gt;fn pick&amp;#x3C;&apos;a&gt;(x: &amp;#x26;&apos;a str, y: &amp;#x26;&apos;a str)&lt;/code&gt;，&lt;code&gt;&apos;a&lt;/code&gt; 必须能同时被两个输入满足。因此，编译器推断 &lt;code&gt;&apos;a&lt;/code&gt; 的长度不能超过 &lt;strong&gt;两者中较短的那个&lt;/strong&gt;（即 &lt;code&gt;b&lt;/code&gt; 的生命周期）。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;检查返回值的有效性：&lt;ul&gt;
-&lt;li&gt;函数签名承诺返回值的生命周期也是 &lt;code&gt;&amp;#39;a&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;检查返回值的有效性：
+&lt;ul&gt;
+&lt;li&gt;函数签名承诺返回值的生命周期也是 &lt;code&gt;&apos;a&lt;/code&gt;。&lt;/li&gt;
 &lt;li&gt;这意味着 &lt;code&gt;ret&lt;/code&gt; 的有效性被限制在了内部花括号之内。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;发现冲突&lt;ul&gt;
+&lt;li&gt;发现冲突
+&lt;ul&gt;
 &lt;li&gt;代码试图在内部花括号之外（&lt;code&gt;println!&lt;/code&gt; 处）使用 &lt;code&gt;ret&lt;/code&gt;。&lt;/li&gt;
-&lt;li&gt;编译器发现 &lt;code&gt;ret&lt;/code&gt; 的推断生命周期（&lt;code&gt;&amp;#39;a&lt;/code&gt;，即内部作用域）无法覆盖实际使用的地方。&lt;/li&gt;
+&lt;li&gt;编译器发现 &lt;code&gt;ret&lt;/code&gt; 的推断生命周期（&lt;code&gt;&apos;a&lt;/code&gt;，即内部作用域）无法覆盖实际使用的地方。&lt;/li&gt;
 &lt;li&gt;报错：&lt;code&gt;b&lt;/code&gt; 活得不够久。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;在这个例子中，&lt;code&gt;x&lt;/code&gt; (&amp;quot;Hello&amp;quot;) 长度 5，&lt;code&gt;y&lt;/code&gt; (&amp;quot;World!!&amp;quot;) 长度 7。函数逻辑实际会返回 &lt;code&gt;y&lt;/code&gt;。&lt;code&gt;y&lt;/code&gt; 确实销毁了，报错是应该的。但如果我反过来，让逻辑返回长命的 &lt;code&gt;x&lt;/code&gt; 呢？&lt;/p&gt;
+&lt;p&gt;在这个例子中，&lt;code&gt;x&lt;/code&gt; (“Hello”) 长度 5，&lt;code&gt;y&lt;/code&gt; (“World!!”) 长度 7。函数逻辑实际会返回 &lt;code&gt;y&lt;/code&gt;。&lt;code&gt;y&lt;/code&gt; 确实销毁了，报错是应该的。但如果我反过来，让逻辑返回长命的 &lt;code&gt;x&lt;/code&gt; 呢？&lt;/p&gt;
 &lt;p&gt;即使逻辑上返回的是 &lt;code&gt;x&lt;/code&gt;，编译器依然会报错。&lt;/p&gt;
-&lt;p&gt;因为 Rust 的编译器在编译阶段只看函数签名，不看函数体内的运行时逻辑。签名 &lt;code&gt;-&amp;gt; &amp;amp;&amp;#39;a str&lt;/code&gt; 告诉编译器：“返回值可能引用了 &lt;code&gt;x&lt;/code&gt;，也可能引用了 &lt;code&gt;y&lt;/code&gt;”。为了保证内存安全，编译器必须假设最坏的情况——即返回值引用了那个生命周期最短的数据。&lt;/p&gt;
+&lt;p&gt;因为 Rust 的编译器在编译阶段只看函数签名，不看函数体内的运行时逻辑。签名 &lt;code&gt;-&gt; &amp;#x26;&apos;a str&lt;/code&gt; 告诉编译器：“返回值可能引用了 &lt;code&gt;x&lt;/code&gt;，也可能引用了 &lt;code&gt;y&lt;/code&gt;”。为了保证内存安全，编译器必须假设最坏的情况——即返回值引用了那个生命周期最短的数据。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Rust的编译器或许有能力从函数体推导出生命周期，但它不会这么做。除了确定性的省略规则，其余情况都是需要标注生命周期。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h3&gt;结构体定义中的生命周期标注&lt;/h3&gt;
+&lt;h3 id=&quot;结构体定义中的生命周期标注&quot;&gt;结构体定义中的生命周期标注&lt;/h3&gt;
 &lt;p&gt;如果一个结构体的字段包含引用（reference），那么该结构体的定义必须包含生命周期参数。&lt;/p&gt;
 &lt;p&gt;这归根结底还是为了避免悬垂引用，结构体本身（借用方）的存活时间，不能超过它所引用的数据（出借方）的存活时间。&lt;/p&gt;
-&lt;p&gt;因此，我们需要在定义结构体时显式声明生命周期参数（如 &lt;code&gt;&amp;#39;a&lt;/code&gt;），并将其应用到对应的引用字段上。这意味着：“该结构体实例的存活时间，不能超过生命周期 &lt;code&gt;&amp;#39;a&lt;/code&gt;”。&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-rust&quot;&gt;// 1. 在结构体名称后声明生命周期参数 &amp;lt;&amp;#39;a&amp;gt;
-// 2. 在引用类型的字段中使用该生命周期 &amp;amp;&amp;#39;a str
-struct ImportantExcerpt&amp;lt;&amp;#39;a&amp;gt; {
-    part: &amp;amp;&amp;#39;a str,
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3&gt;方法定义中的生命周期标注&lt;/h3&gt;
+&lt;p&gt;因此，我们需要在定义结构体时显式声明生命周期参数（如 &lt;code&gt;&apos;a&lt;/code&gt;），并将其应用到对应的引用字段上。这意味着：“该结构体实例的存活时间，不能超过生命周期 &lt;code&gt;&apos;a&lt;/code&gt;”。&lt;/p&gt;
+&lt;pre class=&quot;astro-code monokai&quot; style=&quot;background-color:#272822;color:#F8F8F2; overflow-x: auto;&quot; tabindex=&quot;0&quot; data-language=&quot;rust&quot;&gt;&lt;code&gt;&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#88846F&quot;&gt;// 1. 在结构体名称后声明生命周期参数 &amp;#x3C;&apos;a&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#88846F&quot;&gt;// 2. 在引用类型的字段中使用该生命周期 &amp;#x26;&apos;a str&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#66D9EF;font-style:italic&quot;&gt;struct&lt;/span&gt;&lt;span&gt; &lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;ImportantExcerpt&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&amp;#x3C;&apos;&lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;a&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&gt; {&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    part&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;:&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt; &amp;#x26;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&apos;&lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;a&lt;/span&gt;&lt;span&gt; &lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;str&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;,&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&quot;方法定义中的生命周期标注&quot;&gt;方法定义中的生命周期标注&lt;/h3&gt;
 &lt;p&gt;当我们在具有生命周期的结构体上实现方法时，语法可能会让人感到一点点繁琐，因为我们需要在两个地方声明生命周期：&lt;code&gt;impl&lt;/code&gt; 关键字之后和方法签名中。&lt;/p&gt;
-&lt;h4&gt;&lt;code&gt;impl&lt;/code&gt; 块的标注&lt;/h4&gt;
+&lt;h4 id=&quot;impl-块的标注&quot;&gt;&lt;code&gt;impl&lt;/code&gt; 块的标注&lt;/h4&gt;
 &lt;p&gt;如果是给一个带有生命周期的结构体写方法，必须在 &lt;code&gt;impl&lt;/code&gt; 之后声明生命周期，以便在结构体名称中使用它。&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-rust&quot;&gt;struct ImportantExcerpt&amp;lt;&amp;#39;a&amp;gt; {
-    part: &amp;amp;&amp;#39;a str,
-}
-
-// 这里的 &amp;lt;&amp;#39;a&amp;gt; 是为了声明 impl 块中用到的生命周期
-// 后面的 ImportantExcerpt&amp;lt;&amp;#39;a&amp;gt; 是在使用这个生命周期
-impl&amp;lt;&amp;#39;a&amp;gt; ImportantExcerpt&amp;lt;&amp;#39;a&amp;gt; {
-    
-    // 根据省略规则，返回值的生命周期默认与 &amp;amp;self 相同（如果返回值是引用）
-    fn level(&amp;amp;self) -&amp;gt; i32 {
-        3
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h4&gt;方法签名的独立生命周期&lt;/h4&gt;
-&lt;p&gt;有时候，方法参数的生命周期和结构体本身的生命周期（&lt;code&gt;&amp;#39;a&lt;/code&gt;）是独立的。这时我们可以在方法名称后声明新的生命周期参数。&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-rust&quot;&gt;impl&amp;lt;&amp;#39;a&amp;gt; ImportantExcerpt&amp;lt;&amp;#39;a&amp;gt; {
-    // 这里声明了新的生命周期 &amp;#39;b
-    // 根据省略规则，如果不写标注，返回值的生命周期会默认跟 &amp;amp;self 一样是 &amp;#39;a
-    // 但如果我们想明确指定返回值跟第二个参数 announcement 绑定，就需要手动标注
-    fn announce_and_return_part&amp;lt;&amp;#39;b&amp;gt;(
-        &amp;amp;self, 
-        announcement: &amp;amp;&amp;#39;b str
-    ) -&amp;gt; &amp;amp;&amp;#39;b str {
-        println!(&amp;quot;Attention please: {}&amp;quot;, announcement);
-        announcement // 返回值的生命周期是 &amp;#39;b
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;在这个例子中，编译器清楚地知道：&lt;code&gt;ImportantExcerpt&lt;/code&gt; 实例活多久（&lt;code&gt;&amp;#39;a&lt;/code&gt;）与 &lt;code&gt;announcement&lt;/code&gt; 活多久（&lt;code&gt;&amp;#39;b&lt;/code&gt;）没有必然联系，且返回值跟随的是 &lt;code&gt;announcement&lt;/code&gt;。&lt;/p&gt;
-&lt;h3&gt;Trait 实现中的生命周期&lt;/h3&gt;
-&lt;p&gt;有时我们需要为&lt;strong&gt;引用类型&lt;/strong&gt;实现 Trait，比如为了实现 &lt;code&gt;for x in &amp;amp;collection&lt;/code&gt;，我们需要为 &lt;code&gt;&amp;amp;&amp;#39;a TicketStore&lt;/code&gt; 实现 &lt;code&gt;IntoIterator&lt;/code&gt;。&lt;/p&gt;
-&lt;p&gt;此时，Trait 内部的&lt;strong&gt;关联类型&lt;/strong&gt;（如 &lt;code&gt;Item&lt;/code&gt; 和 &lt;code&gt;IntoIter&lt;/code&gt;）也必须带上生命周期，显式告诉编译器：迭代器产生的数据，其存活时间与原始引用 &lt;code&gt;&amp;#39;a&lt;/code&gt; 是一致的。&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-rust&quot;&gt;// 1. 声明生命周期 &amp;lt;&amp;#39;a&amp;gt;，并在目标类型中使用 &amp;amp;&amp;#39;a
-impl&amp;lt;&amp;#39;a&amp;gt; IntoIterator for &amp;amp;&amp;#39;a TicketStore {
-    
-    // 2. 产生的元素是引用，必须标注 &amp;amp;&amp;#39;a
-    type Item = &amp;amp;&amp;#39;a Ticket;
-    
-    // 3. 迭代器内部持有引用，也必须标注 &amp;lt;&amp;#39;a&amp;gt;
-    type IntoIter = std::slice::Iter&amp;lt;&amp;#39;a, Ticket&amp;gt;;
-
-    fn into_iter(self) -&amp;gt; Self::IntoIter {
-        self.tickets.iter()
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;这里的关键在于：&lt;code&gt;impl&lt;/code&gt; 声明了 &lt;code&gt;&amp;#39;a&lt;/code&gt;，&lt;code&gt;&amp;amp;TicketStore&lt;/code&gt;, &lt;code&gt;Item&lt;/code&gt; 的生命周期都标记为 &lt;code&gt;&amp;#39;a&lt;/code&gt;， 这样编译器就能确保：只要迭代器还在用，原始的 &lt;code&gt;TicketStore&lt;/code&gt; 就不能被销毁。&lt;/p&gt;
-&lt;h2&gt;变型 强制转换&lt;/h2&gt;
+&lt;pre class=&quot;astro-code monokai&quot; style=&quot;background-color:#272822;color:#F8F8F2; overflow-x: auto;&quot; tabindex=&quot;0&quot; data-language=&quot;rust&quot;&gt;&lt;code&gt;&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#66D9EF;font-style:italic&quot;&gt;struct&lt;/span&gt;&lt;span&gt; &lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;ImportantExcerpt&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&amp;#x3C;&apos;&lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;a&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&gt; {&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    part&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;:&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt; &amp;#x26;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&apos;&lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;a&lt;/span&gt;&lt;span&gt; &lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;str&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;,&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;}&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#88846F&quot;&gt;// 这里的 &amp;#x3C;&apos;a&gt; 是为了声明 impl 块中用到的生命周期&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#88846F&quot;&gt;// 后面的 ImportantExcerpt&amp;#x3C;&apos;a&gt; 是在使用这个生命周期&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F92672&quot;&gt;impl&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&amp;#x3C;&apos;&lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;a&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&gt; &lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;ImportantExcerpt&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&amp;#x3C;&apos;&lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;a&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&gt; {&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    &lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#88846F&quot;&gt;    // 根据省略规则，返回值的生命周期默认与 &amp;#x26;self 相同（如果返回值是引用）&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F92672&quot;&gt;    fn&lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt; level&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;&amp;#x26;&lt;/span&gt;&lt;span style=&quot;color:#FD971F&quot;&gt;self&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;) &lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;-&gt;&lt;/span&gt;&lt;span&gt; &lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;i32&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt; {&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#AE81FF&quot;&gt;        3&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    }&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&quot;方法签名的独立生命周期&quot;&gt;方法签名的独立生命周期&lt;/h4&gt;
+&lt;p&gt;有时候，方法参数的生命周期和结构体本身的生命周期（&lt;code&gt;&apos;a&lt;/code&gt;）是独立的。这时我们可以在方法名称后声明新的生命周期参数。&lt;/p&gt;
+&lt;pre class=&quot;astro-code monokai&quot; style=&quot;background-color:#272822;color:#F8F8F2; overflow-x: auto;&quot; tabindex=&quot;0&quot; data-language=&quot;rust&quot;&gt;&lt;code&gt;&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F92672&quot;&gt;impl&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&amp;#x3C;&apos;&lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;a&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&gt; &lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;ImportantExcerpt&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&amp;#x3C;&apos;&lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;a&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&gt; {&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#88846F&quot;&gt;    // 这里声明了新的生命周期 &apos;b&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#88846F&quot;&gt;    // 根据省略规则，如果不写标注，返回值的生命周期会默认跟 &amp;#x26;self 一样是 &apos;a&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#88846F&quot;&gt;    // 但如果我们想明确指定返回值跟第二个参数 announcement 绑定，就需要手动标注&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F92672&quot;&gt;    fn&lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt; announce_and_return_part&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&amp;#x3C;&apos;&lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;b&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&gt;(&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F92672&quot;&gt;        &amp;#x26;&lt;/span&gt;&lt;span style=&quot;color:#FD971F&quot;&gt;self&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;, &lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;        announcement&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;:&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt; &amp;#x26;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&apos;&lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;b&lt;/span&gt;&lt;span&gt; &lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;str&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    ) &lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;-&gt;&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt; &amp;#x26;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&apos;&lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;b&lt;/span&gt;&lt;span&gt; &lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;str&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt; {&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt;        println!&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt;&quot;Attention please: {}&quot;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;, announcement);&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;        announcement &lt;/span&gt;&lt;span style=&quot;color:#88846F&quot;&gt;// 返回值的生命周期是 &apos;b&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    }&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;在这个例子中，编译器清楚地知道：&lt;code&gt;ImportantExcerpt&lt;/code&gt; 实例活多久（&lt;code&gt;&apos;a&lt;/code&gt;）与 &lt;code&gt;announcement&lt;/code&gt; 活多久（&lt;code&gt;&apos;b&lt;/code&gt;）没有必然联系，且返回值跟随的是 &lt;code&gt;announcement&lt;/code&gt;。&lt;/p&gt;
+&lt;h3 id=&quot;trait-实现中的生命周期&quot;&gt;Trait 实现中的生命周期&lt;/h3&gt;
+&lt;p&gt;有时我们需要为&lt;strong&gt;引用类型&lt;/strong&gt;实现 Trait，比如为了实现 &lt;code&gt;for x in &amp;#x26;collection&lt;/code&gt;，我们需要为 &lt;code&gt;&amp;#x26;&apos;a TicketStore&lt;/code&gt; 实现 &lt;code&gt;IntoIterator&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;此时，Trait 内部的&lt;strong&gt;关联类型&lt;/strong&gt;（如 &lt;code&gt;Item&lt;/code&gt; 和 &lt;code&gt;IntoIter&lt;/code&gt;）也必须带上生命周期，显式告诉编译器：迭代器产生的数据，其存活时间与原始引用 &lt;code&gt;&apos;a&lt;/code&gt; 是一致的。&lt;/p&gt;
+&lt;pre class=&quot;astro-code monokai&quot; style=&quot;background-color:#272822;color:#F8F8F2; overflow-x: auto;&quot; tabindex=&quot;0&quot; data-language=&quot;rust&quot;&gt;&lt;code&gt;&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#88846F&quot;&gt;// 1. 声明生命周期 &amp;#x3C;&apos;a&gt;，并在目标类型中使用 &amp;#x26;&apos;a&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F92672&quot;&gt;impl&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&amp;#x3C;&apos;&lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;a&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&gt; &lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;IntoIterator&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt; for&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt; &amp;#x26;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&apos;&lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;a&lt;/span&gt;&lt;span&gt; &lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;TicketStore&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt; {&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    &lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#88846F&quot;&gt;    // 2. 产生的元素是引用，必须标注 &amp;#x26;&apos;a&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#66D9EF;font-style:italic&quot;&gt;    type&lt;/span&gt;&lt;span&gt; &lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;Item&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt; =&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt; &amp;#x26;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&apos;&lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;a&lt;/span&gt;&lt;span&gt; &lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;Ticket&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    &lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#88846F&quot;&gt;    // 3. 迭代器内部持有引用，也必须标注 &amp;#x3C;&apos;a&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#66D9EF;font-style:italic&quot;&gt;    type&lt;/span&gt;&lt;span&gt; &lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;IntoIter&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt; =&lt;/span&gt;&lt;span&gt; &lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;std&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;::&lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;slice&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;::&lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;Iter&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&amp;#x3C;&apos;&lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;a&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;, &lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;Ticket&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&gt;;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F92672&quot;&gt;    fn&lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt; into_iter&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;color:#FD971F&quot;&gt;self&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;) &lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;-&gt;&lt;/span&gt;&lt;span style=&quot;color:#FD971F&quot;&gt; Self&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;::&lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;IntoIter&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt; {&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#FD971F&quot;&gt;        self&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;tickets&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt;iter&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;()&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    }&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这里的关键在于：&lt;code&gt;impl&lt;/code&gt; 声明了 &lt;code&gt;&apos;a&lt;/code&gt;，&lt;code&gt;&amp;#x26;TicketStore&lt;/code&gt;, &lt;code&gt;Item&lt;/code&gt; 的生命周期都标记为 &lt;code&gt;&apos;a&lt;/code&gt;， 这样编译器就能确保：只要迭代器还在用，原始的 &lt;code&gt;TicketStore&lt;/code&gt; 就不能被销毁。&lt;/p&gt;
+&lt;h2 id=&quot;变型-强制转换&quot;&gt;变型 强制转换&lt;/h2&gt;
 &lt;p&gt;通常我们说 Rust 没有传统 OOP 那样基于类的继承（Inheritance），因此也没有结构体层面的子类型。但是，在生命周期的范畴内，Rust 确实存在子类型（Subtyping）的概念。&lt;/p&gt;
-&lt;h3&gt;生命周期的子类型&lt;/h3&gt;
+&lt;h3 id=&quot;生命周期的子类型&quot;&gt;生命周期的子类型&lt;/h3&gt;
 &lt;p&gt;规则非常直观：&lt;strong&gt;生命周期越长，它是越具体的子类型。&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;如果 &lt;code&gt;&amp;#39;long&lt;/code&gt; 的生命周期比 &lt;code&gt;&amp;#39;short&lt;/code&gt; 更长（&lt;code&gt;&amp;#39;long: &amp;#39;short&lt;/code&gt;），那么：&lt;/p&gt;
+&lt;p&gt;如果 &lt;code&gt;&apos;long&lt;/code&gt; 的生命周期比 &lt;code&gt;&apos;short&lt;/code&gt; 更长（&lt;code&gt;&apos;long: &apos;short&lt;/code&gt;），那么：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;&amp;#39;long&lt;/code&gt; 是 &lt;code&gt;&amp;#39;short&lt;/code&gt; 的 &lt;strong&gt;子类型&lt;/strong&gt;（subtype）&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;&amp;#39;short&lt;/code&gt; 是 &lt;code&gt;&amp;#39;long&lt;/code&gt; 的 &lt;strong&gt;超类型&lt;/strong&gt;（supertype）&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;&amp;#39;static&lt;/code&gt; 是所有生命周期的子类型，&lt;code&gt;&amp;#39;static&lt;/code&gt; 表示该引用指向的数据在程序的整个剩余运行期间都有效&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&apos;long&lt;/code&gt; 是 &lt;code&gt;&apos;short&lt;/code&gt; 的 &lt;strong&gt;子类型&lt;/strong&gt;（subtype）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&apos;short&lt;/code&gt; 是 &lt;code&gt;&apos;long&lt;/code&gt; 的 &lt;strong&gt;超类型&lt;/strong&gt;（supertype）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&apos;static&lt;/code&gt; 是所有生命周期的子类型，&lt;code&gt;&apos;static&lt;/code&gt; 表示该引用指向的数据在程序的整个剩余运行期间都有效&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;换句话说：&lt;strong&gt;更长的生命周期是更具体的类型，是子类型&lt;/strong&gt;。&lt;/p&gt;
-&lt;h3&gt;变型 (Variance)&lt;/h3&gt;
-&lt;p&gt;变型描述的是&lt;strong&gt;复合类型&lt;/strong&gt;（如 &lt;code&gt;&amp;amp;&amp;#39;a T&lt;/code&gt; 或 &lt;code&gt;Vec&amp;lt;T&amp;gt;&lt;/code&gt;）相对于其&lt;strong&gt;内部类型&lt;/strong&gt;（&lt;code&gt;&amp;#39;a&lt;/code&gt; 或 &lt;code&gt;T&lt;/code&gt;）的兼容性关系。&lt;/p&gt;
-&lt;p&gt;简单来说就是：如果 &lt;code&gt;A&lt;/code&gt; 是 &lt;code&gt;B&lt;/code&gt; 的子类型，那么 &lt;code&gt;Box&amp;lt;A&amp;gt;&lt;/code&gt; 还是 &lt;code&gt;Box&amp;lt;B&amp;gt;&lt;/code&gt; 的子类型吗？&lt;/p&gt;
+&lt;h3 id=&quot;变型-variance&quot;&gt;变型 (Variance)&lt;/h3&gt;
+&lt;p&gt;变型描述的是&lt;strong&gt;复合类型&lt;/strong&gt;（如 &lt;code&gt;&amp;#x26;&apos;a T&lt;/code&gt; 或 &lt;code&gt;Vec&amp;#x3C;T&gt;&lt;/code&gt;）相对于其&lt;strong&gt;内部类型&lt;/strong&gt;（&lt;code&gt;&apos;a&lt;/code&gt; 或 &lt;code&gt;T&lt;/code&gt;）的兼容性关系。&lt;/p&gt;
+&lt;p&gt;简单来说就是：如果 &lt;code&gt;A&lt;/code&gt; 是 &lt;code&gt;B&lt;/code&gt; 的子类型，那么 &lt;code&gt;Box&amp;#x3C;A&gt;&lt;/code&gt; 还是 &lt;code&gt;Box&amp;#x3C;B&gt;&lt;/code&gt; 的子类型吗？&lt;/p&gt;
 &lt;p&gt;主要有三种变型：&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;协变 (Covariant)&lt;/strong&gt;：如果 &lt;code&gt;A&lt;/code&gt; 是 &lt;code&gt;B&lt;/code&gt; 的子类型，那么 &lt;code&gt;Wrapper&amp;lt;A&amp;gt;&lt;/code&gt; 也是 &lt;code&gt;Wrapper&amp;lt;B&amp;gt;&lt;/code&gt; 的子类型。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;逆变 (Contravariant)&lt;/strong&gt;：如果 &lt;code&gt;A&lt;/code&gt; 是 &lt;code&gt;B&lt;/code&gt; 的子类型，那么 &lt;code&gt;Wrapper&amp;lt;B&amp;gt;&lt;/code&gt; 才是 &lt;code&gt;Wrapper&amp;lt;A&amp;gt;&lt;/code&gt; 的子类型。&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;协变 (Covariant)&lt;/strong&gt;：如果 &lt;code&gt;A&lt;/code&gt; 是 &lt;code&gt;B&lt;/code&gt; 的子类型，那么 &lt;code&gt;Wrapper&amp;#x3C;A&gt;&lt;/code&gt; 也是 &lt;code&gt;Wrapper&amp;#x3C;B&gt;&lt;/code&gt; 的子类型。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;逆变 (Contravariant)&lt;/strong&gt;：如果 &lt;code&gt;A&lt;/code&gt; 是 &lt;code&gt;B&lt;/code&gt; 的子类型，那么 &lt;code&gt;Wrapper&amp;#x3C;B&gt;&lt;/code&gt; 才是 &lt;code&gt;Wrapper&amp;#x3C;A&gt;&lt;/code&gt; 的子类型。
+&lt;ul&gt;
 &lt;li&gt;只出现在&lt;strong&gt;函数的参数&lt;/strong&gt;中。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;不变 (Invariant)&lt;/strong&gt;：&lt;strong&gt;“不能替”&lt;/strong&gt;。必须完全匹配，不能互相替代。&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;&amp;amp;mut T&lt;/code&gt;，为了防止将短生命周期的数据写入长生命周期的容器中。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;不变 (Invariant)&lt;/strong&gt;：&lt;strong&gt;“不能替”&lt;/strong&gt;。必须完全匹配，不能互相替代。
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;&amp;#x26;mut T&lt;/code&gt;，为了防止将短生命周期的数据写入长生命周期的容器中。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;常见类型的变型表：&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th align=&quot;left&quot;&gt;类型&lt;/th&gt;
-&lt;th align=&quot;left&quot;&gt;&amp;#39;a&lt;/th&gt;
-&lt;th align=&quot;left&quot;&gt;T&lt;/th&gt;
-&lt;th align=&quot;left&quot;&gt;U&lt;/th&gt;
-&lt;th align=&quot;left&quot;&gt;说明&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;&lt;tr&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;code&gt;&amp;amp;&amp;#39;a T&lt;/code&gt;&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;协变&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;协变&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;只读引用，生命周期和类型都可缩小范围&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;code&gt;&amp;amp;&amp;#39;a mut T&lt;/code&gt;&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;协变&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;strong&gt;不变&lt;/strong&gt;&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;strong&gt;重要&lt;/strong&gt;：可变引用的内容类型不能变，防止写入错误&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;code&gt;Box&amp;lt;T&amp;gt;&lt;/code&gt; / &lt;code&gt;Vec&amp;lt;T&amp;gt;&lt;/code&gt;&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;协变&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;拥有所有权的容器通常是协变的&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;code&gt;UnsafeCell&amp;lt;T&amp;gt;&lt;/code&gt; / &lt;code&gt;Cell&amp;lt;T&amp;gt;&lt;/code&gt;&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;strong&gt;不变&lt;/strong&gt;&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;内部可变性类型必须不变&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;code&gt;fn(T) -&amp;gt; U&lt;/code&gt;&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;strong&gt;逆变&lt;/strong&gt;&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;协变&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;参数逆变，返回值协变&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;code&gt;*const T&lt;/code&gt;&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;协变&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;code&gt;*mut T&lt;/code&gt;&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;strong&gt;不变&lt;/strong&gt;&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;h3&gt;函数中的强制转换（Coercion）&lt;/h3&gt;
-&lt;p&gt;&lt;code&gt; fn(T) -&amp;gt; U&lt;/code&gt; 中 U 上是协变的&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th align=&quot;left&quot;&gt;类型&lt;/th&gt;&lt;th align=&quot;left&quot;&gt;’a&lt;/th&gt;&lt;th align=&quot;left&quot;&gt;T&lt;/th&gt;&lt;th align=&quot;left&quot;&gt;U&lt;/th&gt;&lt;th align=&quot;left&quot;&gt;说明&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td align=&quot;left&quot;&gt;&lt;code&gt;&amp;#x26;&apos;a T&lt;/code&gt;&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;协变&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;协变&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;只读引用，生命周期和类型都可缩小范围&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot;&gt;&lt;code&gt;&amp;#x26;&apos;a mut T&lt;/code&gt;&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;协变&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;&lt;strong&gt;不变&lt;/strong&gt;&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;&lt;strong&gt;重要&lt;/strong&gt;：可变引用的内容类型不能变，防止写入错误&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot;&gt;&lt;code&gt;Box&amp;#x3C;T&gt;&lt;/code&gt; / &lt;code&gt;Vec&amp;#x3C;T&gt;&lt;/code&gt;&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;协变&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;拥有所有权的容器通常是协变的&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot;&gt;&lt;code&gt;UnsafeCell&amp;#x3C;T&gt;&lt;/code&gt; / &lt;code&gt;Cell&amp;#x3C;T&gt;&lt;/code&gt;&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;&lt;strong&gt;不变&lt;/strong&gt;&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;内部可变性类型必须不变&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot;&gt;&lt;code&gt;fn(T) -&gt; U&lt;/code&gt;&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;&lt;strong&gt;逆变&lt;/strong&gt;&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;协变&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;参数逆变，返回值协变&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot;&gt;&lt;code&gt;*const T&lt;/code&gt;&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;协变&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot;&gt;&lt;code&gt;*mut T&lt;/code&gt;&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;&lt;strong&gt;不变&lt;/strong&gt;&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;h3 id=&quot;函数中的强制转换coercion&quot;&gt;函数中的强制转换（Coercion）&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt; fn(T) -&gt; U&lt;/code&gt; 中 U 上是协变的&lt;/p&gt;
 &lt;p&gt;这意味着函数实际返回的生命周期，可以比函数签名声明的生命周期更长。&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-rust&quot;&gt;// `&amp;lt;&amp;#39;a: &amp;#39;b&amp;gt;` 表示 &amp;#39;a 至少和 &amp;#39;b 一样长（&amp;#39;a 是 &amp;#39;b 的子类型）
-fn choose_first&amp;lt;&amp;#39;a: &amp;#39;b, &amp;#39;b&amp;gt;(first: &amp;amp;&amp;#39;a i32, _: &amp;amp;&amp;#39;b i32) -&amp;gt; &amp;amp;&amp;#39;b i32 {
-    // 既然 &amp;amp;&amp;#39;a i32 是 &amp;amp;&amp;#39;b i32 的子类型，它就可以替代 &amp;amp;&amp;#39;b i32 被返回。
-    first 
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3&gt;&lt;code&gt;&amp;#39;static&lt;/code&gt;&lt;/h3&gt;
-&lt;p&gt;这也意味着，返回一个 &lt;code&gt;&amp;#39;static&lt;/code&gt; 也是合法的&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-rust&quot;&gt;fn pick&amp;lt;&amp;#39;a&amp;gt;(x: &amp;amp;&amp;#39;a str, y: &amp;amp;&amp;#39;a str) -&amp;gt; &amp;amp;&amp;#39;a str {
-    &amp;quot;I am static string constant&amp;quot; // 这是一个 &amp;amp;&amp;#39;static str
-}
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;astro-code monokai&quot; style=&quot;background-color:#272822;color:#F8F8F2; overflow-x: auto;&quot; tabindex=&quot;0&quot; data-language=&quot;rust&quot;&gt;&lt;code&gt;&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#88846F&quot;&gt;// `&amp;#x3C;&apos;a: &apos;b&gt;` 表示 &apos;a 至少和 &apos;b 一样长（&apos;a 是 &apos;b 的子类型）&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F92672&quot;&gt;fn&lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt; choose_first&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&amp;#x3C;&apos;&lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;a&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;:&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt; &apos;&lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;b&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;, &apos;&lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;b&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&gt;(first&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;:&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt; &amp;#x26;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&apos;&lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;a&lt;/span&gt;&lt;span&gt; &lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;i32&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;, _&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;:&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt; &amp;#x26;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&apos;&lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;b&lt;/span&gt;&lt;span&gt; &lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;i32&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;) &lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;-&gt;&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt; &amp;#x26;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&apos;&lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;b&lt;/span&gt;&lt;span&gt; &lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;i32&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt; {&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#88846F&quot;&gt;    // 既然 &amp;#x26;&apos;a i32 是 &amp;#x26;&apos;b i32 的子类型，它就可以替代 &amp;#x26;&apos;b i32 被返回。&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    first &lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&quot;static&quot;&gt;&lt;code&gt;&apos;static&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;这也意味着，返回一个 &lt;code&gt;&apos;static&lt;/code&gt; 也是合法的&lt;/p&gt;
+&lt;pre class=&quot;astro-code monokai&quot; style=&quot;background-color:#272822;color:#F8F8F2; overflow-x: auto;&quot; tabindex=&quot;0&quot; data-language=&quot;rust&quot;&gt;&lt;code&gt;&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F92672&quot;&gt;fn&lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt; pick&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&amp;#x3C;&apos;&lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;a&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&gt;(x&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;:&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt; &amp;#x26;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&apos;&lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;a&lt;/span&gt;&lt;span&gt; &lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;str&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;, y&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;:&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt; &amp;#x26;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&apos;&lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;a&lt;/span&gt;&lt;span&gt; &lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;str&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;) &lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;-&gt;&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt; &amp;#x26;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&apos;&lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;a&lt;/span&gt;&lt;span&gt; &lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;str&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt; {&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt;    &quot;I am static string constant&quot;&lt;/span&gt;&lt;span style=&quot;color:#88846F&quot;&gt; // 这是一个 &amp;#x26;&apos;static str&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;然而，必须注意的是：&lt;strong&gt;Rust 编译器在检查调用端的安全性时，只看函数签名，不看函数体实现。&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;即使 pick 实际上返回了 &lt;code&gt;&amp;#39;static&lt;/code&gt;，调用者看到的签名依然是 &lt;code&gt;-&amp;gt; &amp;amp;&amp;#39;a str&lt;/code&gt;。编译器必须假设最坏的情况——即返回值可能只是其中一个输入参数的引用。&lt;/p&gt;
+&lt;p&gt;即使 pick 实际上返回了 &lt;code&gt;&apos;static&lt;/code&gt;，调用者看到的签名依然是 &lt;code&gt;-&gt; &amp;#x26;&apos;a str&lt;/code&gt;。编译器必须假设最坏的情况——即返回值可能只是其中一个输入参数的引用。&lt;/p&gt;
 &lt;p&gt;因此，下面这段代码依然无法通过编译：&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-rust&quot;&gt;fn main() {
-    let ret: &amp;amp;str;
-    let a = String::from(&amp;quot;Hello&amp;quot;);
-    {
-        let b = String::from(&amp;quot;World!!&amp;quot;);
-        ret = pick(a.as_str(), b.as_str());
-    }
-    println!(&amp;quot;{}&amp;quot;, ret);
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2&gt;参考&lt;/h2&gt;
+&lt;pre class=&quot;astro-code monokai&quot; style=&quot;background-color:#272822;color:#F8F8F2; overflow-x: auto;&quot; tabindex=&quot;0&quot; data-language=&quot;rust&quot;&gt;&lt;code&gt;&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F92672&quot;&gt;fn&lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt; main&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;() {&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#66D9EF;font-style:italic&quot;&gt;    let&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt; ret&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;:&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt; &amp;#x26;&lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;str&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#66D9EF;font-style:italic&quot;&gt;    let&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt; a &lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;=&lt;/span&gt;&lt;span&gt; &lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;String&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;::&lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt;from&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt;&quot;Hello&quot;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;);&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    {&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#66D9EF;font-style:italic&quot;&gt;        let&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt; b &lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;=&lt;/span&gt;&lt;span&gt; &lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;String&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;::&lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt;from&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt;&quot;World!!&quot;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;);&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;        ret &lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt; pick&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;(a&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt;as_str&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;(), b&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt;as_str&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;());&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    }&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt;    println!&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt;&quot;{}&quot;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;, ret);&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&quot;参考&quot;&gt;参考&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;https://doc.rust-lang.org/book/ch10-03-lifetime-syntax.html&quot;&gt;Validating References with Lifetimes - The Rust Programming Language&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://doc.rust-lang.org/nomicon/lifetime-elision.html&quot;&gt;Lifetime Elision - The Rustonomicon&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://doc.rust-lang.org/rust-by-example/scope/lifetime/lifetime_coercion.html&quot;&gt;Coercion - Rust By Example&lt;/a&gt;&lt;/p&gt;
-</content:encoded></item><item><title>如何识别 Brave 浏览器</title><link>https://kururin.cc/blog/brave-detect/</link><guid isPermaLink="true">https://kururin.cc/blog/brave-detect/</guid><pubDate>Sun, 12 Jan 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;最近在访问 &lt;a href=&quot;https://lobste.rs&quot;&gt;Lobste.rs&lt;/a&gt; 时（后面用 🦞 代替），网站会禁止 Brave 浏览器的访问。有一点我感到很困惑，因为 Brave 在隐藏用户特征方面做了很多努力，其中包括伪装用户代理信息。这让我产生了一个疑问：🦞 是如何识别出 Brave 的？其实我也在愁统计不到 Brave。&lt;/p&gt;
-&lt;h2&gt;探索&lt;/h2&gt;
-&lt;h3&gt;利用前端 JavaScript 识别 Brave&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://doc.rust-lang.org/rust-by-example/scope/lifetime/lifetime_coercion.html&quot;&gt;Coercion - Rust By Example&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title>如何识别 Brave 浏览器</title><link>https://kururin.cc/blog/brave-detect/</link><guid isPermaLink="true">https://kururin.cc/blog/brave-detect/</guid><pubDate>Sun, 12 Jan 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;最近在访问 &lt;a href=&quot;https://lobste.rs&quot;&gt;Lobste.rs&lt;/a&gt; 时（后面用 🦞 代替），网站会禁止 Brave 浏览器的访问。有一点我感到很困惑，因为 Brave 在隐藏用户特征方面做了很多努力，其中包括伪装用户代理信息。这让我产生了一个疑问：🦞 是如何识别出 Brave 的？其实我也在愁统计不到 Brave。&lt;/p&gt;
+&lt;h2 id=&quot;探索&quot;&gt;探索&lt;/h2&gt;
+&lt;h3 id=&quot;利用前端-javascript-识别-brave&quot;&gt;利用前端 JavaScript 识别 Brave&lt;/h3&gt;
 &lt;p&gt;起初，我以为 🦞 是通过前端 JS 进行识别的。因为在禁用 JS 后，我发现可以正常访问 🦞。Brave 浏览器提供了一些独特的 API，比如 Wallet，甚至还提供了一个 &lt;code&gt;isBrave&lt;/code&gt; 函数。通过这些 API，很容易在前端检测到用户是否在使用 Brave 浏览器。&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-js&quot;&gt;console.log(window.braveEthereum); // Brave 独有的 Wallet API
-console.log(navigator.Brave.isBrave); // 检测是否为 Brave 浏览器
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;astro-code monokai&quot; style=&quot;background-color:#272822;color:#F8F8F2; overflow-x: auto;&quot; tabindex=&quot;0&quot; data-language=&quot;js&quot;&gt;&lt;code&gt;&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;console.&lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt;log&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;(window.braveEthereum); &lt;/span&gt;&lt;span style=&quot;color:#88846F&quot;&gt;// Brave 独有的 Wallet API&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;console.&lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt;log&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;(navigator.Brave.isBrave); &lt;/span&gt;&lt;span style=&quot;color:#88846F&quot;&gt;// 检测是否为 Brave 浏览器&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;然而，在进一步分析中，我并未在页面发现任何 JS 代码。尤其是在未登录的情况下，🦞 不会加载任何 JS。表明这并非其识别手段。&lt;/p&gt;
-&lt;h3&gt;基于链接参数移除的推断&lt;/h3&gt;
+&lt;h3 id=&quot;基于链接参数移除的推断&quot;&gt;基于链接参数移除的推断&lt;/h3&gt;
 &lt;p&gt;在 🦞 相关的 &lt;a href=&quot;https://github.com/lobsters/lobsters/issues/761&quot;&gt;Issue&lt;/a&gt; 中，我发现了一种&lt;a href=&quot;https://www.ctrl.blog/entry/brave-user-agent-detection.html&quot;&gt;基于链接参数的识别方法&lt;/a&gt;。Brave 的隐私保护策略之一是自动移除一些常见的跟踪参数。例如：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;/detect-brave?gclid=3&amp;amp;fbclid=2&amp;amp;sub=marine
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;astro-code monokai&quot; style=&quot;background-color:#272822;color:#F8F8F2; overflow-x: auto;&quot; tabindex=&quot;0&quot; data-language=&quot;plaintext&quot;&gt;&lt;code&gt;&lt;span class=&quot;line&quot;&gt;&lt;span&gt;/detect-brave?gclid=3&amp;#x26;fbclid=2&amp;#x26;sub=marine&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;如果后端检测到 &lt;code&gt;gclid&lt;/code&gt; 和 &lt;code&gt;fbclid&lt;/code&gt; 等参数被移除，可以推断用户可能使用的是 Brave 浏览器。&lt;/p&gt;
 &lt;p&gt;但这种方法并不可靠。其他工具（例如 Firefox 安装 ClearURLs 扩展后）也会移除这些参数，导致误判。&lt;/p&gt;
-&lt;h3&gt;通过 Client Hint 的识别&lt;/h3&gt;
+&lt;h3 id=&quot;通过-client-hint-的识别&quot;&gt;通过 Client Hint 的识别&lt;/h3&gt;
 &lt;p&gt;在分析请求头时，我注意到了一组没见过的 Header —— &lt;code&gt;sec-ch-ua&lt;/code&gt; 包含 Brave，这是 Client Hint 的一部分，用于替代传统的 User-Agent 字符串。目前也只有 Chromium 系浏览器支持，估计是作为 Privacy Sandbox 的一部分，遭到了 Mozilla 和 Apple 的反对。&lt;/p&gt;
 &lt;p&gt;Client Hint 的目的是为网站提供更精确的设备信息，例如屏幕宽度也能加到 Header。Client Hint 默认不会发送所有的信息，只有在服务器显式请求后，浏览器才会返回相关信息。&lt;strong&gt;但是&lt;/strong&gt;浏览器和平台的信息默认是会发送的。&lt;/p&gt;
 &lt;p&gt;Client Hint 默认会提供的信息：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;Sec-CH-UA: &amp;quot;Brave&amp;quot;;v=&amp;quot;131&amp;quot;, &amp;quot;Chromium&amp;quot;;v=&amp;quot;131&amp;quot;, &amp;quot;Not_A Brand&amp;quot;;v=&amp;quot;24&amp;quot;
-sec-ch-ua-mobile: ?0
-sec-ch-ua-platform: &amp;quot;Windows&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;astro-code monokai&quot; style=&quot;background-color:#272822;color:#F8F8F2; overflow-x: auto;&quot; tabindex=&quot;0&quot; data-language=&quot;plaintext&quot;&gt;&lt;code&gt;&lt;span class=&quot;line&quot;&gt;&lt;span&gt;Sec-CH-UA: &quot;Brave&quot;;v=&quot;131&quot;, &quot;Chromium&quot;;v=&quot;131&quot;, &quot;Not_A Brand&quot;;v=&quot;24&quot;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span&gt;sec-ch-ua-mobile: ?0&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span&gt;sec-ch-ua-platform: &quot;Windows&quot;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;我通过 HTTPie 模拟了请求，结果证实 🦞 确实是通过 &lt;code&gt;Sec-CH-UA&lt;/code&gt; 识别 Brave 浏览器的。&lt;/p&gt;
 &lt;p&gt;有趣的是，禁用 JavaScript 后，Brave 不再发送 Client Hint 的头，这也是为什么禁用 JS 后能够成功访问 🦞 的原因。&lt;/p&gt;
 &lt;p&gt;（伪装成 Chrome，但又没有完全伪装&lt;/p&gt;
-&lt;h2&gt;尝试 Client Hint&lt;/h2&gt;
+&lt;h2 id=&quot;尝试-client-hint&quot;&gt;尝试 Client Hint&lt;/h2&gt;
 &lt;p&gt;之后我尝试用 Client Hint 统计浏览器，发现某些国产浏览器 (比如 UC) &lt;code&gt;User-Agent&lt;/code&gt; 显示其正确名字，&lt;code&gt;Sec-CH-UA&lt;/code&gt; 却返回一个 Chromium? like Chrome? 如果只用 &lt;code&gt;Sec-CH-UA&lt;/code&gt; 的话目前比传统 UA 更不靠谱。&lt;/p&gt;
-&lt;h2&gt;结&lt;/h2&gt;
+&lt;h2 id=&quot;结&quot;&gt;结&lt;/h2&gt;
 &lt;p&gt;2024（确实 2024）年还能看到有网站在跟浏览器玩猫捉老鼠的游戏就挺搞的，最终不过是重复 Mozilla/5.0 的历史（大家都变成 Chrome 就好了，实际上也差不多了）。尽管我也很讨厌 Brave 塞的那些币圈垃圾。&lt;/p&gt;
 &lt;p&gt;Vivaldi 也是因为收到太多不兼容的报告，被迫默认改为跟 Chrome 一致的 UA。&lt;/p&gt;
-&lt;p&gt;中途我还发现 Brave 维护了一个长长的&lt;a href=&quot;https://github.com/brave/adblock-lists/blob/6d2ed09f951d89085dd3e186acc4a7f881346d3f/brave-unbreak.txt#L722&quot;&gt;清单&lt;/a&gt;，禁止 Brave 的网站都会被拉到清单里，对清单里的网站会隐藏自身独特的 API 防止被检测到。&lt;/p&gt;
-</content:encoded></item><item><title>如何实现一个简单的 Passkey 登录</title><link>https://kururin.cc/blog/passkey-101/</link><guid isPermaLink="true">https://kururin.cc/blog/passkey-101/</guid><pubDate>Mon, 09 Dec 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;最近糊了个
+&lt;p&gt;中途我还发现 Brave 维护了一个长长的&lt;a href=&quot;https://github.com/brave/adblock-lists/blob/6d2ed09f951d89085dd3e186acc4a7f881346d3f/brave-unbreak.txt#L722&quot;&gt;清单&lt;/a&gt;，禁止 Brave 的网站都会被拉到清单里，对清单里的网站会隐藏自身独特的 API 防止被检测到。&lt;/p&gt;</content:encoded></item><item><title>如何实现一个简单的 Passkey 登录</title><link>https://kururin.cc/blog/passkey-101/</link><guid isPermaLink="true">https://kururin.cc/blog/passkey-101/</guid><pubDate>Mon, 09 Dec 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;最近糊了个
 &lt;a href=&quot;https://meow-counter.icealtria.workers.dev/&quot;&gt;meow-counter&lt;/a&gt;（&lt;a href=&quot;#footer&quot;&gt;Footer&lt;/a&gt;
 那个，魔改自
 &lt;a href=&quot;https://github.com/kotx/moco&quot;&gt;moco&lt;/a&gt;），但是统计面板不想公开，所以自然需要一个鉴权方式。我选择了
 &lt;strong&gt;Passkey&lt;/strong&gt;，也借此搞通了 Passkey 的验证流程。&lt;/p&gt;
-&lt;h2&gt;为什么选择 Passkey?&lt;/h2&gt;
+&lt;h2 id=&quot;为什么选择-passkey&quot;&gt;为什么选择 Passkey?&lt;/h2&gt;
 &lt;p&gt;我不喜欢输密码，基于公钥认证的系统让我感觉更安心。就像使用
 SSH，我也是仅支持公钥验证，完全不需要密码，安全性更高且劝退暴力破解者。&lt;/p&gt;
 &lt;p&gt;对于普通用户，Passkey
 解决了密码泄露、钓鱼攻击等问题，简化了身份验证流程（无需额外的 2FA）。&lt;/p&gt;
-&lt;h2&gt;不足之处&lt;/h2&gt;
+&lt;h2 id=&quot;不足之处&quot;&gt;不足之处&lt;/h2&gt;
 &lt;p&gt;Passkey 通常绑定到设备或其生态系统（如 iCloud、Google 账号）。目前，除了使用
 &lt;strong&gt;KeePassXC&lt;/strong&gt; 外，几乎没有导出和导入的手段。
 更换设备或丢失绑定设备时，可能会面临身份验证困难。
 &lt;a href=&quot;https://blog.1password.com/fido-alliance-import-export-passkeys-draft-specs/&quot;&gt;未来或许会有更多密码管理器支持&lt;/a&gt;。
-[^1]&lt;/p&gt;
-&lt;p&gt;Passkey 必需依赖 Javascript，不能纯 HTML 了。 [^2]&lt;/p&gt;
-&lt;p&gt;[^1]: &lt;a href=&quot;https://fidoalliance.org/specs/cx/cxf-v1.0-wd-20240522.html&quot;&gt;Credential Exchange Format&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;[^2]: &lt;a href=&quot;https://github.com/w3c/webauthn/issues/1255&quot;&gt;Add a way to use webauthn without Javascript · Issue #1255 · w3c/webauthn&lt;/a&gt;&lt;/p&gt;
-&lt;h2&gt;注册与登录流程&lt;/h2&gt;
-&lt;h3&gt;注册流程&lt;/h3&gt;
-&lt;pre&gt;&lt;code class=&quot;language-d2&quot;&gt;shape: sequence_diagram
-
-User -&amp;gt; Frontend: Username
-Frontend -&amp;gt; Backend: /api/registerStart (username)
-Backend -&amp;gt; Frontend: publicKeyCredentialCreationOptions
-Frontend -&amp;gt; User: Trigger credentials.create
-User -&amp;gt; Frontend: User auth
-Frontend -&amp;gt; Backend: /api/registerFinish (attestation)
-Backend -&amp;gt; Backend: VerifyAndSave (attestation)
-Backend -&amp;gt; Frontend: Creation
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3&gt;登录流程&lt;/h3&gt;
-&lt;pre&gt;&lt;code class=&quot;language-d2&quot;&gt;shape: sequence_diagram
-
-User -&amp;gt; Frontend: Username (optional)
-Frontend -&amp;gt; Backend: /api/loginStart (username)
-Backend -&amp;gt; Frontend: publicKeyCredentialRequestOptions
-Frontend -&amp;gt; User: Trigger credentials.get
-User -&amp;gt; Frontend: User auth
-Frontend -&amp;gt; Backend: /api/loginFinish (assertion)
-Backend -&amp;gt; Backend: Verify (assertion)
-Backend -&amp;gt; Frontend: Login successful
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3&gt;数据库&lt;/h3&gt;
-&lt;pre&gt;&lt;code class=&quot;language-d2&quot;&gt;cloud: {
-  users: {
-    shape: sql_table
-    user_id: int {constraint: primary_key}
-    username: text {constraint: unique}
-    created_at: datetime
-  }
-
-  passkeys: {
-    shape: sql_table
-    passkey_id: int {constraint: primary_key}
-    user_id: int {constraint: foreign_key}
-    credential_id: text
-    public_key: text
-    sign_count: int
-    created_at: datetime
-  }
-
-  passkeys.user_id -&amp;gt; users.user_id
-}
-&lt;/code&gt;&lt;/pre&gt;
+&lt;sup&gt;&lt;a href=&quot;#user-content-fn-1&quot; id=&quot;user-content-fnref-1&quot; data-footnote-ref=&quot;&quot; aria-describedby=&quot;footnote-label&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;Passkey 必需依赖 Javascript，不能纯 HTML 了。 &lt;sup&gt;&lt;a href=&quot;#user-content-fn-2&quot; id=&quot;user-content-fnref-2&quot; data-footnote-ref=&quot;&quot; aria-describedby=&quot;footnote-label&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;h2 id=&quot;注册与登录流程&quot;&gt;注册与登录流程&lt;/h2&gt;
+&lt;h3 id=&quot;注册流程&quot;&gt;注册流程&lt;/h3&gt;
+&lt;img alt=&quot;注册流程&quot; decoding=&quot;async&quot; loading=&quot;lazy&quot; src=&quot;/d2/blog/passkey-101/index-0.svg&quot; width=&quot;929&quot; height=&quot;893&quot;&gt;
+&lt;h3 id=&quot;登录流程&quot;&gt;登录流程&lt;/h3&gt;
+&lt;img alt=&quot;登录流程&quot; decoding=&quot;async&quot; loading=&quot;lazy&quot; src=&quot;/d2/blog/passkey-101/index-1.svg&quot; width=&quot;812&quot; height=&quot;893&quot;&gt;
+&lt;h3 id=&quot;数据库&quot;&gt;数据库&lt;/h3&gt;
+&lt;img alt=&quot;登录流程&quot; decoding=&quot;async&quot; loading=&quot;lazy&quot; src=&quot;/d2/blog/passkey-101/index-2.svg&quot; width=&quot;380&quot; height=&quot;600&quot;&gt;
 &lt;p&gt;&lt;code&gt;sign_count&lt;/code&gt; 用于防止 passkey 被克隆。比如 yubikey 每次签名都会计数，key 返回的计数如果小于记录的计数，则说明存在克隆的 key。&lt;/p&gt;
-&lt;p&gt;但是水果和一众密码管理器都没实现这个特征（返回 0），或许是同步计数器比较麻烦。[^3]&lt;/p&gt;
-&lt;p&gt;&lt;del&gt;容易被克隆的软件实现都没实现（密码管理器的同步功能做的事情确实是在克隆），难以克隆的硬件反而有&lt;/del&gt;
-[^3]:&lt;a href=&quot;https://www.reddit.com/r/Bitwarden/comments/1819doj/passkeys_and_the_signature_counter/&quot;&gt;Passkeys and the signature counter : r/Bitwarden&lt;/a&gt;&lt;/p&gt;
-&lt;h2&gt;API 使用指南&lt;/h2&gt;
-&lt;h3&gt;环境要求&lt;/h3&gt;
+&lt;p&gt;但是水果和一众密码管理器都没实现这个特征（返回 0），或许是同步计数器比较麻烦。&lt;sup&gt;&lt;a href=&quot;#user-content-fn-3&quot; id=&quot;user-content-fnref-3&quot; data-footnote-ref=&quot;&quot; aria-describedby=&quot;footnote-label&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;&lt;del&gt;容易被克隆的软件实现都没实现（密码管理器的同步功能做的事情确实是在克隆），难以克隆的硬件反而有&lt;/del&gt;&lt;/p&gt;
+&lt;h2 id=&quot;api-使用指南&quot;&gt;API 使用指南&lt;/h2&gt;
+&lt;h3 id=&quot;环境要求&quot;&gt;环境要求&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;服务端需要支持 &lt;strong&gt;HTTPS&lt;/strong&gt;，也可以是 &lt;code&gt;localhost&lt;/code&gt;（WebAuthn 需要
 &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/Security/Secure_Contexts&quot;&gt;Secure contexts&lt;/a&gt;）。&lt;/li&gt;
@@ -516,34 +499,33 @@ Backend -&amp;gt; Frontend: Login successful
 &lt;a href=&quot;https://github.com/MasterKale/SimpleWebAuthn&quot;&gt;simplewebauthn&lt;/a&gt;。不然验证挺繁琐的。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;下面都算伪代码，实际操作中 ArrayBuffer 编码为 Base64URL&lt;/p&gt;
-&lt;h3&gt;用户注册&lt;/h3&gt;
+&lt;h3 id=&quot;用户注册&quot;&gt;用户注册&lt;/h3&gt;
 &lt;p&gt;前端需要输入用户名，请求 &lt;code&gt;/api/registerStart&lt;/code&gt;，获取
 &lt;code&gt;publicKeyCredentialCreationOptions&lt;/code&gt;。&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const publicKeyCredentialCreationOptions = {
-    challenge: Uint8Array.from(
-        randomStringFromServer,
-        (c) =&amp;gt; c.charCodeAt(0),
-    ),
-    rp: {
-        name: &amp;quot;Meow Counter&amp;quot;,
-        id: &amp;quot;example.com&amp;quot;, // 浏览器会验证当前域名与 RP ID 是否匹配
-    },
-    user: {
-        id: Uint8Array.from(
-            &amp;quot;UZSL85T9AFC&amp;quot;,
-            (c) =&amp;gt; c.charCodeAt(0),
-        ),
-        name: &amp;quot;lee@example.com&amp;quot;,
-        displayName: &amp;quot;Lee&amp;quot;,
-    },
-    pubKeyCredParams: [{ alg: -7, type: &amp;quot;public-key&amp;quot; }], // 接受的算法
-    authenticatorSelection: {
-        authenticatorAttachment: &amp;quot;cross-platform&amp;quot;, // 平台外部认证器
-    },
-    timeout: 60000,
-    attestation: &amp;quot;direct&amp;quot;,
-};
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;astro-code monokai&quot; style=&quot;background-color:#272822;color:#F8F8F2; overflow-x: auto;&quot; tabindex=&quot;0&quot; data-language=&quot;javascript&quot;&gt;&lt;code&gt;&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#66D9EF;font-style:italic&quot;&gt;const&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt; publicKeyCredentialCreationOptions &lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt; {&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    challenge: Uint8Array.&lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt;from&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;(&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;        randomStringFromServer,&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;        (&lt;/span&gt;&lt;span style=&quot;color:#FD971F;font-style:italic&quot;&gt;c&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;) &lt;/span&gt;&lt;span style=&quot;color:#66D9EF;font-style:italic&quot;&gt;=&gt;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt; c.&lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt;charCodeAt&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;color:#AE81FF&quot;&gt;0&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;),&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    ),&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    rp: {&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;        name: &lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt;&quot;Meow Counter&quot;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;,&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;        id: &lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt;&quot;example.com&quot;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;, &lt;/span&gt;&lt;span style=&quot;color:#88846F&quot;&gt;// 浏览器会验证当前域名与 RP ID 是否匹配&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    },&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    user: {&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;        id: Uint8Array.&lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt;from&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;(&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt;            &quot;UZSL85T9AFC&quot;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;,&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;            (&lt;/span&gt;&lt;span style=&quot;color:#FD971F;font-style:italic&quot;&gt;c&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;) &lt;/span&gt;&lt;span style=&quot;color:#66D9EF;font-style:italic&quot;&gt;=&gt;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt; c.&lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt;charCodeAt&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;color:#AE81FF&quot;&gt;0&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;),&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;        ),&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;        name: &lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt;&quot;lee@example.com&quot;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;,&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;        displayName: &lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt;&quot;Lee&quot;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;,&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    },&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    pubKeyCredParams: [{ alg: &lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;-&lt;/span&gt;&lt;span style=&quot;color:#AE81FF&quot;&gt;7&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;, type: &lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt;&quot;public-key&quot;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt; }], &lt;/span&gt;&lt;span style=&quot;color:#88846F&quot;&gt;// 接受的算法&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    authenticatorSelection: {&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;        authenticatorAttachment: &lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt;&quot;cross-platform&quot;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;, &lt;/span&gt;&lt;span style=&quot;color:#88846F&quot;&gt;// 平台外部认证器&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    },&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    timeout: &lt;/span&gt;&lt;span style=&quot;color:#AE81FF&quot;&gt;60000&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;,&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    attestation: &lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt;&quot;direct&quot;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;,&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;};&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;strong&gt;challenge&lt;/strong&gt;:&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;challenge&lt;/code&gt; 应该是一次性且短期有效的，使用后作废&lt;/p&gt;
 &lt;ul&gt;
@@ -558,241 +540,243 @@ Backend -&amp;gt; Frontend: Login successful
 &lt;li&gt;platform：使用本地认证器（如 Windows Hello、Face ID）。&lt;/li&gt;
 &lt;li&gt;cross-platform：使用外部认证器（如 YubiKey，密码管理器）。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4&gt;前端创建凭据&lt;/h4&gt;
-&lt;pre&gt;&lt;code class=&quot;language-js&quot;&gt;const credential = await navigator.credentials.create({
-    publicKey: publicKeyCredentialCreationOptions
-});
-
-console.log(credential);
-
-PublicKeyCredential {
-    id: &amp;#39;ADSUllKQmbqdGtpu4sjseh4cg2TxSvrbcHDTBsv4NSSX9...&amp;#39;,
-    rawId: ArrayBuffer(59),
-    response: AuthenticatorAttestationResponse {
-        clientDataJSON: ArrayBuffer(121),
-        attestationObject: ArrayBuffer(306),
-    },
-    type: &amp;#39;public-key&amp;#39;
-}
-
-post(&amp;#39;/api/registerFinish&amp;#39;, { credential });
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h4&gt;服务端验证注册&lt;/h4&gt;
+&lt;h4 id=&quot;前端创建凭据&quot;&gt;前端创建凭据&lt;/h4&gt;
+&lt;pre class=&quot;astro-code monokai&quot; style=&quot;background-color:#272822;color:#F8F8F2; overflow-x: auto;&quot; tabindex=&quot;0&quot; data-language=&quot;js&quot;&gt;&lt;code&gt;&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#66D9EF;font-style:italic&quot;&gt;const&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt; credential &lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt; await&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt; navigator.credentials.&lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt;create&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;({&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    publicKey: publicKeyCredentialCreationOptions&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;});&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;console.&lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt;log&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;(credential);&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;PublicKeyCredential {&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    id: &lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt;&apos;ADSUllKQmbqdGtpu4sjseh4cg2TxSvrbcHDTBsv4NSSX9...&apos;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;,&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    rawId: &lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt;ArrayBuffer&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;color:#AE81FF&quot;&gt;59&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;),&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    response: AuthenticatorAttestationResponse {&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;        clientDataJSON: &lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt;ArrayBuffer&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;color:#AE81FF&quot;&gt;121&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;),&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;        attestationObject: &lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt;ArrayBuffer&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;color:#AE81FF&quot;&gt;306&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;),&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    },&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    type: &lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt;&apos;public-key&apos;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;}&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt;post&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt;&apos;/api/registerFinish&apos;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;, { credential });&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&quot;服务端验证注册&quot;&gt;服务端验证注册&lt;/h4&gt;
 &lt;p&gt;服务端需要保存 &lt;code&gt;challenge&lt;/code&gt;，以供验证使用。&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const { verifyRegistrationResponse } = require(&amp;quot;@simplewebauthn/server&amp;quot;);
-
-const verification = verifyRegistrationResponse({
-    response: clientResponse, // 前端返回的凭证数据
-    expectedChallenge: storedChallenge,
-    expectedOrigin: &amp;quot;https://example.com&amp;quot;,
-    expectedRPID: &amp;quot;example.com&amp;quot;,
-});
-
-if (verification.verified) {
-    saveToDatabase({
-        credentialID: verification.registrationInfo.credentialID,
-        publicKey: verification.registrationInfo.credentialPublicKey,
-    });
-}
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;astro-code monokai&quot; style=&quot;background-color:#272822;color:#F8F8F2; overflow-x: auto;&quot; tabindex=&quot;0&quot; data-language=&quot;javascript&quot;&gt;&lt;code&gt;&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#66D9EF;font-style:italic&quot;&gt;const&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt; { verifyRegistrationResponse } &lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt; require&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt;&quot;@simplewebauthn/server&quot;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;);&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#66D9EF;font-style:italic&quot;&gt;const&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt; verification &lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt; verifyRegistrationResponse&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;({&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    response: clientResponse, &lt;/span&gt;&lt;span style=&quot;color:#88846F&quot;&gt;// 前端返回的凭证数据&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    expectedChallenge: storedChallenge,&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    expectedOrigin: &lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt;&quot;https://example.com&quot;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;,&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    expectedRPID: &lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt;&quot;example.com&quot;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;,&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;});&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F92672&quot;&gt;if&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt; (verification.verified) {&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt;    saveToDatabase&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;({&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;        credentialID: verification.registrationInfo.credentialID,&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;        publicKey: verification.registrationInfo.credentialPublicKey,&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    });&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;code&gt;verifyRegistrationResponse&lt;/code&gt; 会解析 &lt;code&gt;clientDataJSON&lt;/code&gt;，将 &lt;code&gt;challenge&lt;/code&gt;
 与之前保存的进行比较以验证是否对应于当前注册事件。然后从 &lt;code&gt;attestationObject&lt;/code&gt;
 中获取 &lt;code&gt;credential.id&lt;/code&gt; 和 &lt;code&gt;publicKey&lt;/code&gt;，并将它们存储到数据库中。&lt;/p&gt;
-&lt;h3&gt;用户登录&lt;/h3&gt;
-&lt;h4&gt;服务端生成 challenge&lt;/h4&gt;
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const publicKeyCredentialRequestOptions = {
-    challenge: Uint8Array.from(
-        randomStringFromServer,
-        (c) =&amp;gt; c.charCodeAt(0),
-    ),
-    allowCredentials: [{
-        id: Uint8Array.from(
-            credentialId,
-            (c) =&amp;gt; c.charCodeAt(0),
-        ), // optional，注册时保存的 credentialID
-        type: &amp;quot;public-key&amp;quot;,
-        transports: [&amp;quot;usb&amp;quot;, &amp;quot;ble&amp;quot;, &amp;quot;nfc&amp;quot;], // 支持的认证器传输方式
-    }],
-    timeout: 60000,
-};
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h4&gt;前端触发认证&lt;/h4&gt;
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const assertion = await navigator.credentials.get({
-    publicKey: publicKeyCredentialRequestOptions
-});
-
-console.log(assertion);
-
-PublicKeyCredential {
-    id: &amp;#39;ADSUllKQmbqdGtpu4sjseh4cg2TxSvrbcHDTBsv4NSSX9...&amp;#39;,
-    rawId: ArrayBuffer(59),
-    response: AuthenticatorAssertionResponse {
-        authenticatorData: ArrayBuffer(191),
-        clientDataJSON: ArrayBuffer(118),
-        signature: ArrayBuffer(70),
-        userHandle: ArrayBuffer(10), // optional, 注册时提供的用户ID。用于与服务器上的用户关联起来。服务端未提供 allowCredentialDescriptorList 的时候，服务端可以通过 userHandle 确定用户。
-    },
-    type: &amp;#39;public-key&amp;#39;
-}
-
-post(&amp;#39;/api/loginFinish&amp;#39;, { assertion });
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h4&gt;服务端验证登录&lt;/h4&gt;
-&lt;pre&gt;&lt;code class=&quot;language-javascript&quot;&gt;const { verifyAuthenticationResponse } = require(&amp;quot;@simplewebauthn/server&amp;quot;);
-
-const verification = verifyAuthenticationResponse({
-    response: clientResponse, // 前端返回的数据
-    expectedChallenge: storedChallenge,
-    expectedOrigin: &amp;quot;https://example.com&amp;quot;,
-    expectedRPID: &amp;quot;example.com&amp;quot;,
-    credential: storedCredential, // 注册时保存的 credentialId 和 publicKey
-});
-
-if (verification.verified) {
-    // 用户验证成功
-    grantAccessToUser();
-}
-&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&quot;用户登录&quot;&gt;用户登录&lt;/h3&gt;
+&lt;h4 id=&quot;服务端生成-challenge&quot;&gt;服务端生成 challenge&lt;/h4&gt;
+&lt;pre class=&quot;astro-code monokai&quot; style=&quot;background-color:#272822;color:#F8F8F2; overflow-x: auto;&quot; tabindex=&quot;0&quot; data-language=&quot;javascript&quot;&gt;&lt;code&gt;&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#66D9EF;font-style:italic&quot;&gt;const&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt; publicKeyCredentialRequestOptions &lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt; {&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    challenge: Uint8Array.&lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt;from&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;(&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;        randomStringFromServer,&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;        (&lt;/span&gt;&lt;span style=&quot;color:#FD971F;font-style:italic&quot;&gt;c&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;) &lt;/span&gt;&lt;span style=&quot;color:#66D9EF;font-style:italic&quot;&gt;=&gt;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt; c.&lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt;charCodeAt&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;color:#AE81FF&quot;&gt;0&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;),&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    ),&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    allowCredentials: [{&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;        id: Uint8Array.&lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt;from&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;(&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;            credentialId,&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;            (&lt;/span&gt;&lt;span style=&quot;color:#FD971F;font-style:italic&quot;&gt;c&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;) &lt;/span&gt;&lt;span style=&quot;color:#66D9EF;font-style:italic&quot;&gt;=&gt;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt; c.&lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt;charCodeAt&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;color:#AE81FF&quot;&gt;0&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;),&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;        ), &lt;/span&gt;&lt;span style=&quot;color:#88846F&quot;&gt;// optional，注册时保存的 credentialID&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;        type: &lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt;&quot;public-key&quot;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;,&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;        transports: [&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt;&quot;usb&quot;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;, &lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt;&quot;ble&quot;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;, &lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt;&quot;nfc&quot;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;], &lt;/span&gt;&lt;span style=&quot;color:#88846F&quot;&gt;// 支持的认证器传输方式&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    }],&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    timeout: &lt;/span&gt;&lt;span style=&quot;color:#AE81FF&quot;&gt;60000&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;,&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;};&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&quot;前端触发认证&quot;&gt;前端触发认证&lt;/h4&gt;
+&lt;pre class=&quot;astro-code monokai&quot; style=&quot;background-color:#272822;color:#F8F8F2; overflow-x: auto;&quot; tabindex=&quot;0&quot; data-language=&quot;javascript&quot;&gt;&lt;code&gt;&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#66D9EF;font-style:italic&quot;&gt;const&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt; assertion &lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt; await&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt; navigator.credentials.&lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt;get&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;({&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    publicKey: publicKeyCredentialRequestOptions&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;});&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;console.&lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt;log&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;(assertion);&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;PublicKeyCredential {&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    id: &lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt;&apos;ADSUllKQmbqdGtpu4sjseh4cg2TxSvrbcHDTBsv4NSSX9...&apos;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;,&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    rawId: &lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt;ArrayBuffer&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;color:#AE81FF&quot;&gt;59&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;),&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    response: AuthenticatorAssertionResponse {&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;        authenticatorData: &lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt;ArrayBuffer&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;color:#AE81FF&quot;&gt;191&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;),&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;        clientDataJSON: &lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt;ArrayBuffer&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;color:#AE81FF&quot;&gt;118&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;),&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;        signature: &lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt;ArrayBuffer&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;color:#AE81FF&quot;&gt;70&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;),&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;        userHandle: &lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt;ArrayBuffer&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;color:#AE81FF&quot;&gt;10&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;), &lt;/span&gt;&lt;span style=&quot;color:#88846F&quot;&gt;// optional, 注册时提供的用户ID。用于与服务器上的用户关联起来。服务端未提供 allowCredentialDescriptorList 的时候，服务端可以通过 userHandle 确定用户。&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    },&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    type: &lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt;&apos;public-key&apos;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;}&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt;post&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt;&apos;/api/loginFinish&apos;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;, { assertion });&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&quot;服务端验证登录&quot;&gt;服务端验证登录&lt;/h4&gt;
+&lt;pre class=&quot;astro-code monokai&quot; style=&quot;background-color:#272822;color:#F8F8F2; overflow-x: auto;&quot; tabindex=&quot;0&quot; data-language=&quot;javascript&quot;&gt;&lt;code&gt;&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#66D9EF;font-style:italic&quot;&gt;const&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt; { verifyAuthenticationResponse } &lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt; require&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt;&quot;@simplewebauthn/server&quot;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;);&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#66D9EF;font-style:italic&quot;&gt;const&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt; verification &lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt; verifyAuthenticationResponse&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;({&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    response: clientResponse, &lt;/span&gt;&lt;span style=&quot;color:#88846F&quot;&gt;// 前端返回的数据&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    expectedChallenge: storedChallenge,&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    expectedOrigin: &lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt;&quot;https://example.com&quot;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;,&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    expectedRPID: &lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt;&quot;example.com&quot;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;,&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    credential: storedCredential, &lt;/span&gt;&lt;span style=&quot;color:#88846F&quot;&gt;// 注册时保存的 credentialId 和 publicKey&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;});&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F92672&quot;&gt;if&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt; (verification.verified) {&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#88846F&quot;&gt;    // 用户验证成功&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt;    grantAccessToUser&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;();&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;verifyAuthenticationResponse 验证 signature 和 clientDataJSON 是否与存储的
 publicKey 匹配，确认登录成功。&lt;/p&gt;
-</content:encoded></item><item><title>给运行在局域网内的服务添加 https</title><link>https://kururin.cc/blog/https-lan/</link><guid isPermaLink="true">https://kururin.cc/blog/https-lan/</guid><description>使用 Tailscale 实现</description><pubDate>Mon, 06 May 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;这是一个很奇怪的需求，在大多数情况下，局域网内的设备是相互信任的，https 似乎是件没有什么必要的事情。&lt;/p&gt;
-&lt;p&gt;但是有些软件要求必须使用 HTTPS，比如 Vaultwarden，因为它依赖大多数浏览器仅在 HTTPS 才可用的 &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto&quot;&gt;SubtleCrypto API&lt;/a&gt;。[^1] 此外，一些软件在未开启 HTTPS 时，会在页面上显示不安全的提示。还有一些软件若不开启 https ，则会在页面上显示不安全的提示。这时候 https 就有必要了。&lt;/p&gt;
-&lt;p&gt;[^1]:&lt;a href=&quot;https://github.com/dani-garcia/vaultwarden/wiki/Enabling-HTTPS&quot;&gt;Enabling HTTPS · dani-garcia/vaultwarden Wiki · GitHub&lt;/a&gt;&lt;/p&gt;
+&lt;section data-footnotes=&quot;&quot; class=&quot;footnotes&quot;&gt;&lt;h2 class=&quot;sr-only&quot; id=&quot;footnote-label&quot;&gt;Footnotes&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li id=&quot;user-content-fn-1&quot;&gt;
+&lt;p&gt;&lt;a href=&quot;https://fidoalliance.org/specs/cx/cxf-v1.0-wd-20240522.html&quot;&gt;Credential Exchange Format&lt;/a&gt; &lt;a href=&quot;#user-content-fnref-1&quot; data-footnote-backref=&quot;&quot; aria-label=&quot;Back to reference 1&quot; class=&quot;data-footnote-backref&quot;&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&quot;user-content-fn-2&quot;&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/w3c/webauthn/issues/1255&quot;&gt;Add a way to use webauthn without Javascript · Issue #1255 · w3c/webauthn&lt;/a&gt; &lt;a href=&quot;#user-content-fnref-2&quot; data-footnote-backref=&quot;&quot; aria-label=&quot;Back to reference 2&quot; class=&quot;data-footnote-backref&quot;&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&quot;user-content-fn-3&quot;&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.reddit.com/r/Bitwarden/comments/1819doj/passkeys_and_the_signature_counter/&quot;&gt;Passkeys and the signature counter : r/Bitwarden&lt;/a&gt; &lt;a href=&quot;#user-content-fnref-3&quot; data-footnote-backref=&quot;&quot; aria-label=&quot;Back to reference 3&quot; class=&quot;data-footnote-backref&quot;&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;</content:encoded></item><item><title>给运行在局域网内的服务添加 https</title><link>https://kururin.cc/blog/https-lan/</link><guid isPermaLink="true">https://kururin.cc/blog/https-lan/</guid><description>使用 Tailscale 实现</description><pubDate>Mon, 06 May 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;这是一个很奇怪的需求，在大多数情况下，局域网内的设备是相互信任的，https 似乎是件没有什么必要的事情。&lt;/p&gt;
+&lt;p&gt;但是有些软件要求必须使用 HTTPS，比如 Vaultwarden，因为它依赖大多数浏览器仅在 HTTPS 才可用的 &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto&quot;&gt;SubtleCrypto API&lt;/a&gt;。&lt;sup&gt;&lt;a href=&quot;#user-content-fn-1&quot; id=&quot;user-content-fnref-1&quot; data-footnote-ref=&quot;&quot; aria-describedby=&quot;footnote-label&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; 此外，一些软件在未开启 HTTPS 时，会在页面上显示不安全的提示。还有一些软件若不开启 https ，则会在页面上显示不安全的提示。这时候 https 就有必要了。&lt;/p&gt;
 &lt;p&gt;之后我用搜索引擎搜了下有关这方面的内容，大部分都是用通过自签证书实现的。这确实是实现 HTTPS 的一种常见方法，但在多台机器上配置自签证书比较繁琐。&lt;/p&gt;
 &lt;p&gt;对于 Tailscale 用户来说，只需要少量配置即可实现 HTTPS。Tailscale 的 Tailnet 提供域名和证书生成功能，通过 &lt;code&gt;tailscale serve&lt;/code&gt; 命令，可以轻松反向代理服务并提供 HTTPS 支持。如果需要更复杂的配置，可以使用 Caddy。Caddy 遇到 &lt;code&gt;*.ts.net&lt;/code&gt; 域名时，会自动从 Tailscale 获取证书。我的个人设备几乎都连接了 Tailscale。&lt;/p&gt;
-&lt;h2&gt;如何配置&lt;/h2&gt;
-&lt;h3&gt;tailscale serve&lt;/h3&gt;
+&lt;h2 id=&quot;如何配置&quot;&gt;如何配置&lt;/h2&gt;
+&lt;h3 id=&quot;tailscale-serve&quot;&gt;tailscale serve&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;打开 console 的 &lt;a href=&quot;https://login.tailscale.com/admin/dns&quot;&gt;&lt;strong&gt;DNS&lt;/strong&gt;&lt;/a&gt; 页面。&lt;/li&gt;
 &lt;li&gt;确保 MagicDNS 和 HTTPS Certificates 都为开启状态
-&lt;img src=&quot;image.png&quot; alt=&quot;DNS Settings&quot;&gt;&lt;/li&gt;
-&lt;li&gt;执行以下命令：&lt;pre&gt;&lt;code class=&quot;language-sh&quot;&gt;tailscale serve --bg --https=443 localhost:&amp;lt;port&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;figure&gt;&lt;img alt=&quot;DNS Settings&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; fetchpriority=&quot;auto&quot; width=&quot;712&quot; height=&quot;405&quot; src=&quot;/assets/image_28hSoz.webp&quot; &gt;&lt;figcaption&gt;DNS Settings&lt;/figcaption&gt;&lt;/figure&gt;&lt;/li&gt;
+&lt;li&gt;执行以下命令：
+&lt;pre class=&quot;astro-code monokai&quot; style=&quot;background-color:#272822;color:#F8F8F2; overflow-x: auto;&quot; tabindex=&quot;0&quot; data-language=&quot;sh&quot;&gt;&lt;code&gt;&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt;tailscale&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt; serve&lt;/span&gt;&lt;span style=&quot;color:#AE81FF&quot;&gt; --bg&lt;/span&gt;&lt;span style=&quot;color:#AE81FF&quot;&gt; --https=443&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt; localhost:&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;&amp;#x3C;&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt;por&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;t&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;之后，就可以通过在 Tailscale 设置好的域名访问服务了。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;把 serve 换成 funnel，则可以将服务暴露在互联网。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h3&gt;Caddy&lt;/h3&gt;
+&lt;h3 id=&quot;caddy&quot;&gt;Caddy&lt;/h3&gt;
 &lt;p&gt;从 Caddy 2.5 测试版开始，Caddy 支持与 Tailscale 集成。当 Caddy 收到 &lt;code&gt;*.ts.net&lt;/code&gt; 域名的 HTTPS 请求时，会自动从本地 Tailscale 守护程序获取证书，无需额外配置。&lt;/p&gt;
 &lt;p&gt;配置示例如下：&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-sh&quot;&gt;machine-name.domain-alias.ts.net {
-
-  handle_path /vw/* {
-    reverse_proxy http://127.0.0.1:8089
-  }
-
-  handle_path /alist/* {
-    reverse_proxy http://127.0.0.1:5244
-  }
-
-}
-&lt;/code&gt;&lt;/pre&gt;
-</content:encoded></item><item><title>终究还是用回了 Syncthing</title><link>https://kururin.cc/blog/syncthing/</link><guid isPermaLink="true">https://kururin.cc/blog/syncthing/</guid><description>主要是吐槽 Dropbox</description><pubDate>Wed, 10 Apr 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;我使用过的同步软件&lt;/h2&gt;
+&lt;pre class=&quot;astro-code monokai&quot; style=&quot;background-color:#272822;color:#F8F8F2; overflow-x: auto;&quot; tabindex=&quot;0&quot; data-language=&quot;sh&quot;&gt;&lt;code&gt;&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt;machine-name.domain-alias.ts.net&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt; {&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt;  handle_path&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt; /vw/&lt;/span&gt;&lt;span style=&quot;color:#FD971F&quot;&gt;*&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt; {&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt;    reverse_proxy&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt; http://127.0.0.1:8089&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;  }&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt;  handle_path&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt; /alist/&lt;/span&gt;&lt;span style=&quot;color:#FD971F&quot;&gt;*&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt; {&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt;    reverse_proxy&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt; http://127.0.0.1:5244&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;  }&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;section data-footnotes=&quot;&quot; class=&quot;footnotes&quot;&gt;&lt;h2 class=&quot;sr-only&quot; id=&quot;footnote-label&quot;&gt;Footnotes&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li id=&quot;user-content-fn-1&quot;&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/dani-garcia/vaultwarden/wiki/Enabling-HTTPS&quot;&gt;Enabling HTTPS · dani-garcia/vaultwarden Wiki · GitHub&lt;/a&gt; &lt;a href=&quot;#user-content-fnref-1&quot; data-footnote-backref=&quot;&quot; aria-label=&quot;Back to reference 1&quot; class=&quot;data-footnote-backref&quot;&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;</content:encoded></item><item><title>终究还是用回了 Syncthing</title><link>https://kururin.cc/blog/syncthing/</link><guid isPermaLink="true">https://kururin.cc/blog/syncthing/</guid><description>主要是吐槽 Dropbox</description><pubDate>Wed, 10 Apr 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;我使用过的同步软件&quot;&gt;我使用过的同步软件&lt;/h2&gt;
 &lt;p&gt;我在很长一段时间里一直使用 Dropbox，MegaSync 也用过一段时间。至于为什么选择这两个，是因为主流网盘中提供 Linux 客户端的除了 PCloud 就只有这两个了。&lt;/p&gt;
 &lt;p&gt;起初我在用 Mega，因为我将密码管理器从 Bitwarden 更换为 KeePassXC，我想将密码库同步到手机上，但当时 KeePass2Android 不支持。现在虽然支持了，但还没完全支持，例如无法登录开启 &lt;a href=&quot;https://github.com/PhilippC/keepass2android/issues/2415&quot;&gt;2FA&lt;/a&gt; 的账号，而 KeePassDX 也用不了。Dropbox 支持在系统的文件选择器中选择文件，因此手机上的两个软件都可以支持。&lt;/p&gt;
 &lt;p&gt;不过我最终还是放弃了这两个云同步软件，只留下了 Syncthing。Syncthing 我其实一直在用，但之前都只是在电脑上使用。对于在手机上使用，我曾担心它会耗电，但后来发现这个担心是多余的。&lt;/p&gt;
-&lt;h2&gt;批评 Dropbox&lt;/h2&gt;
+&lt;h2 id=&quot;批评-dropbox&quot;&gt;批评 Dropbox&lt;/h2&gt;
 &lt;p&gt;为什么要抛弃 Dropbox，那要从我给 Obsidian 写一个插件说起。Obsidian 的插件是用 JavaScript 编写的，每个 JS 项目都会有一坨 &lt;code&gt;node_modules&lt;/code&gt;，然后它把这个文件夹同步过去。&lt;/p&gt;
 &lt;p&gt;我以为在 GUI 里设置选择性同步可以忽略掉这个文件夹，但我搞错了。Dropbox 只能用一种很别扭的方式忽略一个文件夹：&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-sh&quot;&gt;# linux
-attr -s com.dropbox.ignored -V 1 &amp;#39;/home/yourname/Dropbox (Personal)/YourFileName.pdf&amp;#39;
-# windog
-Set-Content -Path &amp;#39;C:\Users\yourname\Dropbox(Personal)\YourFileName.pdf&amp;#39; -Stream com.dropbox.ignored -Value 1
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;astro-code monokai&quot; style=&quot;background-color:#272822;color:#F8F8F2; overflow-x: auto;&quot; tabindex=&quot;0&quot; data-language=&quot;sh&quot;&gt;&lt;code&gt;&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#88846F&quot;&gt;# linux&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt;attr&lt;/span&gt;&lt;span style=&quot;color:#AE81FF&quot;&gt; -s&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt; com.dropbox.ignored&lt;/span&gt;&lt;span style=&quot;color:#AE81FF&quot;&gt; -V&lt;/span&gt;&lt;span style=&quot;color:#AE81FF&quot;&gt; 1&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt; &apos;/home/yourname/Dropbox (Personal)/YourFileName.pdf&apos;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#88846F&quot;&gt;# windog&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt;Set-Content&lt;/span&gt;&lt;span style=&quot;color:#AE81FF&quot;&gt; -Path&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt; &apos;C:\Users\yourname\Dropbox(Personal)\YourFileName.pdf&apos;&lt;/span&gt;&lt;span style=&quot;color:#AE81FF&quot;&gt; -Stream&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt; com.dropbox.ignored&lt;/span&gt;&lt;span style=&quot;color:#AE81FF&quot;&gt; -Value&lt;/span&gt;&lt;span style=&quot;color:#AE81FF&quot;&gt; 1&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;这就没办法在文件创建之前忽略掉这个文件了，想忽略多个文件还要逐个操作。&lt;/p&gt;
 &lt;p&gt;而 syncthing 和 MEGA 只需要简单写个规则。&lt;/p&gt;
 &lt;p&gt;不止如此。。。&lt;/p&gt;
-&lt;p&gt;Dropbox 只能将本地的一个文件夹与服务器同步，但我不喜欢将一切都放到 &lt;del&gt;/Dropbox。我希望能将 `&lt;/del&gt;/Docs&lt;code&gt;与&lt;/code&gt;%USERPROFILE%/Docs&lt;code&gt;，&lt;/code&gt;~/Books&lt;code&gt;与&lt;/code&gt;D:/Books` 同步。&lt;/p&gt;
+&lt;p&gt;Dropbox 只能将本地的一个文件夹与服务器同步，但我不喜欢将一切都放到 ~/Dropbox。我希望能将 &lt;code&gt;~/Docs&lt;/code&gt; 与 &lt;code&gt;%USERPROFILE%/Docs&lt;/code&gt;，&lt;code&gt;~/Books&lt;/code&gt; 与 &lt;code&gt;D:/Books&lt;/code&gt; 同步。&lt;/p&gt;
 &lt;p&gt;Syncthing 和 Mega 都能做到。&lt;/p&gt;
-&lt;p&gt;在 Gnome 上 Dropbox 的托盘完全是坏的，这个问题存在了数年，虽然不知道是谁的锅，但只在 Dropbox 上遇到过。右键点击托盘图标打开菜单只能随缘，即便打开显示的状态也是不更新的，永远 &amp;quot;Connecting...&amp;quot;，当然实际上工作的。它只能作为设置页的入口。&lt;/p&gt;
+&lt;p&gt;在 Gnome 上 Dropbox 的托盘完全是坏的，这个问题存在了数年，虽然不知道是谁的锅，但只在 Dropbox 上遇到过。右键点击托盘图标打开菜单只能随缘，即便打开显示的状态也是不更新的，永远 “Connecting…”，当然实际上工作的。它只能作为设置页的入口。&lt;/p&gt;
 &lt;p&gt;同步相关的功能比 Syncthing 和 Mega 更匮乏，但占用内存却是最大的。&lt;/p&gt;
 &lt;p&gt;槽点这么多，那干脆不用了。我都不知道为什么忍了它这么久。&lt;/p&gt;
 &lt;p&gt;(说起来 MEGAsync 算是我较为满意的一个网盘了)&lt;/p&gt;
-&lt;h2&gt;如何实现 3-2-1 备份&lt;/h2&gt;
+&lt;h2 id=&quot;如何实现-3-2-1-备份&quot;&gt;如何实现 3-2-1 备份&lt;/h2&gt;
 &lt;p&gt;我使用同步软件的其中一个原因是希望实现 3-2-1 备份，以避免本地机器故障。所谓 3-2-1 备份策略，即保存三份数据备份，使用两种不同的存储介质，并确保至少有一份备份存储在异地。&lt;/p&gt;
 &lt;p&gt;为了实现这个策略，我采用了 Restic 进行定期备份。它支持数据加密和压缩快照。还可以调用 rclone 的服务作为远程 repo。&lt;/p&gt;
 &lt;p&gt;具体来说，我编写了一个定期执行的脚本，通过 Restic 进行备份操作。为了确保备份的安全性，我将备份库（repo）的密码存储在 Gnome Keyring 中。脚本会调用 &lt;code&gt;secret-tool&lt;/code&gt; 从 Gnome Keyring 中取出密码，并用来解密备份库进行备份。&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-sh&quot;&gt;restic -r rclone:&amp;lt;remote&amp;gt;:/path/to/repo backup /path/to/data --password-command &amp;#39;secret-tool lookup restic pass&amp;#39;
-&lt;/code&gt;&lt;/pre&gt;
-</content:encoded></item><item><title>我又回来了</title><link>https://kururin.cc/blog/first-post/</link><guid isPermaLink="true">https://kururin.cc/blog/first-post/</guid><description>这次要徒手搓博客</description><pubDate>Thu, 21 Sep 2023 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;曾经几度对自己的博客开了又关，最初一个博客应该是在读初中的时候建起来的，使用的是 wordpress。但都没写什么文章，每次想写点什么，就觉得没什么好写的，或者写不出来。。等域名过期或是vps过期，然后也就这么丢掉了。比起写博客还是建博客比较好玩😊况且有了生成式人工智能，写作负担会小很多。&lt;/p&gt;
-&lt;h2&gt;框架选择&lt;/h2&gt;
+&lt;pre class=&quot;astro-code monokai&quot; style=&quot;background-color:#272822;color:#F8F8F2; overflow-x: auto;&quot; tabindex=&quot;0&quot; data-language=&quot;sh&quot;&gt;&lt;code&gt;&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt;restic&lt;/span&gt;&lt;span style=&quot;color:#AE81FF&quot;&gt; -r&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt; rclone:&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;&amp;#x3C;&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt;remot&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;e&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;&gt;&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt;:/path/to/repo&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt; backup&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt; /path/to/data&lt;/span&gt;&lt;span style=&quot;color:#AE81FF&quot;&gt; --password-command&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt; &apos;secret-tool lookup restic pass&apos;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;</content:encoded></item><item><title>我又回来了</title><link>https://kururin.cc/blog/first-post/</link><guid isPermaLink="true">https://kururin.cc/blog/first-post/</guid><description>这次要徒手搓博客</description><pubDate>Thu, 21 Sep 2023 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;曾经几度对自己的博客开了又关，最初一个博客应该是在读初中的时候建起来的，使用的是 wordpress。但都没写什么文章，每次想写点什么，就觉得没什么好写的，或者写不出来。。等域名过期或是vps过期，然后也就这么丢掉了。比起写博客还是建博客比较好玩😊况且有了生成式人工智能，写作负担会小很多。&lt;/p&gt;
+&lt;h2 id=&quot;框架选择&quot;&gt;框架选择&lt;/h2&gt;
 &lt;p&gt;我对前端不是很熟悉，SSG(Static Site Generator) 框架除了主流的 Hexo, Hugo, Jekyll 之外，我几乎不认识其他的。这几个框架在我看来都不是很灵活（不好整活）。&lt;/p&gt;
 &lt;p&gt;正好我发现某位页面仔群友也在用重写博客，使用了 Astro。之后我也去了解一下关于这框架的 features，令我比较感兴趣的是 &lt;a href=&quot;https://docs.astro.build/en/concepts/islands/&quot;&gt;Component Islands&lt;/a&gt;，它可以使用任何被支持的UI框架（比如 React, Svelte, Vue）作为组件，还有 MDX，这就相当有利于整活。SSR 的支持也是有的，以后可能会用来显示动态内容，比如评论。于是就选择了 Astro。&lt;/p&gt;
-&lt;h2&gt;目标&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;input checked=&quot;&quot; disabled=&quot;&quot; type=&quot;checkbox&quot;&gt; 很快的页面打开速度&lt;/li&gt;
-&lt;li&gt;&lt;input checked=&quot;&quot; disabled=&quot;&quot; type=&quot;checkbox&quot;&gt; 无障碍&lt;/li&gt;
-&lt;li&gt;&lt;input checked=&quot;&quot; disabled=&quot;&quot; type=&quot;checkbox&quot;&gt; 搜索引擎友好&lt;/li&gt;
-&lt;li&gt;&lt;input checked=&quot;&quot; disabled=&quot;&quot; type=&quot;checkbox&quot;&gt; w3m 友好&lt;/li&gt;
-&lt;li&gt;&lt;input checked=&quot;&quot; disabled=&quot;&quot; type=&quot;checkbox&quot;&gt; 尽可能避免 JS&lt;/li&gt;
+&lt;h2 id=&quot;目标&quot;&gt;目标&lt;/h2&gt;
+&lt;ul class=&quot;contains-task-list&quot;&gt;
+&lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; checked disabled&gt; 很快的页面打开速度&lt;/li&gt;
+&lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; checked disabled&gt; 无障碍&lt;/li&gt;
+&lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; checked disabled&gt; 搜索引擎友好&lt;/li&gt;
+&lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; checked disabled&gt; w3m 友好&lt;/li&gt;
+&lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; checked disabled&gt; 尽可能避免 JS&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;大概就是灯塔跑分要4个100，最初设定的目标算是达到了。&lt;/p&gt;
-&lt;h2&gt;过程记录&lt;/h2&gt;
-&lt;h3&gt;设计&lt;/h3&gt;
+&lt;h2 id=&quot;过程记录&quot;&gt;过程记录&lt;/h2&gt;
+&lt;h3 id=&quot;设计&quot;&gt;设计&lt;/h3&gt;
 &lt;p&gt;起初，我打算根据 Material You 的风格来设计我的博客，也就是现在(2023) Google 的设计语言。我模仿了 Material 官网的超大的R角(Radius: 40px)，但后来我发现，过大的圆角严重影响了内容的展示。这里的逻辑是，为了看起来更协调，大圆角需要足够的留白，这就导致了内容展示的空间变少了。有空我一定要写一篇《圆角批判》!&lt;/p&gt;
 &lt;p&gt;色彩方面使用了 &lt;a href=&quot;https://m3.material.io/theme-builder&quot;&gt;Material Theme Builder&lt;/a&gt; 进行调色。后面为了方便使用了 &lt;a href=&quot;https://github.com/JavierM42/tailwind-material-colors&quot;&gt;tailwind-material-colors&lt;/a&gt; 作为插件，只要设定一个 primary color 就能计算出其他的颜色，DarkMode 也自动适配好了。 写这篇博客的时候，使用了 &lt;span style=&quot;background-color: #405e0d; color:white&quot;&gt;#405e0d&lt;/span&gt; 作为主题色。以后看心情换。&lt;/p&gt;
-&lt;h3&gt;CSS&lt;/h3&gt;
-&lt;p&gt;初版使用纯正的 CSS 进行页面布局，写着写着越来越乱了，第一次写规模稍大的页面，不知怎么管理 CSS。后面使用 Tailwind CSS 负担小了很多，首先不用 template 和 css 来回切，不知不觉找不着 tab 了。如果要问为什么不写在 &lt;code&gt;&amp;lt;style&amp;gt;&lt;/code&gt;，因为我不想看到 Network 里一大堆 stylesheet（这什么强迫症），实际上对加载速度也没很大影响。&lt;/p&gt;
-&lt;h2&gt;最后的话&lt;/h2&gt;
-&lt;p&gt;接下来，我将继续优化和完善这个博客，还有很多想法没实现呢。就这样。&lt;/p&gt;
-</content:encoded></item><item><title>折腾日记：尝试将影片库到云端</title><link>https://kururin.cc/blog/cloud-jellyfin/</link><guid isPermaLink="true">https://kururin.cc/blog/cloud-jellyfin/</guid><description>简单的说下我迁移影片到云端的过程，还有坑。使用的是 alist 和天翼盘。</description><pubDate>Mon, 13 Feb 2023 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;最近，我偶然发现了一个名为 alist 的项目，它能挂载多款国内的网盘，并支持 WebDav 协议。然后我想到了祖传的 10T 天翼网盘。于是，我产生了一个令人兴奋的想法：将 NAS 中的影片移动到网盘上，并使用 webdav 协议在 kodi 中进行播放。在这篇文章中，我将记录下我如何实现这个想法和坑。&lt;/p&gt;
-&lt;h2&gt;准备工作&lt;/h2&gt;
+&lt;h3 id=&quot;css&quot;&gt;CSS&lt;/h3&gt;
+&lt;p&gt;初版使用纯正的 CSS 进行页面布局，写着写着越来越乱了，第一次写规模稍大的页面，不知怎么管理 CSS。后面使用 Tailwind CSS 负担小了很多，首先不用 template 和 css 来回切，不知不觉找不着 tab 了。如果要问为什么不写在 &lt;code&gt;&amp;#x3C;style&gt;&lt;/code&gt;，因为我不想看到 Network 里一大堆 stylesheet（这什么强迫症），实际上对加载速度也没很大影响。&lt;/p&gt;
+&lt;h2 id=&quot;最后的话&quot;&gt;最后的话&lt;/h2&gt;
+&lt;p&gt;接下来，我将继续优化和完善这个博客，还有很多想法没实现呢。就这样。&lt;/p&gt;</content:encoded></item><item><title>折腾日记：尝试将影片库到云端</title><link>https://kururin.cc/blog/cloud-jellyfin/</link><guid isPermaLink="true">https://kururin.cc/blog/cloud-jellyfin/</guid><description>简单的说下我迁移影片到云端的过程，还有坑。使用的是 alist 和天翼盘。</description><pubDate>Mon, 13 Feb 2023 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;最近，我偶然发现了一个名为 alist 的项目，它能挂载多款国内的网盘，并支持 WebDav 协议。然后我想到了祖传的 10T 天翼网盘。于是，我产生了一个令人兴奋的想法：将 NAS 中的影片移动到网盘上，并使用 webdav 协议在 kodi 中进行播放。在这篇文章中，我将记录下我如何实现这个想法和坑。&lt;/p&gt;
+&lt;h2 id=&quot;准备工作&quot;&gt;准备工作&lt;/h2&gt;
 &lt;p&gt;首先，我们需要安装 Alist。这是一个非常简单的过程，只需遵循安装说明并进行操作即可。作为安装的方法，我选择了使用 docker compose 进行安装。&lt;/p&gt;
 &lt;p&gt;天翼网盘免费版一天只有 2G 上传，想要更大的上传只能购买会员。电信用户可以到积分商城兑换，1000 积分一个月。&lt;/p&gt;
 &lt;p&gt;在登录管理面板后，我们需要添加网盘。alist 支持天翼网盘和天翼网盘客户端。对于大于 4 GB 的文件，必须使用天翼网盘客户端。&lt;/p&gt;
-&lt;h2&gt;迁移工作&lt;/h2&gt;
+&lt;h2 id=&quot;迁移工作&quot;&gt;迁移工作&lt;/h2&gt;
 &lt;p&gt;既然 alist 支持 WebDav 了，我决定选择使用 rclone 进行文件迁移。sync 命令比通过网页传输方便得多。此外，我还有一些影片尚未刮削元数据，使用 sync 命令可以将我在本地对影片的修改同步到远端。并且如果传输过程中出现问题，也容易处理。&lt;/p&gt;
-&lt;h2&gt;评估&lt;/h2&gt;
+&lt;h2 id=&quot;评估&quot;&gt;评估&lt;/h2&gt;
 &lt;p&gt;在使用 alist 把影片迁移到网盘后，我惊讶地发现它的播放效果非常流畅，即使是 16Mbps 的高码率视频，拖动播放进度条也能立即加载。这个体验相比许多在线流媒体服务都更出色。（会员过期后，拖动进度条缓冲时间大概为 1 秒）&lt;/p&gt;
 &lt;p&gt;然而，在搜索影片的元数据时，速度可能会有所不足，需要一些等待时间。我猜测这可能是由于文件数量过多，于是我决定删除部分每集的缩略图和不必要的海报以提升速度。然后，我遇到了以下原因不明的异常行为。&lt;/p&gt;
-&lt;h2&gt;坑&lt;/h2&gt;
+&lt;h2 id=&quot;坑&quot;&gt;坑&lt;/h2&gt;
 &lt;p&gt;我使用 rclone sync 命令，将我在 NAS 的删除操作同步到远端，但文件只被删除了一部分。命令执行的很快，执行过程中也没发生报错，到 alist 网页中看到文件被删除，但我到网盘页面看到只删除了一部分。接着我刷新 alist 的文件列表，果然还在，这个就很。。到时候再研究下怎么回事了。之前我上传文件的时候出现过几次错误，但之后重试后都顺利完成了（rclone sync 失败后会重新尝试 2 次）。&lt;/p&gt;
-&lt;h2&gt;总结&lt;/h2&gt;
+&lt;h2 id=&quot;总结&quot;&gt;总结&lt;/h2&gt;
 &lt;p&gt;总的来说，使用网盘作为影片库与 kodi 观看的体验很不错，但是天翼盘不付费的上传体验糟糕。迁移后 NAS 硬盘空间非常充裕，可以不用买新硬盘了。但 alist 通过 WebDav 进行某些操作文件时不是很稳定，除了视频播放。&lt;/p&gt;
-&lt;h2&gt;后记&lt;/h2&gt;
-&lt;p&gt;之后换了 Rclone + Jellyfin，Kodi 每次要等打开电视才扫描片库。使用 rclone mount 将 WebDav 挂载到其中一个目录，然后添加到 Jellyfin，体验要远远好于 kodi。&lt;/p&gt;
-</content:encoded></item><item><title>Linux 下使用 gpg 作为 Mailvelope 的后端</title><link>https://kururin.cc/blog/mailvelope/</link><guid isPermaLink="true">https://kururin.cc/blog/mailvelope/</guid><pubDate>Sun, 15 Aug 2021 17:22:41 GMT</pubDate><content:encoded>&lt;p&gt;Mailvelope 是一个开源的浏览器扩展，可以为网页版电子邮箱提供加密和签名。&lt;/p&gt;
+&lt;h2 id=&quot;后记&quot;&gt;后记&lt;/h2&gt;
+&lt;p&gt;之后换了 Rclone + Jellyfin，Kodi 每次要等打开电视才扫描片库。使用 rclone mount 将 WebDav 挂载到其中一个目录，然后添加到 Jellyfin，体验要远远好于 kodi。&lt;/p&gt;</content:encoded></item><item><title>Linux 下使用 gpg 作为 Mailvelope 的后端</title><link>https://kururin.cc/blog/mailvelope/</link><guid isPermaLink="true">https://kururin.cc/blog/mailvelope/</guid><pubDate>Sun, 15 Aug 2021 17:22:41 GMT</pubDate><content:encoded>&lt;p&gt;Mailvelope 是一个开源的浏览器扩展，可以为网页版电子邮箱提供加密和签名。&lt;/p&gt;
 &lt;p&gt;软件默认使用自己的Keyring，后端也不是gpg，使用起来很不方便。这也意味着不能用硬件 Key 进行操作。&lt;/p&gt;
 &lt;p&gt;如果要在 Mailvelope 使用 gpg，Windows 下可以开箱即用，Linux 下的浏览器安装完是调用不了 gpg 的，就需要手动配置下了。
 安装 gpgme&lt;/p&gt;
 &lt;p&gt;需要安装 gpgme 才能与 gpg 通讯，部分发行版已经带了 gpgme 的包。&lt;/p&gt;
 &lt;p&gt;对于我自己用的 Arch&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-sh&quot;&gt;sudo pacman -S gpgme
-Firefox
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;astro-code monokai&quot; style=&quot;background-color:#272822;color:#F8F8F2; overflow-x: auto;&quot; tabindex=&quot;0&quot; data-language=&quot;sh&quot;&gt;&lt;code&gt;&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt;sudo&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt; pacman&lt;/span&gt;&lt;span style=&quot;color:#AE81FF&quot;&gt; -S&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt; gpgme&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt;Firefox&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;创建一个文件，如果没有文件夹就先创建一个&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;~/.mozilla/native-messaging-hosts/gpgmejson.json&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;然后写入下面内容&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-json&quot;&gt;{
-  &amp;quot;name&amp;quot;: &amp;quot;gpgmejson&amp;quot;,
-  &amp;quot;description&amp;quot;: &amp;quot;JavaScript binding for GnuPG&amp;quot;,
-  &amp;quot;path&amp;quot;: &amp;quot;/usr/bin/gpgme-json&amp;quot;,
-  &amp;quot;type&amp;quot;: &amp;quot;stdio&amp;quot;,
-  &amp;quot;allowed_extensions&amp;quot;: [&amp;quot;jid1-AQqSMBYb0a8ADg@jetpack&amp;quot;]
-}
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;astro-code monokai&quot; style=&quot;background-color:#272822;color:#F8F8F2; overflow-x: auto;&quot; tabindex=&quot;0&quot; data-language=&quot;json&quot;&gt;&lt;code&gt;&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;{&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#66D9EF;font-style:italic&quot;&gt;  &quot;name&quot;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;: &lt;/span&gt;&lt;span style=&quot;color:#CFCFC2&quot;&gt;&quot;gpgmejson&quot;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;,&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#66D9EF;font-style:italic&quot;&gt;  &quot;description&quot;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;: &lt;/span&gt;&lt;span style=&quot;color:#CFCFC2&quot;&gt;&quot;JavaScript binding for GnuPG&quot;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;,&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#66D9EF;font-style:italic&quot;&gt;  &quot;path&quot;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;: &lt;/span&gt;&lt;span style=&quot;color:#CFCFC2&quot;&gt;&quot;/usr/bin/gpgme-json&quot;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;,&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#66D9EF;font-style:italic&quot;&gt;  &quot;type&quot;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;: &lt;/span&gt;&lt;span style=&quot;color:#CFCFC2&quot;&gt;&quot;stdio&quot;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;,&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#66D9EF;font-style:italic&quot;&gt;  &quot;allowed_extensions&quot;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;: [&lt;/span&gt;&lt;span style=&quot;color:#CFCFC2&quot;&gt;&quot;jid1-AQqSMBYb0a8ADg@jetpack&quot;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;]&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Chromium&lt;/p&gt;
 &lt;p&gt;跟 Firefox 操作差不多&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;~/.config/chromium/NativeMessagingHosts/gpgmejson.json&lt;/code&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-json&quot;&gt;{
-  &amp;quot;name&amp;quot;: &amp;quot;gpgmejson&amp;quot;,
-  &amp;quot;description&amp;quot;: &amp;quot;JavaScript binding for GnuPG&amp;quot;,
-  &amp;quot;path&amp;quot;: &amp;quot;/usr/bin/gpgme-json&amp;quot;,
-  &amp;quot;type&amp;quot;: &amp;quot;stdio&amp;quot;,
-  &amp;quot;allowed_origins&amp;quot;: [&amp;quot;chrome-extension://kajibbejlbohfaggdiogboambcijhkke/&amp;quot;]
-}
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;astro-code monokai&quot; style=&quot;background-color:#272822;color:#F8F8F2; overflow-x: auto;&quot; tabindex=&quot;0&quot; data-language=&quot;json&quot;&gt;&lt;code&gt;&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;{&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#66D9EF;font-style:italic&quot;&gt;  &quot;name&quot;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;: &lt;/span&gt;&lt;span style=&quot;color:#CFCFC2&quot;&gt;&quot;gpgmejson&quot;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;,&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#66D9EF;font-style:italic&quot;&gt;  &quot;description&quot;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;: &lt;/span&gt;&lt;span style=&quot;color:#CFCFC2&quot;&gt;&quot;JavaScript binding for GnuPG&quot;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;,&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#66D9EF;font-style:italic&quot;&gt;  &quot;path&quot;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;: &lt;/span&gt;&lt;span style=&quot;color:#CFCFC2&quot;&gt;&quot;/usr/bin/gpgme-json&quot;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;,&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#66D9EF;font-style:italic&quot;&gt;  &quot;type&quot;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;: &lt;/span&gt;&lt;span style=&quot;color:#CFCFC2&quot;&gt;&quot;stdio&quot;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;,&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#66D9EF;font-style:italic&quot;&gt;  &quot;allowed_origins&quot;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;: [&lt;/span&gt;&lt;span style=&quot;color:#CFCFC2&quot;&gt;&quot;chrome-extension://kajibbejlbohfaggdiogboambcijhkke/&quot;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;]&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;参考&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/mailvelope/mailvelope/wiki/Mailvelope-GnuPG-integration&quot;&gt;https://github.com/mailvelope/mailvelope/wiki/Mailvelope-GnuPG-integration&lt;/a&gt;&lt;/p&gt;
-</content:encoded></item><item><title>CanoKey NFC-A 开箱体验</title><link>https://kururin.cc/blog/canokey-unboxing/</link><guid isPermaLink="true">https://kururin.cc/blog/canokey-unboxing/</guid><description>Yubikey 平替</description><pubDate>Tue, 02 Feb 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;strong&gt;这是 eraly bird，不是 pigeon。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/mailvelope/mailvelope/wiki/Mailvelope-GnuPG-integration&quot;&gt;https://github.com/mailvelope/mailvelope/wiki/Mailvelope-GnuPG-integration&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title>CanoKey NFC-A 开箱体验</title><link>https://kururin.cc/blog/canokey-unboxing/</link><guid isPermaLink="true">https://kururin.cc/blog/canokey-unboxing/</guid><description>Yubikey 平替</description><pubDate>Tue, 02 Feb 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;strong&gt;这是 eraly bird，不是 pigeon。&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;说下购买的原因，我一直想买一个替代Key，无奈Yubikey售价太高，然后恰好在某群组看到Canokey发售的消息。&lt;/p&gt;
 &lt;p&gt;目前发售的CanoKey拥有Yubikey 5 NFC大部分功能，早起的鸟儿只需要79+10（运费），价格不到Yubikey的四分一。正式版据说也不会太贵。&lt;/p&gt;
-&lt;h2&gt;开箱&lt;/h2&gt;
+&lt;h2 id=&quot;开箱&quot;&gt;开箱&lt;/h2&gt;
 &lt;p&gt;外包装是牛皮纸，看上去很环保。本体有滴胶保护，防水且坚固。
-&lt;img src=&quot;https://github.com/icealtria/picx-images-hosting/raw/images/20231022/CanoKey.webp&quot; alt=&quot;Canokey&quot;&gt;&lt;/p&gt;
-&lt;h2&gt;它能做什么&lt;/h2&gt;
+&lt;/p&gt;&lt;figure&gt;&lt;img src=&quot;https://github.com/icealtria/picx-images-hosting/raw/images/20231022/CanoKey.webp&quot; alt=&quot;Canokey&quot;&gt;&lt;figcaption&gt;Canokey&lt;/figcaption&gt;&lt;/figure&gt;&lt;p&gt;&lt;/p&gt;
+&lt;h2 id=&quot;它能做什么&quot;&gt;它能做什么&lt;/h2&gt;
 &lt;p&gt;支持的协议&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;U2F / FIDO2&lt;/li&gt;
@@ -804,11 +788,10 @@ Firefox
 &lt;p&gt;Yubikey能做的Canokey基本都能做。我自己平时用的功能大多都覆盖到，除了KeepassXC中的Challenge-Response。并且大部分功能使用方法跟Yubikey一致，甚至还可以使用ykman（YubiKey Manager CLI）管理PIV。所以Canokey支持的特性很多都可以参考&lt;a href=&quot;https://github.com/drduh/YubiKey-Guide&quot;&gt;Yubikey Guide&lt;/a&gt;。&lt;/p&gt;
 &lt;p&gt;个人最常用的还是U2F，OpenPGP Card。使用U2F作为MFA的一种方式，相比TOTP能更好地对抗钓鱼，社工。而OpenPGP Card可以保护私钥不被盗取。&lt;/p&gt;
 &lt;p&gt;另外支持64个FIDO2 resident keys，相比之下Yubikey 5只有25个。&lt;/p&gt;
-&lt;h2&gt;不爽的地方&lt;/h2&gt;
+&lt;h2 id=&quot;不爽的地方&quot;&gt;不爽的地方&lt;/h2&gt;
 &lt;p&gt;客户端是网页的，需要Chromium内核的浏览器。我觉得还是有个本地运行的客户端更好，不过客户端开源，可以clone项目到本地，在node环境运行。&lt;/p&gt;
 &lt;p&gt;目前TOTP只在网页使用，很不方便。&lt;/p&gt;
 &lt;p&gt;OpenSSH 8.2版本开始支持FIDO/U2F安全密钥。但Canokey只支持ecdsa-sk，不支持ed25519-sk。有点遗憾，但也还好。&lt;/p&gt;
 &lt;p&gt;NFC灵敏度要比Yubikey低很多，偶尔会出现失败的现象。&lt;/p&gt;
-&lt;h2&gt;总结&lt;/h2&gt;
-&lt;p&gt;目前市面上在单个硬件实现多种协议的Key并不多，而且价格对比Yubikey也没有优势。CanoKey能够支持其大部分核心功能，日常使用基本能够满足需求，后续正式版价格不高的话非常值得入手。&lt;/p&gt;
-</content:encoded></item></channel></rss>
+&lt;h2 id=&quot;总结&quot;&gt;总结&lt;/h2&gt;
+&lt;p&gt;目前市面上在单个硬件实现多种协议的Key并不多，而且价格对比Yubikey也没有优势。CanoKey能够支持其大部分核心功能，日常使用基本能够满足需求，后续正式版价格不高的话非常值得入手。&lt;/p&gt;</content:encoded></item></channel></rss>
