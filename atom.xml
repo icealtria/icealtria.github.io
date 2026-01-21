@@ -33,37 +33,7 @@
 &lt;p&gt;网络方面，可以在支付宝/淘宝的飞猪上面买一个一天3GB的流量包，价格10元。一般过境后能自动启动，实在不行也可以手动选择网络 CMHK。3GB流量很够用了，完成开户+导航+中途查找资料也就用了500MB&lt;/p&gt;
 &lt;p&gt;根据以往经验，省内出行最经济的是大巴，接着就到某书寻找大巴线路，然后我发现有的线路能直接到达福田/罗湖口岸附近。也省去了转车的麻烦。我的路线选择是到达罗湖口岸，然后从罗湖搭地铁到上水站，找个地方坐下来办理。&lt;/p&gt;
 &lt;p&gt;我当时在彩園廣場外面找了个地方坐着，地铁出站就能看到彩園廣場。&lt;/p&gt;
-&lt;figure class=&quot;livephoto&quot; data-astro-cid-nvr62e2s&gt; &lt;img src=&quot;/assets/IMG_1459_1Lmx78.webp&quot; alt data-astro-cid-nvr62e2s=&quot;true&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; fetchpriority=&quot;auto&quot; width=&quot;2252&quot; height=&quot;2376&quot; class=&quot;livephoto__image&quot;&gt; &lt;span class=&quot;absolute text-white top-2 left-2 z-10&quot; data-astro-cid-nvr62e2s&gt; &lt;svg width=&quot;1em&quot; height=&quot;1em&quot; data-astro-cid-nvr62e2s=&quot;true&quot; data-icon=&quot;mdi:image-filter-tilt-shift&quot;&gt;   &lt;symbol id=&quot;ai:mdi:image-filter-tilt-shift&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;path fill=&quot;currentColor&quot; d=&quot;M5.68 19.74A10 10 0 0 0 11 21.95v-2.02a7.94 7.94 0 0 1-3.9-1.62m5.9 1.62v2.02c2-.2 3.84-1 5.32-2.21l-1.43-1.43c-1.1.86-2.43 1.44-3.89 1.62m5.31-3.03l1.43 1.43c1.21-1.48 2.01-3.33 2.21-5.33h-2.02a7.94 7.94 0 0 1-1.62 3.9M15 12a3 3 0 0 0-3-3a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3M4.07 13H2.05c.2 2 1 3.84 2.21 5.32l1.43-1.43A7.87 7.87 0 0 1 4.07 13m1.62-5.9L4.26 5.68A10 10 0 0 0 2.05 11h2.02c.18-1.46.76-2.79 1.62-3.9M19.93 11h2.02c-.2-2-1-3.84-2.21-5.32L18.31 7.1a7.94 7.94 0 0 1 1.62 3.9m-1.61-6.74A10 10 0 0 0 13 2.05v2.02c1.46.18 2.79.76 3.9 1.62M11 4.07V2.05c-2 .2-3.84 1-5.32 2.21L7.1 5.69A7.94 7.94 0 0 1 11 4.07&quot;/&gt;&lt;/symbol&gt;&lt;use href=&quot;#ai:mdi:image-filter-tilt-shift&quot;&gt;&lt;/use&gt;  &lt;/svg&gt; &lt;/span&gt; &lt;video src=&quot;/assets/IMG_1459.webm&quot; muted class=&quot;livephoto__video&quot; data-astro-cid-nvr62e2s&gt;&lt;/video&gt; &lt;figcaption data-astro-cid-nvr62e2s&gt;上水彩园路&lt;/figcaption&gt; &lt;/figure&gt;  &lt;script&gt;
-    document.addEventListener(&quot;DOMContentLoaded&quot;, () =&gt; {
-        const lives = document.querySelectorAll(&quot;.livephoto&quot;);
-
-        lives.forEach((lp) =&gt; {
-            const video = lp.querySelector(&quot;video&quot;);
-
-            // Play on hover
-            lp.addEventListener(&quot;mouseenter&quot;, () =&gt; {
-                lp.classList.add(&quot;playing&quot;);
-                video.currentTime = 0;
-                video.play();
-            });
-
-            // Stop on leave
-            lp.addEventListener(&quot;mouseleave&quot;, () =&gt; {
-                lp.classList.remove(&quot;playing&quot;);
-                video.pause();
-                sleep(100);
-                video.currentTime = 0;
-            });
-
-            // Revert to photo when video finishes
-            video.addEventListener(&quot;ended&quot;, () =&gt; {
-                lp.classList.remove(&quot;playing&quot;);
-                sleep(100);
-                video.currentTime = 0;
-            });
-        });
-    });
-&lt;/script&gt;
+&lt;figure class=&quot;livephoto&quot; data-astro-cid-nvr62e2s&gt; &lt;img src=&quot;/assets/IMG_1459_1Lmx78.webp&quot; alt data-astro-cid-nvr62e2s=&quot;true&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; fetchpriority=&quot;auto&quot; width=&quot;2252&quot; height=&quot;2376&quot; class=&quot;livephoto__image&quot;&gt;  &lt;figcaption data-astro-cid-nvr62e2s&gt;上水彩园路&lt;/figcaption&gt; &lt;/figure&gt;  
 &lt;h2 id=&quot;开戶前&quot;&gt;开戶前&lt;/h2&gt;
 &lt;p&gt;如果有人想以咱的文章作为攻略，那你不一定要按照我的步骤来，开户完后发现还有更优解。&lt;/p&gt;
 &lt;p&gt;我图省事直接开了汇丰One和中银自在理财，其实应该开卓越理财和中银那个什么来着，先冲高端，再降级才对。&lt;/p&gt;
