@@ -1,0 +1,12 @@
+{
+	"client_id": "https://icealtria.github.io/bsky-oauth.json",
+	"client_name": "Rin's Blog",
+	"client_uri": "https://icealtria.github.io",
+	"redirect_uris": ["https://icealtria.github.io/oauth/callback"],
+	"scope": "atproto transition:generic",
+	"grant_types": ["authorization_code", "refresh_token"],
+	"response_types": ["code"],
+	"token_endpoint_auth_method": "none",
+	"application_type": "web",
+	"dpop_bound_access_tokens": true
+}
