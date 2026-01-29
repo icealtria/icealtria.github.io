@@ -84,7 +84,7 @@
 &lt;p&gt;网络方面，可以在支付宝/淘宝的飞猪上面买一个一天3GB的流量包，价格10元。一般过境后能自动启动，实在不行也可以手动选择网络 CMHK。3GB流量很够用了，完成开户+导航+中途查找资料也就用了500MB&lt;/p&gt;
 &lt;p&gt;根据以往经验，省内出行最经济的是大巴，接着就到某书寻找大巴线路，然后我发现有的线路能直接到达福田/罗湖口岸附近。也省去了转车的麻烦。我的路线选择是到达罗湖口岸，然后从罗湖搭地铁到上水站，找个地方坐下来办理。&lt;/p&gt;
 &lt;p&gt;我当时在彩園廣場外面找了个地方坐着，地铁出站就能看到彩園廣場。&lt;/p&gt;
-&lt;figure&gt;&lt;img src=&quot;/assets/IMG_1459_1Lmx78.webp&quot; alt=&quot;上水彩园路&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; fetchpriority=&quot;auto&quot; width=&quot;2252&quot; height=&quot;2376&quot;&gt;&lt;figcaption&gt;上水彩园路&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img src=&quot;/assets/IMG_1459_Z2tTrRp.webp&quot; alt=&quot;上水彩园路&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; fetchpriority=&quot;auto&quot; width=&quot;2252&quot; height=&quot;2376&quot;&gt;&lt;figcaption&gt;上水彩园路&lt;/figcaption&gt;&lt;/figure&gt;
 &lt;h2 id=&quot;开戶前&quot;&gt;开戶前&lt;/h2&gt;
 &lt;p&gt;如果有人想以咱的文章作为攻略，那你不一定要按照我的步骤来，开户完后发现还有更优解。&lt;/p&gt;
 &lt;p&gt;我图省事直接开了汇丰One和中银自在理财，其实应该开卓越理财和中银那个什么来着，先冲高端，再降级才对。&lt;/p&gt;
@@ -144,7 +144,7 @@
 &lt;p&gt;申请汇丰万事达借记卡（蓝狮子）
 操作路径：App → 银行卡页面 → 申请 → 等待邮寄&lt;/p&gt;
 &lt;p&gt;第二天凌晨就收到了 hello 邮件，这意味着卡即将邮寄&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/IMG_1570_ZjEyif.webp&quot; alt=&quot;汇丰ATM卡&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; fetchpriority=&quot;auto&quot; width=&quot;2016&quot; height=&quot;1512&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/IMG_1570_CyCCV.webp&quot; alt=&quot;汇丰ATM卡&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; fetchpriority=&quot;auto&quot; width=&quot;2016&quot; height=&quot;1512&quot;&gt;&lt;/p&gt;
 &lt;h3 id=&quot;關於密码函&quot;&gt;關於密码函&lt;/h3&gt;
 &lt;p&gt;由于密码函是通过平邮（airmail）送出，现在很多人都没有信箱，也没电话联系，存在一定丢件风险。可以提前联系邮局的人留意一下。&lt;/p&gt;
 &lt;p&gt;当时十几天没收到自己亲自跑了一趟邮局，邮局的人告诉我我的地址并没有收到国际邮件，然后工作人员让我登记一下电话号码有邮件会通知我，之后过了两天就打电话给我说收到了。&lt;/p&gt;
@@ -164,7 +164,7 @@
 &lt;li&gt;按提示完成证件上传、入境记录上传、人脸识别&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;刚开通两三天是打开APP的中银卡会提示亲临分行，其实不用的，等个几天就能用了，然后实体卡也会自动邮寄。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/IMG_1565_VdG7b.webp&quot; alt=&quot;中银卡&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; fetchpriority=&quot;auto&quot; width=&quot;3905&quot; height=&quot;2563&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/IMG_1565_1K8OVz.webp&quot; alt=&quot;中银卡&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; fetchpriority=&quot;auto&quot; width=&quot;3905&quot; height=&quot;2563&quot;&gt;&lt;/p&gt;
 &lt;p&gt;中银的实体卡疑似挂号信，跟汇丰密码函同一天收到。收到卡的时候邮递员告诉我有一张是挂号信，汇丰的两张信确定是普通 airmail，中银卡的信封没看到 registered 的字样，但似乎那张挂号信就是中银的。&lt;/p&gt;
 &lt;h2 id=&quot;眾安銀行-za-bank&quot;&gt;眾安銀行 ZA Bank&lt;/h2&gt;
 &lt;ol&gt;
@@ -683,7 +683,7 @@ publicKey 匹配，确认登录成功。&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;打开 console 的 &lt;a href=&quot;https://login.tailscale.com/admin/dns&quot;&gt;&lt;strong&gt;DNS&lt;/strong&gt;&lt;/a&gt; 页面。&lt;/li&gt;
 &lt;li&gt;确保 MagicDNS 和 HTTPS Certificates 都为开启状态
-&lt;img alt=&quot;DNS Settings&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; fetchpriority=&quot;auto&quot; width=&quot;712&quot; height=&quot;405&quot; src=&quot;/assets/image_28hSoz.webp&quot; &gt;&lt;/li&gt;
+&lt;img alt=&quot;DNS Settings&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; fetchpriority=&quot;auto&quot; width=&quot;712&quot; height=&quot;405&quot; src=&quot;/assets/image_Z1IloB0.webp&quot; &gt;&lt;/li&gt;
 &lt;li&gt;执行以下命令：
 &lt;pre class=&quot;astro-code monokai&quot; style=&quot;background-color:#272822;color:#F8F8F2; overflow-x: auto;&quot; tabindex=&quot;0&quot; data-language=&quot;sh&quot;&gt;&lt;code&gt;&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt;tailscale&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt; serve&lt;/span&gt;&lt;span style=&quot;color:#AE81FF&quot;&gt; --bg&lt;/span&gt;&lt;span style=&quot;color:#AE81FF&quot;&gt; --https=443&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt; localhost:&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;&amp;#x3C;&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt;por&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;t&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
