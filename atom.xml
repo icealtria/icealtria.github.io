@@ -2,34 +2,34 @@
 &lt;p&gt;偏移百分比和像素是手动调式出来的。要是按钮里的文字长短不一，那简直灾难。&lt;/p&gt;
 &lt;h2 id=&quot;手算偏移量&quot;&gt;手算偏移量&lt;/h2&gt;
 &lt;p&gt;这是我以前最常用的办法。给导航栏加个伪元素当背景，然后鼠标指到哪个，就手动把背景“挪”过去。当然这类效果用 JS 其实更好实现，但个人的强迫症，我是不会在导航上引入 JS 的。&lt;/p&gt;
-&lt;nav class=&quot;navbar-legacy relative flex justify-center gap-1 my-8 p-1 bg-zinc-100/50 dark:bg-zinc-800/50 rounded-full w-fit mx-auto border border-zinc-200 dark:border-zinc-700&quot; data-astro-cid-xznwuxjn&gt; &lt;a href=&quot;#&quot; class=&quot;active px-4 py-1.5 text-sm font-medium transition-colors z-10&quot; data-astro-cid-xznwuxjn&gt;首页&lt;/a&gt; &lt;a href=&quot;#&quot; class=&quot;px-4 py-1.5 text-sm font-medium transition-colors z-10&quot; data-astro-cid-xznwuxjn&gt;归档&lt;/a&gt; &lt;a href=&quot;#&quot; class=&quot;px-4 py-1.5 text-sm font-medium transition-colors z-10&quot; data-astro-cid-xznwuxjn&gt;友链&lt;/a&gt; &lt;a href=&quot;#&quot; class=&quot;px-4 py-1.5 text-sm font-medium transition-colors z-10&quot; data-astro-cid-xznwuxjn&gt;关于&lt;/a&gt; &lt;/nav&gt;
+&lt;nav class=&quot;navbar-legacy relative flex justify-center gap-1 my-8 p-1 bg-zinc-100/50 dark:bg-zinc-800/50 rounded-full w-fit mx-auto border border-zinc-200 dark:border-zinc-700&quot; data-astro-cid-xznwuxjn&gt;&lt;a href=&quot;#&quot; class=&quot;active px-4 py-1.5 text-sm font-medium transition-colors z-10&quot; data-astro-cid-xznwuxjn&gt;首页&lt;/a&gt;&lt;a href=&quot;#&quot; class=&quot;px-4 py-1.5 text-sm font-medium transition-colors z-10&quot; data-astro-cid-xznwuxjn&gt;归档&lt;/a&gt;&lt;a href=&quot;#&quot; class=&quot;px-4 py-1.5 text-sm font-medium transition-colors z-10&quot; data-astro-cid-xznwuxjn&gt;友链&lt;/a&gt;&lt;a href=&quot;#&quot; class=&quot;px-4 py-1.5 text-sm font-medium transition-colors z-10&quot; data-astro-cid-xznwuxjn&gt;关于&lt;/a&gt;&lt;/nav&gt;
 &lt;p&gt;代码写起来大概长这样：&lt;/p&gt;
-&lt;details class=&quot;foldable-code&quot; data-astro-cid-h44jmcat&gt; &lt;summary class=&quot;foldable-header&quot; data-astro-cid-h44jmcat&gt; &lt;span class=&quot;foldable-title&quot; data-astro-cid-h44jmcat&gt;NavbarLegacy.astro&lt;/span&gt;  &lt;/summary&gt; &lt;div class=&quot;foldable-content&quot; data-astro-cid-h44jmcat&gt; &lt;pre class=&quot;astro-code monokai&quot; style=&quot;background-color:#272822;color:#F8F8F2;overflow-x:auto&quot; tabindex=&quot;0&quot; data-language=&quot;astro&quot;&gt;&lt;code&gt;&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;nav&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt;    class&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt;&amp;quot;navbar-legacy relative flex justify-center gap-1 my-8 p-1 bg-zinc-100/50 dark:bg-zinc-800/50 rounded-full w-fit mx-auto border border-zinc-200 dark:border-zinc-700&amp;quot;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    &amp;lt;&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;a&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt;        href&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt;&amp;quot;#&amp;quot;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt;        class&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt;&amp;quot;active px-4 py-1.5 text-sm font-medium transition-colors z-10&amp;quot;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;        &amp;gt;首页&amp;lt;/&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;a&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    &amp;gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    &amp;lt;&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;a&lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt; href&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt;&amp;quot;#&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt; class&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt;&amp;quot;px-4 py-1.5 text-sm font-medium transition-colors z-10&amp;quot;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;        &amp;gt;归档&amp;lt;/&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;a&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    &amp;gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    &amp;lt;&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;a&lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt; href&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt;&amp;quot;#&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt; class&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt;&amp;quot;px-4 py-1.5 text-sm font-medium transition-colors z-10&amp;quot;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;        &amp;gt;友链&amp;lt;/&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;a&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    &amp;gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    &amp;lt;&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;a&lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt; href&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt;&amp;quot;#&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt; class&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt;&amp;quot;px-4 py-1.5 text-sm font-medium transition-colors z-10&amp;quot;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;        &amp;gt;关于&amp;lt;/&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;a&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    &amp;gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;nav&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;details class=&quot;foldable-code&quot; data-astro-cid-h44jmcat&gt;&lt;summary class=&quot;foldable-header&quot; data-astro-cid-h44jmcat&gt;&lt;span class=&quot;foldable-title&quot; data-astro-cid-h44jmcat&gt;NavbarLegacy.astro&lt;/span&gt;&lt;/summary&gt;&lt;div class=&quot;foldable-content&quot; data-astro-cid-h44jmcat&gt;&lt;pre class=&quot;astro-code monokai&quot; style=&quot;background-color:#272822;color:#F8F8F2; overflow-x: auto;&quot; tabindex=&quot;0&quot; data-language=&quot;astro&quot;&gt;&lt;code&gt;&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&amp;#x3C;&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;nav&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt;    class&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt;&quot;navbar-legacy relative flex justify-center gap-1 my-8 p-1 bg-zinc-100/50 dark:bg-zinc-800/50 rounded-full w-fit mx-auto border border-zinc-200 dark:border-zinc-700&quot;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    &amp;#x3C;&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;a&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt;        href&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt;&quot;#&quot;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt;        class&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt;&quot;active px-4 py-1.5 text-sm font-medium transition-colors z-10&quot;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;        &gt;首页&amp;#x3C;/&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;a&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    &gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    &amp;#x3C;&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;a&lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt; href&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt;&quot;#&quot;&lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt; class&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt;&quot;px-4 py-1.5 text-sm font-medium transition-colors z-10&quot;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;        &gt;归档&amp;#x3C;/&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;a&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    &gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    &amp;#x3C;&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;a&lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt; href&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt;&quot;#&quot;&lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt; class&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt;&quot;px-4 py-1.5 text-sm font-medium transition-colors z-10&quot;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;        &gt;友链&amp;#x3C;/&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;a&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    &gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    &amp;#x3C;&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;a&lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt; href&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt;&quot;#&quot;&lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt; class&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt;&quot;px-4 py-1.5 text-sm font-medium transition-colors z-10&quot;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;        &gt;关于&amp;#x3C;/&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;a&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    &gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&amp;#x3C;/&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;nav&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;line&quot;&gt;&lt;/span&gt;
-&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;style&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&amp;#x3C;&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;style&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt;    .navbar-legacy&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt; {&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#66D9EF;font-style:italic&quot;&gt;        position&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;: &lt;/span&gt;&lt;span style=&quot;color:#66D9EF&quot;&gt;relative&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    }&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;line&quot;&gt;&lt;/span&gt;
 &lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt;    .navbar-legacy::before&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt; {&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#66D9EF;font-style:italic&quot;&gt;        content&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;: &lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#66D9EF;font-style:italic&quot;&gt;        content&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;: &lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#66D9EF;font-style:italic&quot;&gt;        position&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;: &lt;/span&gt;&lt;span style=&quot;color:#66D9EF&quot;&gt;absolute&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#66D9EF;font-style:italic&quot;&gt;        top&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;: &lt;/span&gt;&lt;span style=&quot;color:#AE81FF&quot;&gt;4&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;px&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#66D9EF;font-style:italic&quot;&gt;        left&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;: &lt;/span&gt;&lt;span style=&quot;color:#AE81FF&quot;&gt;4&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;px&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;;&lt;/span&gt;&lt;/span&gt;
@@ -83,25 +83,25 @@
 &lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#66D9EF;font-style:italic&quot;&gt;        opacity&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;: &lt;/span&gt;&lt;span style=&quot;color:#AE81FF&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#66D9EF;font-style:italic&quot;&gt;        transform&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;: &lt;/span&gt;&lt;span style=&quot;color:#66D9EF&quot;&gt;translateX&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;color:#AE81FF&quot;&gt;192&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;px&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;);&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    }&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;style&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt; &lt;/div&gt; &lt;/details&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&amp;#x3C;/&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;style&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/details&gt;
 &lt;p&gt;每增加一个导航链接，就得去重新算一遍偏移量。之前导航还有图标 + 响应式设计，手机上没图标就露馅了，为了动效把图标砍了。&lt;/p&gt;
 &lt;h2 id=&quot;anchor&quot;&gt;Anchor&lt;/h2&gt;
 &lt;p&gt;用上 Anchor Positioning 之后，逻辑变得非常简洁。滑块只需要通过声明式语言指定它的锚点目标即可。&lt;/p&gt;
 &lt;p&gt;这种方式让定位逻辑回归到了最直觉的状态：你只需要声明“要跟谁对齐”，剩下的适配工作交给浏览器原生处理。&lt;/p&gt;
 &lt;p&gt;比如下面 &lt;code&gt;.indicator&lt;/code&gt; 声明了 &lt;code&gt;position-anchor: --nav-anchor&lt;/code&gt;&lt;/p&gt;
-&lt;nav class=&quot;navbar-anchor relative flex justify-center gap-1 my-8 p-1 bg-zinc-100/50 dark:bg-zinc-800/50 rounded-full w-fit mx-auto border border-zinc-200 dark:border-zinc-700&quot; data-astro-cid-h4jvo6lb&gt; &lt;a href=&quot;#&quot; data-astro-cid-h4jvo6lb&gt;首页&lt;/a&gt; &lt;a href=&quot;#&quot; data-astro-cid-h4jvo6lb&gt;归档&lt;/a&gt; &lt;a href=&quot;#&quot; class=&quot;px-6&quot; data-astro-cid-h4jvo6lb&gt;特别长的友链&lt;/a&gt; &lt;a href=&quot;#&quot; class=&quot;active&quot; data-astro-cid-h4jvo6lb&gt;关于&lt;/a&gt; &lt;div class=&quot;indicator&quot; data-astro-cid-h4jvo6lb&gt;&lt;/div&gt; &lt;/nav&gt;
-&lt;details class=&quot;foldable-code&quot; data-astro-cid-h44jmcat&gt; &lt;summary class=&quot;foldable-header&quot; data-astro-cid-h44jmcat&gt; &lt;span class=&quot;foldable-title&quot; data-astro-cid-h44jmcat&gt;NavbarAnchor.astro&lt;/span&gt;  &lt;/summary&gt; &lt;div class=&quot;foldable-content&quot; data-astro-cid-h44jmcat&gt; &lt;pre class=&quot;astro-code monokai&quot; style=&quot;background-color:#272822;color:#F8F8F2;overflow-x:auto&quot; tabindex=&quot;0&quot; data-language=&quot;astro&quot;&gt;&lt;code&gt;&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;nav&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt;    class&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt;&amp;quot;navbar-anchor relative flex justify-center gap-1 my-8 p-1 bg-zinc-100/50 dark:bg-zinc-800/50 rounded-full w-fit mx-auto border border-zinc-200 dark:border-zinc-700&amp;quot;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    &amp;lt;&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;a&lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt; href&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt;&amp;quot;#&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&amp;gt;首页&amp;lt;/&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;a&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    &amp;lt;&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;a&lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt; href&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt;&amp;quot;#&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&amp;gt;归档&amp;lt;/&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;a&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    &amp;lt;&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;a&lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt; href&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt;&amp;quot;#&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt; class&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt;&amp;quot;px-6&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&amp;gt;特别长的友链&amp;lt;/&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;a&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    &amp;lt;&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;a&lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt; href&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt;&amp;quot;#&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt; class&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt;&amp;quot;active&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&amp;gt;关于&amp;lt;/&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;a&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;nav class=&quot;navbar-anchor relative flex justify-center gap-1 my-8 p-1 bg-zinc-100/50 dark:bg-zinc-800/50 rounded-full w-fit mx-auto border border-zinc-200 dark:border-zinc-700&quot; data-astro-cid-h4jvo6lb&gt;&lt;a href=&quot;#&quot; data-astro-cid-h4jvo6lb&gt;首页&lt;/a&gt;&lt;a href=&quot;#&quot; data-astro-cid-h4jvo6lb&gt;归档&lt;/a&gt;&lt;a href=&quot;#&quot; class=&quot;px-6&quot; data-astro-cid-h4jvo6lb&gt;特别长的友链&lt;/a&gt;&lt;a href=&quot;#&quot; class=&quot;active&quot; data-astro-cid-h4jvo6lb&gt;关于&lt;/a&gt;&lt;div class=&quot;indicator&quot; data-astro-cid-h4jvo6lb&gt;&lt;/div&gt;&lt;/nav&gt;
+&lt;details class=&quot;foldable-code&quot; data-astro-cid-h44jmcat&gt;&lt;summary class=&quot;foldable-header&quot; data-astro-cid-h44jmcat&gt;&lt;span class=&quot;foldable-title&quot; data-astro-cid-h44jmcat&gt;NavbarAnchor.astro&lt;/span&gt;&lt;/summary&gt;&lt;div class=&quot;foldable-content&quot; data-astro-cid-h44jmcat&gt;&lt;pre class=&quot;astro-code monokai&quot; style=&quot;background-color:#272822;color:#F8F8F2; overflow-x: auto;&quot; tabindex=&quot;0&quot; data-language=&quot;astro&quot;&gt;&lt;code&gt;&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&amp;#x3C;&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;nav&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt;    class&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt;&quot;navbar-anchor relative flex justify-center gap-1 my-8 p-1 bg-zinc-100/50 dark:bg-zinc-800/50 rounded-full w-fit mx-auto border border-zinc-200 dark:border-zinc-700&quot;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    &amp;#x3C;&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;a&lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt; href&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt;&quot;#&quot;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&gt;首页&amp;#x3C;/&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;a&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    &amp;#x3C;&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;a&lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt; href&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt;&quot;#&quot;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&gt;归档&amp;#x3C;/&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;a&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    &amp;#x3C;&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;a&lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt; href&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt;&quot;#&quot;&lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt; class&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt;&quot;px-6&quot;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&gt;特别长的友链&amp;#x3C;/&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;a&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    &amp;#x3C;&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;a&lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt; href&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt;&quot;#&quot;&lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt; class&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt;&quot;active&quot;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&gt;关于&amp;#x3C;/&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;a&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;line&quot;&gt;&lt;/span&gt;
-&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    &amp;lt;&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;div&lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt; class&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt;&amp;quot;indicator&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;div&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;nav&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    &amp;#x3C;&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;div&lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt; class&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt;&quot;indicator&quot;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&gt;&amp;#x3C;/&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;div&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&amp;#x3C;/&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;nav&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;line&quot;&gt;&lt;/span&gt;
-&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;style&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&amp;#x3C;&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;style&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt;    .navbar-anchor&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt; a&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt; {&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#66D9EF;font-style:italic&quot;&gt;        padding&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;: &lt;/span&gt;&lt;span style=&quot;color:#AE81FF&quot;&gt;0.375&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;rem&lt;/span&gt;&lt;span style=&quot;color:#AE81FF&quot;&gt; 1&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;rem&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#66D9EF;font-style:italic&quot;&gt;        font-size&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;: &lt;/span&gt;&lt;span style=&quot;color:#AE81FF&quot;&gt;0.875&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;rem&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;;&lt;/span&gt;&lt;/span&gt;
@@ -161,13 +161,13 @@
 &lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#66D9EF;font-style:italic&quot;&gt;        background-color&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;: &lt;/span&gt;&lt;span style=&quot;color:#AE81FF&quot;&gt;#3f3f46&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;        @apply ring-1 ring-white/10;&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    }&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;style&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt; &lt;/div&gt; &lt;/details&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&amp;#x3C;/&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;style&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/details&gt;
 &lt;p&gt;按钮里的文字不管多长，&lt;code&gt;anchor(right)&lt;/code&gt; 都能精准映射到边缘，滑块也因此实现了自动适配。&lt;/p&gt;
 &lt;h2 id=&quot;总结&quot;&gt;总结&lt;/h2&gt;
 &lt;p&gt;在以往的方案中，依赖 JavaScript 监听尺寸变化，而现在，我们可以直接使用声明式语言定义元素间的逻辑关联，将复杂的坐标计算交给浏览器的渲染引擎处理。&lt;/p&gt;
 &lt;h2 id=&quot;浏览器支持&quot;&gt;浏览器支持&lt;/h2&gt;
 &lt;p&gt;最新浏览器已经基本支持了，Firefox 似乎还有点问题。&lt;/p&gt;
-&lt;p class=&quot;ciu_embed&quot; data-feature=&quot;css-anchor-positioning&quot; data-periods=&quot;future_1,current,past_1,past_2&quot; data-accessible-colours=&quot;false&quot; data-astro-cid-x7wzzvvh&gt; &lt;picture data-astro-cid-x7wzzvvh&gt; &lt;source type=&quot;image/webp&quot; srcset=&quot;https://caniuse.bitsofco.de/image/{feature}.webp&quot; data-astro-cid-x7wzzvvh&gt; &lt;source type=&quot;image/png&quot; srcset=&quot;https://caniuse.bitsofco.de/image/{feature}.png&quot; data-astro-cid-x7wzzvvh&gt; &lt;img src=&quot;https://caniuse.bitsofco.de/image/{feature}.jpg&quot; alt=&quot;Data on support for the {feature} feature across the major browsers from caniuse.com&quot; data-astro-cid-x7wzzvvh&gt; &lt;/picture&gt; &lt;/p&gt; &lt;script src=&quot;https://cdn.jsdelivr.net/gh/ireade/caniuse-embed/public/caniuse-embed.min.js&quot;&gt;&lt;/script&gt;</content:encoded></item><item><title>2025</title><link>https://kururin.cc/blog/2025/</link><guid isPermaLink="true">https://kururin.cc/blog/2025/</guid><pubDate>Thu, 01 Jan 2026 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;无趣的一年。&lt;/p&gt;
+&lt;p class=&quot;ciu_embed&quot; data-feature=&quot;css-anchor-positioning&quot; data-periods=&quot;future_1,current,past_1,past_2&quot; data-accessible-colours=&quot;false&quot; data-astro-cid-x7wzzvvh&gt;&lt;picture data-astro-cid-x7wzzvvh&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://caniuse.bitsofco.de/image/{feature}.webp&quot; data-astro-cid-x7wzzvvh&gt;&lt;source type=&quot;image/png&quot; srcset=&quot;https://caniuse.bitsofco.de/image/{feature}.png&quot; data-astro-cid-x7wzzvvh&gt;&lt;img src=&quot;https://caniuse.bitsofco.de/image/{feature}.jpg&quot; alt=&quot;Data on support for the {feature} feature across the major browsers from caniuse.com&quot; data-astro-cid-x7wzzvvh&gt;&lt;/picture&gt;&lt;/p&gt;&lt;script src=&quot;https://cdn.jsdelivr.net/gh/ireade/caniuse-embed/public/caniuse-embed.min.js&quot;&gt;&lt;/script&gt;</content:encoded></item><item><title>2025</title><link>https://kururin.cc/blog/2025/</link><guid isPermaLink="true">https://kururin.cc/blog/2025/</guid><pubDate>Thu, 01 Jan 2026 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;无趣的一年。&lt;/p&gt;
 &lt;p&gt;有些地方讲得模糊，这是故意的。&lt;/p&gt;
 &lt;p&gt;2024 发生了很多事，导致我精神状态不佳。焦虑，PTSD，失眠。&lt;/p&gt;
 &lt;p&gt;经过一年的调整，我的状态确实好了很多。&lt;/p&gt;
@@ -175,9 +175,10 @@
 &lt;p&gt;PTSD随着时间推移，症状在减轻。&lt;/p&gt;
 &lt;p&gt;年初时，还得靠药物辅助才能入睡。即便睡着了，还是会早醒，醒来后脑子也会立刻开始胡思乱想，根本无法回笼。而最近，一觉睡到天亮的情况变多了，即便偶尔早醒，也能安心地翻个身再次入睡。&lt;/p&gt;
 &lt;p&gt;身体在修复，杂念在减少。这一年虽然平淡，但我确实好了很多。&lt;/p&gt;
-&lt;p&gt;新的一年，希望生活能有更多变化。或许是因为厌恶了确定性。&lt;/p&gt;</content:encoded></item><item><title>Re: Hasunosora</title><link>https://kururin.cc/blog/new-theme-2025/</link><guid isPermaLink="true">https://kururin.cc/blog/new-theme-2025/</guid><pubDate>Fri, 28 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;终于把那个看了很久的圆角主题给扬掉了。其实很早就想把博客做成方方正正、棱角分明的样子。&lt;/p&gt;
+&lt;p&gt;新的一年，希望生活能有更多变化。或许是因为厌恶了确定性。&lt;/p&gt;
+</content:encoded></item><item><title>Re: Hasunosora</title><link>https://kururin.cc/blog/new-theme-2025/</link><guid isPermaLink="true">https://kururin.cc/blog/new-theme-2025/</guid><pubDate>Fri, 28 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;终于把那个看了很久的圆角主题给扬掉了。其实很早就想把博客做成方方正正、棱角分明的样子。&lt;/p&gt;
 &lt;p&gt;回想两年前我&lt;a href=&quot;/blog/first-post/&quot;&gt;重拾博客&lt;/a&gt;时，本想写一篇《圆角批判》。。。也没啥好批判的了。&lt;/p&gt;
-&lt;p&gt;旧主题是我自行设计的”mylike”（其实是 Material You Like 的意思），曾试图把手机上Material 3的那套设计语言搬到博客上。这套主题一直是开源在 &lt;a href=&quot;https://github.com/icealtria/astro-mylike-blog/&quot;&gt;GitHub&lt;/a&gt; 上，连个Star都没有（笑）。初版圆角超大的，现在克制了很多，经过几次迭代并最终定格在&lt;a href=&quot;https://mylike-blog.vercel.app/&quot;&gt;现在的样子&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;旧主题是我自行设计的“mylike”（其实是 Material You Like 的意思），曾试图把手机上Material 3的那套设计语言搬到博客上。这套主题一直是开源在 &lt;a href=&quot;https://github.com/icealtria/astro-mylike-blog/&quot;&gt;GitHub&lt;/a&gt; 上，连个Star都没有（笑）。初版圆角超大的，现在克制了很多，经过几次迭代并最终定格在&lt;a href=&quot;https://mylike-blog.vercel.app/&quot;&gt;现在的样子&lt;/a&gt;。&lt;/p&gt;
 &lt;p&gt;对于Material 3在手机上的表现，我依然是满意的。但在 2025 年，当桌面操作系统和应用都开始泛滥大圆角设计，拼命向手机体验靠拢时，我反而想反其道而行。我不希望我的博客在电脑上看，是一个被放大的手机 App。&lt;/p&gt;
 &lt;h2 id=&quot;遇见莲之空&quot;&gt;遇见莲之空&lt;/h2&gt;
 &lt;p&gt;新外观“致敬”了 LoveLive! 莲之空官网的设计风格。起初是在 &lt;a href=&quot;https://blog.mikan.ac.cn&quot;&gt;blog.mikan.ac.cn&lt;/a&gt; 看到的，第一眼就觉得符合我口味。侧边导航配合主页大图的设计，很有轻小说或者Anime官网的感觉。后来顺藤摸瓜，发现确实源自LoveLive! 莲之空女学院学园偶像俱乐部的官网：&lt;a href=&quot;https://www.lovelive-anime.jp/hasunosora/%E3%80%82&quot;&gt;https://www.lovelive-anime.jp/hasunosora/。&lt;/a&gt;&lt;/p&gt;
@@ -189,7 +190,8 @@
 &lt;p&gt;以前我对网页的FCP和体积有点执念，总想着把页面控制在100k以内（不压缩）。这次为了视觉效果，我做了一些让步——首页塞进了大图，也用上了Web Font。毕竟，如果一直固守传统的精简主义，某种程度上也会限制我在前端领域的探索。&lt;/p&gt;
 &lt;p&gt;不过好在，现在的页面大小依然控制得很好，即使加上了这些“负担”，首页体积依然控制在200k以内，Lighthouse跑分依旧是满分。在JS的使用上，我依然保持克制。我认为，声明式才是构建界面的未来。&lt;/p&gt;
 &lt;p&gt;配色上我也没照搬原站，而是沿用了之前脚本生成的Material Colors，这样我可以根据心情随时更换色彩风格。&lt;/p&gt;
-&lt;p&gt;当然这套主题未来也会开源，待我修缮下屎山代码，打磨下细节。&lt;/p&gt;</content:encoded></item><item><title>行动力不足源于精确度不足</title><link>https://kururin.cc/blog/acc-opening-hk/</link><guid isPermaLink="true">https://kururin.cc/blog/acc-opening-hk/</guid><description>港卡开户经历</description><pubDate>Thu, 27 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;无须在意标题，这其实是一篇记录港卡开户的文章。&lt;/p&gt;
+&lt;p&gt;当然这套主题未来也会开源，待我修缮下屎山代码，打磨下细节。&lt;/p&gt;
+</content:encoded></item><item><title>行动力不足源于精确度不足</title><link>https://kururin.cc/blog/acc-opening-hk/</link><guid isPermaLink="true">https://kururin.cc/blog/acc-opening-hk/</guid><description>港卡开户经历</description><pubDate>Thu, 27 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;无须在意标题，这其实是一篇记录港卡开户的文章。&lt;/p&gt;
 &lt;p&gt;港卡的计划其实在去年就列入了清单。至于为什么拖到现在？如果不是看了一眼通行证发现签注快过期了（虽说续签也不麻烦），我可能还会继续无限期搁置。&lt;/p&gt;
 &lt;p&gt;中间其实有过几次契机。有个朋友也有开港卡的意向，本来想拉上一起的，总觉得有人陪同动力会足一些，结果对方又说没空，这事就搁浅了。&lt;/p&gt;
 &lt;p&gt;汇丰曾短暂支持大陆在线开户，然后90天内到香港境内激活下就可以了，结果刚开放几天就关门（指的是 one）了。当天我就下好 app，就能直接开户，不知为何犹豫了。&lt;/p&gt;
@@ -202,7 +204,7 @@
 &lt;p&gt;网络方面，可以在支付宝/淘宝的飞猪上面买一个一天3GB的流量包，价格10元。一般过境后能自动启动，实在不行也可以手动选择网络 CMHK。3GB流量很够用了，完成开户+导航+中途查找资料也就用了500MB&lt;/p&gt;
 &lt;p&gt;根据以往经验，省内出行最经济的是大巴，接着就到某书寻找大巴线路，然后我发现有的线路能直接到达福田/罗湖口岸附近。也省去了转车的麻烦。我的路线选择是到达罗湖口岸，然后从罗湖搭地铁到上水站，找个地方坐下来办理。&lt;/p&gt;
 &lt;p&gt;我当时在彩園廣場外面找了个地方坐着，地铁出站就能看到彩園廣場。&lt;/p&gt;
-&lt;figure&gt;  &lt;img src=&quot;/assets/IMG_1459_Z2tTrRp.webp&quot; alt=&quot;上水彩园路&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; width=&quot;2252&quot; height=&quot;2376&quot;&gt; &lt;figcaption&gt;上水彩园路&lt;/figcaption&gt; &lt;/figure&gt;
+&lt;figure&gt;&lt;img src=&quot;/assets/IMG_1459_Z2tTrRp.webp&quot; alt=&quot;上水彩园路&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; width=&quot;2252&quot; height=&quot;2376&quot;&gt;&lt;figcaption&gt;上水彩园路&lt;/figcaption&gt;&lt;/figure&gt;
 &lt;h2 id=&quot;开戶前&quot;&gt;开戶前&lt;/h2&gt;
 &lt;p&gt;如果有人想以咱的文章作为攻略，那你不一定要按照我的步骤来，开户完后发现还有更优解。&lt;/p&gt;
 &lt;p&gt;我图省事直接开了汇丰One和中银自在理财，其实应该开卓越理财和中银那个什么来着，先冲高端，再降级才对。&lt;/p&gt;
@@ -262,7 +264,7 @@
 &lt;p&gt;申请汇丰万事达借记卡（蓝狮子）
 操作路径：App → 银行卡页面 → 申请 → 等待邮寄&lt;/p&gt;
 &lt;p&gt;第二天凌晨就收到了 hello 邮件，这意味着卡即将邮寄&lt;/p&gt;
-&lt;p&gt; &lt;img src=&quot;/assets/IMG_1570_CyCCV.webp&quot; alt=&quot;汇丰ATM卡&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; width=&quot;2016&quot; height=&quot;1512&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/IMG_1570_CyCCV.webp&quot; alt=&quot;汇丰ATM卡&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; width=&quot;2016&quot; height=&quot;1512&quot;&gt;&lt;/p&gt;
 &lt;h3 id=&quot;關於密码函&quot;&gt;關於密码函&lt;/h3&gt;
 &lt;p&gt;由于密码函是通过平邮（airmail）送出，现在很多人都没有信箱，也没电话联系，存在一定丢件风险。可以提前联系邮局的人留意一下。&lt;/p&gt;
 &lt;p&gt;当时十几天没收到自己亲自跑了一趟邮局，邮局的人告诉我我的地址并没有收到国际邮件，然后工作人员让我登记一下电话号码有邮件会通知我，之后过了两天就打电话给我说收到了。&lt;/p&gt;
@@ -282,7 +284,7 @@
 &lt;li&gt;按提示完成证件上传、入境记录上传、人脸识别&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;刚开通两三天是打开APP的中银卡会提示亲临分行，其实不用的，等个几天就能用了，然后实体卡也会自动邮寄。&lt;/p&gt;
-&lt;p&gt; &lt;img src=&quot;/assets/IMG_1565_1K8OVz.webp&quot; alt=&quot;中银卡&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; width=&quot;3905&quot; height=&quot;2563&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/IMG_1565_1K8OVz.webp&quot; alt=&quot;中银卡&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; width=&quot;3905&quot; height=&quot;2563&quot;&gt;&lt;/p&gt;
 &lt;p&gt;中银的实体卡疑似挂号信，跟汇丰密码函同一天收到。收到卡的时候邮递员告诉我有一张是挂号信，汇丰的两张信确定是普通 airmail，中银卡的信封没看到 registered 的字样，但似乎那张挂号信就是中银的。&lt;/p&gt;
 &lt;h2 id=&quot;眾安銀行-za-bank&quot;&gt;眾安銀行 ZA Bank&lt;/h2&gt;
 &lt;ol&gt;
@@ -307,7 +309,7 @@
 &lt;p&gt;后来我想通了，其实我对炒股没这么大热情。大陆人办理港卡也只能投资和储蓄，不能用于其他用途，我还指望能用它收钱呢，还挺失望的。&lt;/p&gt;
 &lt;/blockquote&gt;</content:encoded></item><item><title>告别linter驱动编程(※怎么可能) - Rust生命周期</title><link>https://kururin.cc/blog/rust-lifetime/</link><guid isPermaLink="true">https://kururin.cc/blog/rust-lifetime/</guid><pubDate>Wed, 19 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span class=&quot;hidden-text&quot;&gt;草，第一次感觉需要给 blog 加一个 Toc。还有不喜欢这个 typography。&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;学习 Rust 很长一段时间，我虽然理解「生命周期」这个概念，但在实际写代码时，往往不知道什么时候该标注，标注有时也看不懂💦，都是靠 linter 提示，我甚至觉得编译器有能力推断出大部分生命周期。&lt;/p&gt;
-&lt;p&gt;这次借助&lt;a href=&quot;https://academy.jetbrains.com/?tag=Rust&amp;#x26;source=MARKETPLACE&quot;&gt;喷气大脑学院&lt;/a&gt;的课程重新学习了下。&lt;/p&gt;
+&lt;p&gt;这次借助&lt;a href=&quot;https://academy.jetbrains.com/?tag=Rust&amp;amp;source=MARKETPLACE&quot;&gt;喷气大脑学院&lt;/a&gt;的课程重新学习了下。&lt;/p&gt;
 &lt;p&gt;前置知识：所有权和借用&lt;/p&gt;
 &lt;p&gt;这个在单线程的模型里应该比较好理解，感觉没必要写了。&lt;/p&gt;
 &lt;h2 id=&quot;为什么要有生命周期&quot;&gt;为什么要有生命周期？&lt;/h2&gt;
@@ -335,7 +337,7 @@
 &lt;/ol&gt;
 &lt;p&gt;编译器自动把返回值和输入 &lt;code&gt;x&lt;/code&gt; 绑定。&lt;/p&gt;
 &lt;ol start=&quot;3&quot;&gt;
-&lt;li&gt;如果输入参数中有 &amp;#x26;self 或 &amp;#x26;mut self，那么 self 的生命周期会被赋给所有输出生命周期参数。
+&lt;li&gt;如果输入参数中有 &amp;amp;self 或 &amp;amp;mut self，那么 self 的生命周期会被赋给所有输出生命周期参数。
 &lt;pre class=&quot;astro-code monokai&quot; style=&quot;background-color:#272822;color:#F8F8F2; overflow-x: auto;&quot; tabindex=&quot;0&quot; data-language=&quot;rust&quot;&gt;&lt;code&gt;&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F92672&quot;&gt;impl&lt;/span&gt;&lt;span&gt; &lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;A&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt; {&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F92672&quot;&gt;    fn&lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt; name&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;&amp;#x26;&lt;/span&gt;&lt;span style=&quot;color:#FD971F&quot;&gt;self&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;) &lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;-&gt;&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt; &amp;#x26;&lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;str&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt; { &lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;&amp;#x26;&lt;/span&gt;&lt;span style=&quot;color:#FD971F&quot;&gt;self&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;field }&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
@@ -355,8 +357,7 @@
 &lt;span class=&quot;line&quot;&gt;&lt;span&gt;help: consider introducing a named lifetime parameter&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;line&quot;&gt;&lt;span&gt;   |&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;line&quot;&gt;&lt;span&gt;   | fn pick&amp;#x3C;&apos;a&gt;(x: &amp;#x26;&apos;a str, y: &amp;#x26;&apos;a  str) -&gt; &amp;#x26;&apos;a str {&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;line&quot;&gt;&lt;span&gt;   |        ++++     ++          ++           ++&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;line&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span&gt;   |        ++++     ++          ++           ++&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;这时编译器建议了让函数的两个输入使用相同的生命周期&lt;code&gt;&apos;a&lt;/code&gt;&lt;/p&gt;
 &lt;pre class=&quot;astro-code monokai&quot; style=&quot;background-color:#272822;color:#F8F8F2; overflow-x: auto;&quot; tabindex=&quot;0&quot; data-language=&quot;rust&quot;&gt;&lt;code&gt;&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F92672&quot;&gt;fn&lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt; pick&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&amp;#x3C;&apos;&lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;a&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&gt;(x&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;:&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt; &amp;#x26;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&apos;&lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;a&lt;/span&gt;&lt;span&gt; &lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;str&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;, y&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;:&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt; &amp;#x26;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&apos;&lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;a&lt;/span&gt;&lt;span&gt; &lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;str&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;) &lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;-&gt;&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt; &amp;#x26;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&apos;&lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;a&lt;/span&gt;&lt;span&gt; &lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;str&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt; {&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F92672&quot;&gt;    if&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt; x&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt;len&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;() &gt; y&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt;len&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;() { x } &lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;else&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt; { y }&lt;/span&gt;&lt;/span&gt;
@@ -384,7 +385,7 @@
 &lt;ul&gt;
 &lt;li&gt;输入 &lt;code&gt;x&lt;/code&gt; 来自 &lt;code&gt;a&lt;/code&gt;（活到 &lt;code&gt;main&lt;/code&gt; 结束）。&lt;/li&gt;
 &lt;li&gt;输入 &lt;code&gt;y&lt;/code&gt; 来自 &lt;code&gt;b&lt;/code&gt;（活到内部花括号 &lt;code&gt;}&lt;/code&gt; 结束）。&lt;/li&gt;
-&lt;li&gt;根据签名 &lt;code&gt;fn pick&amp;#x3C;&apos;a&gt;(x: &amp;#x26;&apos;a str, y: &amp;#x26;&apos;a str)&lt;/code&gt;，&lt;code&gt;&apos;a&lt;/code&gt; 必须能同时被两个输入满足。因此，编译器推断 &lt;code&gt;&apos;a&lt;/code&gt; 的长度不能超过 &lt;strong&gt;两者中较短的那个&lt;/strong&gt;（即 &lt;code&gt;b&lt;/code&gt; 的生命周期）。&lt;/li&gt;
+&lt;li&gt;根据签名 &lt;code&gt;fn pick&amp;lt;&apos;a&amp;gt;(x: &amp;amp;&apos;a str, y: &amp;amp;&apos;a str)&lt;/code&gt;，&lt;code&gt;&apos;a&lt;/code&gt; 必须能同时被两个输入满足。因此，编译器推断 &lt;code&gt;&apos;a&lt;/code&gt; 的长度不能超过 &lt;strong&gt;两者中较短的那个&lt;/strong&gt;（即 &lt;code&gt;b&lt;/code&gt; 的生命周期）。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;检查返回值的有效性：
@@ -403,7 +404,7 @@
 &lt;/ol&gt;
 &lt;p&gt;在这个例子中，&lt;code&gt;x&lt;/code&gt; (“Hello”) 长度 5，&lt;code&gt;y&lt;/code&gt; (“World!!”) 长度 7。函数逻辑实际会返回 &lt;code&gt;y&lt;/code&gt;。&lt;code&gt;y&lt;/code&gt; 确实销毁了，报错是应该的。但如果我反过来，让逻辑返回长命的 &lt;code&gt;x&lt;/code&gt; 呢？&lt;/p&gt;
 &lt;p&gt;即使逻辑上返回的是 &lt;code&gt;x&lt;/code&gt;，编译器依然会报错。&lt;/p&gt;
-&lt;p&gt;因为 Rust 的编译器在编译阶段只看函数签名，不看函数体内的运行时逻辑。签名 &lt;code&gt;-&gt; &amp;#x26;&apos;a str&lt;/code&gt; 告诉编译器：“返回值可能引用了 &lt;code&gt;x&lt;/code&gt;，也可能引用了 &lt;code&gt;y&lt;/code&gt;”。为了保证内存安全，编译器必须假设最坏的情况——即返回值引用了那个生命周期最短的数据。&lt;/p&gt;
+&lt;p&gt;因为 Rust 的编译器在编译阶段只看函数签名，不看函数体内的运行时逻辑。签名 &lt;code&gt;-&amp;gt; &amp;amp;&apos;a str&lt;/code&gt; 告诉编译器：“返回值可能引用了 &lt;code&gt;x&lt;/code&gt;，也可能引用了 &lt;code&gt;y&lt;/code&gt;”。为了保证内存安全，编译器必须假设最坏的情况——即返回值引用了那个生命周期最短的数据。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Rust的编译器或许有能力从函数体推导出生命周期，但它不会这么做。除了确定性的省略规则，其余情况都是需要标注生命周期。&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -449,7 +450,7 @@
 &lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;在这个例子中，编译器清楚地知道：&lt;code&gt;ImportantExcerpt&lt;/code&gt; 实例活多久（&lt;code&gt;&apos;a&lt;/code&gt;）与 &lt;code&gt;announcement&lt;/code&gt; 活多久（&lt;code&gt;&apos;b&lt;/code&gt;）没有必然联系，且返回值跟随的是 &lt;code&gt;announcement&lt;/code&gt;。&lt;/p&gt;
 &lt;h3 id=&quot;trait-实现中的生命周期&quot;&gt;Trait 实现中的生命周期&lt;/h3&gt;
-&lt;p&gt;有时我们需要为&lt;strong&gt;引用类型&lt;/strong&gt;实现 Trait，比如为了实现 &lt;code&gt;for x in &amp;#x26;collection&lt;/code&gt;，我们需要为 &lt;code&gt;&amp;#x26;&apos;a TicketStore&lt;/code&gt; 实现 &lt;code&gt;IntoIterator&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;有时我们需要为&lt;strong&gt;引用类型&lt;/strong&gt;实现 Trait，比如为了实现 &lt;code&gt;for x in &amp;amp;collection&lt;/code&gt;，我们需要为 &lt;code&gt;&amp;amp;&apos;a TicketStore&lt;/code&gt; 实现 &lt;code&gt;IntoIterator&lt;/code&gt;。&lt;/p&gt;
 &lt;p&gt;此时，Trait 内部的&lt;strong&gt;关联类型&lt;/strong&gt;（如 &lt;code&gt;Item&lt;/code&gt; 和 &lt;code&gt;IntoIter&lt;/code&gt;）也必须带上生命周期，显式告诉编译器：迭代器产生的数据，其存活时间与原始引用 &lt;code&gt;&apos;a&lt;/code&gt; 是一致的。&lt;/p&gt;
 &lt;pre class=&quot;astro-code monokai&quot; style=&quot;background-color:#272822;color:#F8F8F2; overflow-x: auto;&quot; tabindex=&quot;0&quot; data-language=&quot;rust&quot;&gt;&lt;code&gt;&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#88846F&quot;&gt;// 1. 声明生命周期 &amp;#x3C;&apos;a&gt;，并在目标类型中使用 &amp;#x26;&apos;a&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F92672&quot;&gt;impl&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&amp;#x3C;&apos;&lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;a&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&gt; &lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;IntoIterator&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt; for&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt; &amp;#x26;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&apos;&lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;a&lt;/span&gt;&lt;span&gt; &lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;TicketStore&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt; {&lt;/span&gt;&lt;/span&gt;
@@ -464,7 +465,7 @@
 &lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#FD971F&quot;&gt;        self&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;tickets&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt;iter&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;()&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;    }&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;这里的关键在于：&lt;code&gt;impl&lt;/code&gt; 声明了 &lt;code&gt;&apos;a&lt;/code&gt;，&lt;code&gt;&amp;#x26;TicketStore&lt;/code&gt;, &lt;code&gt;Item&lt;/code&gt; 的生命周期都标记为 &lt;code&gt;&apos;a&lt;/code&gt;， 这样编译器就能确保：只要迭代器还在用，原始的 &lt;code&gt;TicketStore&lt;/code&gt; 就不能被销毁。&lt;/p&gt;
+&lt;p&gt;这里的关键在于：&lt;code&gt;impl&lt;/code&gt; 声明了 &lt;code&gt;&apos;a&lt;/code&gt;，&lt;code&gt;&amp;amp;TicketStore&lt;/code&gt;, &lt;code&gt;Item&lt;/code&gt; 的生命周期都标记为 &lt;code&gt;&apos;a&lt;/code&gt;， 这样编译器就能确保：只要迭代器还在用，原始的 &lt;code&gt;TicketStore&lt;/code&gt; 就不能被销毁。&lt;/p&gt;
 &lt;h2 id=&quot;变型-强制转换&quot;&gt;变型 强制转换&lt;/h2&gt;
 &lt;p&gt;通常我们说 Rust 没有传统 OOP 那样基于类的继承（Inheritance），因此也没有结构体层面的子类型。但是，在生命周期的范畴内，Rust 确实存在子类型（Subtyping）的概念。&lt;/p&gt;
 &lt;h3 id=&quot;生命周期的子类型&quot;&gt;生命周期的子类型&lt;/h3&gt;
@@ -477,87 +478,87 @@
 &lt;/ul&gt;
 &lt;p&gt;换句话说：&lt;strong&gt;更长的生命周期是更具体的类型，是子类型&lt;/strong&gt;。&lt;/p&gt;
 &lt;h3 id=&quot;变型-variance&quot;&gt;变型 (Variance)&lt;/h3&gt;
-&lt;p&gt;变型描述的是&lt;strong&gt;复合类型&lt;/strong&gt;（如 &lt;code&gt;&amp;#x26;&apos;a T&lt;/code&gt; 或 &lt;code&gt;Vec&amp;#x3C;T&gt;&lt;/code&gt;）相对于其&lt;strong&gt;内部类型&lt;/strong&gt;（&lt;code&gt;&apos;a&lt;/code&gt; 或 &lt;code&gt;T&lt;/code&gt;）的兼容性关系。&lt;/p&gt;
-&lt;p&gt;简单来说就是：如果 &lt;code&gt;A&lt;/code&gt; 是 &lt;code&gt;B&lt;/code&gt; 的子类型，那么 &lt;code&gt;Box&amp;#x3C;A&gt;&lt;/code&gt; 还是 &lt;code&gt;Box&amp;#x3C;B&gt;&lt;/code&gt; 的子类型吗？&lt;/p&gt;
+&lt;p&gt;变型描述的是&lt;strong&gt;复合类型&lt;/strong&gt;（如 &lt;code&gt;&amp;amp;&apos;a T&lt;/code&gt; 或 &lt;code&gt;Vec&amp;lt;T&amp;gt;&lt;/code&gt;）相对于其&lt;strong&gt;内部类型&lt;/strong&gt;（&lt;code&gt;&apos;a&lt;/code&gt; 或 &lt;code&gt;T&lt;/code&gt;）的兼容性关系。&lt;/p&gt;
+&lt;p&gt;简单来说就是：如果 &lt;code&gt;A&lt;/code&gt; 是 &lt;code&gt;B&lt;/code&gt; 的子类型，那么 &lt;code&gt;Box&amp;lt;A&amp;gt;&lt;/code&gt; 还是 &lt;code&gt;Box&amp;lt;B&amp;gt;&lt;/code&gt; 的子类型吗？&lt;/p&gt;
 &lt;p&gt;主要有三种变型：&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;协变 (Covariant)&lt;/strong&gt;：如果 &lt;code&gt;A&lt;/code&gt; 是 &lt;code&gt;B&lt;/code&gt; 的子类型，那么 &lt;code&gt;Wrapper&amp;#x3C;A&gt;&lt;/code&gt; 也是 &lt;code&gt;Wrapper&amp;#x3C;B&gt;&lt;/code&gt; 的子类型。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;逆变 (Contravariant)&lt;/strong&gt;：如果 &lt;code&gt;A&lt;/code&gt; 是 &lt;code&gt;B&lt;/code&gt; 的子类型，那么 &lt;code&gt;Wrapper&amp;#x3C;B&gt;&lt;/code&gt; 才是 &lt;code&gt;Wrapper&amp;#x3C;A&gt;&lt;/code&gt; 的子类型。
+&lt;li&gt;&lt;strong&gt;协变 (Covariant)&lt;/strong&gt;：如果 &lt;code&gt;A&lt;/code&gt; 是 &lt;code&gt;B&lt;/code&gt; 的子类型，那么 &lt;code&gt;Wrapper&amp;lt;A&amp;gt;&lt;/code&gt; 也是 &lt;code&gt;Wrapper&amp;lt;B&amp;gt;&lt;/code&gt; 的子类型。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;逆变 (Contravariant)&lt;/strong&gt;：如果 &lt;code&gt;A&lt;/code&gt; 是 &lt;code&gt;B&lt;/code&gt; 的子类型，那么 &lt;code&gt;Wrapper&amp;lt;B&amp;gt;&lt;/code&gt; 才是 &lt;code&gt;Wrapper&amp;lt;A&amp;gt;&lt;/code&gt; 的子类型。
 &lt;ul&gt;
 &lt;li&gt;只出现在&lt;strong&gt;函数的参数&lt;/strong&gt;中。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;不变 (Invariant)&lt;/strong&gt;：&lt;strong&gt;“不能替”&lt;/strong&gt;。必须完全匹配，不能互相替代。
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;&amp;#x26;mut T&lt;/code&gt;，为了防止将短生命周期的数据写入长生命周期的容器中。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;amp;mut T&lt;/code&gt;，为了防止将短生命周期的数据写入长生命周期的容器中。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;常见类型的变型表：&lt;/p&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th align=&quot;left&quot;&gt;类型&lt;/th&gt;&lt;th align=&quot;left&quot;&gt;’a&lt;/th&gt;&lt;th align=&quot;left&quot;&gt;T&lt;/th&gt;&lt;th align=&quot;left&quot;&gt;U&lt;/th&gt;&lt;th align=&quot;left&quot;&gt;说明&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td align=&quot;left&quot;&gt;&lt;code&gt;&amp;#x26;&apos;a T&lt;/code&gt;&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;协变&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;协变&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;只读引用，生命周期和类型都可缩小范围&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot;&gt;&lt;code&gt;&amp;#x26;&apos;a mut T&lt;/code&gt;&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;协变&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;&lt;strong&gt;不变&lt;/strong&gt;&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;&lt;strong&gt;重要&lt;/strong&gt;：可变引用的内容类型不能变，防止写入错误&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot;&gt;&lt;code&gt;Box&amp;#x3C;T&gt;&lt;/code&gt; / &lt;code&gt;Vec&amp;#x3C;T&gt;&lt;/code&gt;&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;协变&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;拥有所有权的容器通常是协变的&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot;&gt;&lt;code&gt;UnsafeCell&amp;#x3C;T&gt;&lt;/code&gt; / &lt;code&gt;Cell&amp;#x3C;T&gt;&lt;/code&gt;&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;&lt;strong&gt;不变&lt;/strong&gt;&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;内部可变性类型必须不变&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot;&gt;&lt;code&gt;fn(T) -&gt; U&lt;/code&gt;&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;&lt;strong&gt;逆变&lt;/strong&gt;&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;协变&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;参数逆变，返回值协变&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot;&gt;&lt;code&gt;*const T&lt;/code&gt;&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;协变&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot;&gt;&lt;code&gt;*mut T&lt;/code&gt;&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;&lt;strong&gt;不变&lt;/strong&gt;&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&quot;text-align: left&quot;&gt;类型&lt;/th&gt;
+&lt;th style=&quot;text-align: left&quot;&gt;’a&lt;/th&gt;
+&lt;th style=&quot;text-align: left&quot;&gt;T&lt;/th&gt;
+&lt;th style=&quot;text-align: left&quot;&gt;U&lt;/th&gt;
+&lt;th style=&quot;text-align: left&quot;&gt;说明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;&lt;code&gt;&amp;amp;&apos;a T&lt;/code&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;协变&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;协变&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;只读引用，生命周期和类型都可缩小范围&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;&lt;code&gt;&amp;amp;&apos;a mut T&lt;/code&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;协变&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;&lt;strong&gt;不变&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;&lt;strong&gt;重要&lt;/strong&gt;：可变引用的内容类型不能变，防止写入错误&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;&lt;code&gt;Box&amp;lt;T&amp;gt;&lt;/code&gt; / &lt;code&gt;Vec&amp;lt;T&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;协变&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;拥有所有权的容器通常是协变的&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;&lt;code&gt;UnsafeCell&amp;lt;T&amp;gt;&lt;/code&gt; / &lt;code&gt;Cell&amp;lt;T&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;&lt;strong&gt;不变&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;内部可变性类型必须不变&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;&lt;code&gt;fn(T) -&amp;gt; U&lt;/code&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;&lt;strong&gt;逆变&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;协变&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;参数逆变，返回值协变&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;&lt;code&gt;*const T&lt;/code&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;协变&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;&lt;code&gt;*mut T&lt;/code&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;&lt;strong&gt;不变&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align: left&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 &lt;h3 id=&quot;函数中的强制转换coercion&quot;&gt;函数中的强制转换（Coercion）&lt;/h3&gt;
-&lt;p&gt;&lt;code&gt; fn(T) -&gt; U&lt;/code&gt; 中 U 上是协变的&lt;/p&gt;
+&lt;p&gt;&lt;code&gt; fn(T) -&amp;gt; U&lt;/code&gt; 中 U 上是协变的&lt;/p&gt;
 &lt;p&gt;这意味着函数实际返回的生命周期，可以比函数签名声明的生命周期更长。&lt;/p&gt;
 &lt;pre class=&quot;astro-code monokai&quot; style=&quot;background-color:#272822;color:#F8F8F2; overflow-x: auto;&quot; tabindex=&quot;0&quot; data-language=&quot;rust&quot;&gt;&lt;code&gt;&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#88846F&quot;&gt;// `&amp;#x3C;&apos;a: &apos;b&gt;` 表示 &apos;a 至少和 &apos;b 一样长（&apos;a 是 &apos;b 的子类型）&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F92672&quot;&gt;fn&lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt; choose_first&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&amp;#x3C;&apos;&lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;a&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;:&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt; &apos;&lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;b&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;, &apos;&lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;b&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&gt;(first&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;:&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt; &amp;#x26;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&apos;&lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;a&lt;/span&gt;&lt;span&gt; &lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;i32&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;, _&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;:&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt; &amp;#x26;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&apos;&lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;b&lt;/span&gt;&lt;span&gt; &lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;i32&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;) &lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;-&gt;&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt; &amp;#x26;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;&apos;&lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;b&lt;/span&gt;&lt;span&gt; &lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;i32&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt; {&lt;/span&gt;&lt;/span&gt;
@@ -570,7 +571,7 @@
 &lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt;    &quot;I am static string constant&quot;&lt;/span&gt;&lt;span style=&quot;color:#88846F&quot;&gt; // 这是一个 &amp;#x26;&apos;static str&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;然而，必须注意的是：&lt;strong&gt;Rust 编译器在检查调用端的安全性时，只看函数签名，不看函数体实现。&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;即使 pick 实际上返回了 &lt;code&gt;&apos;static&lt;/code&gt;，调用者看到的签名依然是 &lt;code&gt;-&gt; &amp;#x26;&apos;a str&lt;/code&gt;。编译器必须假设最坏的情况——即返回值可能只是其中一个输入参数的引用。&lt;/p&gt;
+&lt;p&gt;即使 pick 实际上返回了 &lt;code&gt;&apos;static&lt;/code&gt;，调用者看到的签名依然是 &lt;code&gt;-&amp;gt; &amp;amp;&apos;a str&lt;/code&gt;。编译器必须假设最坏的情况——即返回值可能只是其中一个输入参数的引用。&lt;/p&gt;
 &lt;p&gt;因此，下面这段代码依然无法通过编译：&lt;/p&gt;
 &lt;pre class=&quot;astro-code monokai&quot; style=&quot;background-color:#272822;color:#F8F8F2; overflow-x: auto;&quot; tabindex=&quot;0&quot; data-language=&quot;rust&quot;&gt;&lt;code&gt;&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F92672&quot;&gt;fn&lt;/span&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt; main&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;() {&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#66D9EF;font-style:italic&quot;&gt;    let&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt; ret&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;:&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt; &amp;#x26;&lt;/span&gt;&lt;span style=&quot;color:#A6E22E;text-decoration:underline&quot;&gt;str&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;;&lt;/span&gt;&lt;/span&gt;
@@ -584,7 +585,8 @@
 &lt;h2 id=&quot;参考&quot;&gt;参考&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;https://doc.rust-lang.org/book/ch10-03-lifetime-syntax.html&quot;&gt;Validating References with Lifetimes - The Rust Programming Language&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://doc.rust-lang.org/nomicon/lifetime-elision.html&quot;&gt;Lifetime Elision - The Rustonomicon&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://doc.rust-lang.org/rust-by-example/scope/lifetime/lifetime_coercion.html&quot;&gt;Coercion - Rust By Example&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title>如何识别 Brave 浏览器</title><link>https://kururin.cc/blog/brave-detect/</link><guid isPermaLink="true">https://kururin.cc/blog/brave-detect/</guid><pubDate>Sun, 12 Jan 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;最近在访问 &lt;a href=&quot;https://lobste.rs&quot;&gt;Lobste.rs&lt;/a&gt; 时（后面用 🦞 代替），网站会禁止 Brave 浏览器的访问。有一点我感到很困惑，因为 Brave 在隐藏用户特征方面做了很多努力，其中包括伪装用户代理信息。这让我产生了一个疑问：🦞 是如何识别出 Brave 的？其实我也在愁统计不到 Brave。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://doc.rust-lang.org/rust-by-example/scope/lifetime/lifetime_coercion.html&quot;&gt;Coercion - Rust By Example&lt;/a&gt;&lt;/p&gt;
+</content:encoded></item><item><title>如何识别 Brave 浏览器</title><link>https://kururin.cc/blog/brave-detect/</link><guid isPermaLink="true">https://kururin.cc/blog/brave-detect/</guid><pubDate>Sun, 12 Jan 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;最近在访问 &lt;a href=&quot;https://lobste.rs&quot;&gt;Lobste.rs&lt;/a&gt; 时（后面用 🦞 代替），网站会禁止 Brave 浏览器的访问。有一点我感到很困惑，因为 Brave 在隐藏用户特征方面做了很多努力，其中包括伪装用户代理信息。这让我产生了一个疑问：🦞 是如何识别出 Brave 的？其实我也在愁统计不到 Brave。&lt;/p&gt;
 &lt;h2 id=&quot;探索&quot;&gt;探索&lt;/h2&gt;
 &lt;h3 id=&quot;利用前端-javascript-识别-brave&quot;&gt;利用前端 JavaScript 识别 Brave&lt;/h3&gt;
 &lt;p&gt;起初，我以为 🦞 是通过前端 JS 进行识别的。因为在禁用 JS 后，我发现可以正常访问 🦞。Brave 浏览器提供了一些独特的 API，比如 Wallet，甚至还提供了一个 &lt;code&gt;isBrave&lt;/code&gt; 函数。通过这些 API，很容易在前端检测到用户是否在使用 Brave 浏览器。&lt;/p&gt;
@@ -611,7 +613,8 @@
 &lt;h2 id=&quot;结&quot;&gt;结&lt;/h2&gt;
 &lt;p&gt;2024（确实 2024）年还能看到有网站在跟浏览器玩猫捉老鼠的游戏就挺搞的，最终不过是重复 Mozilla/5.0 的历史（大家都变成 Chrome 就好了，实际上也差不多了）。尽管我也很讨厌 Brave 塞的那些币圈垃圾。&lt;/p&gt;
 &lt;p&gt;Vivaldi 也是因为收到太多不兼容的报告，被迫默认改为跟 Chrome 一致的 UA。&lt;/p&gt;
-&lt;p&gt;中途我还发现 Brave 维护了一个长长的&lt;a href=&quot;https://github.com/brave/adblock-lists/blob/6d2ed09f951d89085dd3e186acc4a7f881346d3f/brave-unbreak.txt#L722&quot;&gt;清单&lt;/a&gt;，禁止 Brave 的网站都会被拉到清单里，对清单里的网站会隐藏自身独特的 API 防止被检测到。&lt;/p&gt;</content:encoded></item><item><title>如何实现一个简单的 Passkey 登录</title><link>https://kururin.cc/blog/passkey-101/</link><guid isPermaLink="true">https://kururin.cc/blog/passkey-101/</guid><pubDate>Mon, 09 Dec 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;最近糊了个
+&lt;p&gt;中途我还发现 Brave 维护了一个长长的&lt;a href=&quot;https://github.com/brave/adblock-lists/blob/6d2ed09f951d89085dd3e186acc4a7f881346d3f/brave-unbreak.txt#L722&quot;&gt;清单&lt;/a&gt;，禁止 Brave 的网站都会被拉到清单里，对清单里的网站会隐藏自身独特的 API 防止被检测到。&lt;/p&gt;
+</content:encoded></item><item><title>如何实现一个简单的 Passkey 登录</title><link>https://kururin.cc/blog/passkey-101/</link><guid isPermaLink="true">https://kururin.cc/blog/passkey-101/</guid><pubDate>Mon, 09 Dec 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;最近糊了个
 &lt;a href=&quot;https://meow-counter.icealtria.workers.dev/&quot;&gt;meow-counter&lt;/a&gt;（&lt;a href=&quot;#footer&quot;&gt;Footer&lt;/a&gt;
 那个，魔改自
 &lt;a href=&quot;https://github.com/kotx/moco&quot;&gt;moco&lt;/a&gt;），但是统计面板不想公开，所以自然需要一个鉴权方式。我选择了
@@ -626,17 +629,72 @@ SSH，我也是仅支持公钥验证，完全不需要密码，安全性更高�
 &lt;strong&gt;KeePassXC&lt;/strong&gt; 外，几乎没有导出和导入的手段。
 更换设备或丢失绑定设备时，可能会面临身份验证困难。
 &lt;a href=&quot;https://blog.1password.com/fido-alliance-import-export-passkeys-draft-specs/&quot;&gt;未来或许会有更多密码管理器支持&lt;/a&gt;。
-&lt;sup&gt;&lt;a href=&quot;#user-content-fn-1&quot; id=&quot;user-content-fnref-1&quot; data-footnote-ref=&quot;&quot; aria-describedby=&quot;footnote-label&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-&lt;p&gt;Passkey 必需依赖 Javascript，不能纯 HTML 了。 &lt;sup&gt;&lt;a href=&quot;#user-content-fn-2&quot; id=&quot;user-content-fnref-2&quot; data-footnote-ref=&quot;&quot; aria-describedby=&quot;footnote-label&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;sup&gt;&lt;a href=&quot;#user-content-fn-1&quot; id=&quot;user-content-fnref-1&quot; data-footnote-ref aria-describedby=&quot;footnote-label&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;Passkey 必需依赖 Javascript，不能纯 HTML 了。 &lt;sup&gt;&lt;a href=&quot;#user-content-fn-2&quot; id=&quot;user-content-fnref-2&quot; data-footnote-ref aria-describedby=&quot;footnote-label&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;h2 id=&quot;注册与登录流程&quot;&gt;注册与登录流程&lt;/h2&gt;
 &lt;h3 id=&quot;注册流程&quot;&gt;注册流程&lt;/h3&gt;
-&lt;img alt=&quot;注册流程&quot; decoding=&quot;async&quot; loading=&quot;lazy&quot; src=&quot;/d2/content/blog/passkey-101/index-0.svg&quot; width=&quot;929&quot; height=&quot;893&quot;&gt;
+&lt;pre class=&quot;mermaid&quot;&gt;---
+config:
+  look: handDrawn
+  theme: neutral
+---
+sequenceDiagram
+    autonumber
+    participant User
+    participant Frontend
+    participant Backend
+
+    User-&amp;gt;&amp;gt;Frontend: Username
+    Frontend-&amp;gt;&amp;gt;Backend: /api/registerStart (username)
+    Backend--&amp;gt;&amp;gt;Frontend: publicKeyCredentialCreationOptions
+    Frontend-&amp;gt;&amp;gt;User: Trigger credentials.create
+    User-&amp;gt;&amp;gt;Frontend: User auth
+    Frontend-&amp;gt;&amp;gt;Backend: /api/registerFinish (attestation)
+    Backend-&amp;gt;&amp;gt;Backend: VerifyAndSave (attestation)
+    Backend--&amp;gt;&amp;gt;Frontend: Creation&lt;/pre&gt;
 &lt;h3 id=&quot;登录流程&quot;&gt;登录流程&lt;/h3&gt;
-&lt;img alt=&quot;登录流程&quot; decoding=&quot;async&quot; loading=&quot;lazy&quot; src=&quot;/d2/content/blog/passkey-101/index-1.svg&quot; width=&quot;812&quot; height=&quot;893&quot;&gt;
+&lt;pre class=&quot;mermaid&quot;&gt;---
+config:
+  look: handDrawn
+  theme: neutral
+---
+sequenceDiagram
+    autonumber
+    participant User
+    participant Frontend
+    participant Backend
+
+    User-&amp;gt;&amp;gt;Frontend: Username (optional)
+    Frontend-&amp;gt;&amp;gt;Backend: /api/loginStart (username)
+    Backend--&amp;gt;&amp;gt;Frontend: publicKeyCredentialRequestOptions
+    Frontend-&amp;gt;&amp;gt;User: Trigger credentials.get
+    User-&amp;gt;&amp;gt;Frontend: User auth
+    Frontend-&amp;gt;&amp;gt;Backend: /api/loginFinish (assertion)
+    Backend-&amp;gt;&amp;gt;Backend: Verify (assertion)
+    Backend--&amp;gt;&amp;gt;Frontend: Login successful&lt;/pre&gt;
 &lt;h3 id=&quot;数据库&quot;&gt;数据库&lt;/h3&gt;
-&lt;img alt=&quot;登录流程&quot; decoding=&quot;async&quot; loading=&quot;lazy&quot; src=&quot;/d2/content/blog/passkey-101/index-2.svg&quot; width=&quot;380&quot; height=&quot;600&quot;&gt;
+&lt;pre class=&quot;mermaid&quot;&gt;---
+config:
+  look: handDrawn
+  theme: neutral
+---
+erDiagram
+    users {
+        int user_id PK
+        text username UK
+        datetime created_at
+    }
+    passkeys {
+        int passkey_id PK
+        int user_id FK
+        text credential_id
+        text public_key
+        int sign_count
+        datetime created_at
+    }
+    users ||--o{ passkeys : &amp;quot;has&amp;quot;&lt;/pre&gt;
 &lt;p&gt;&lt;code&gt;sign_count&lt;/code&gt; 用于防止 passkey 被克隆。比如 yubikey 每次签名都会计数，key 返回的计数如果小于记录的计数，则说明存在克隆的 key。&lt;/p&gt;
-&lt;p&gt;但是水果和一众密码管理器都没实现这个特征（返回 0），或许是同步计数器比较麻烦。&lt;sup&gt;&lt;a href=&quot;#user-content-fn-3&quot; id=&quot;user-content-fnref-3&quot; data-footnote-ref=&quot;&quot; aria-describedby=&quot;footnote-label&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;但是水果和一众密码管理器都没实现这个特征（返回 0），或许是同步计数器比较麻烦。&lt;sup&gt;&lt;a href=&quot;#user-content-fn-3&quot; id=&quot;user-content-fnref-3&quot; data-footnote-ref aria-describedby=&quot;footnote-label&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;p&gt;&lt;del&gt;容易被克隆的软件实现都没实现（密码管理器的同步功能做的事情确实是在克隆），难以克隆的硬件反而有&lt;/del&gt;&lt;/p&gt;
 &lt;h2 id=&quot;api-使用指南&quot;&gt;API 使用指南&lt;/h2&gt;
 &lt;h3 id=&quot;环境要求&quot;&gt;环境要求&lt;/h3&gt;
@@ -780,7 +838,7 @@ SSH，我也是仅支持公钥验证，完全不需要密码，安全性更高�
 &lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;verifyAuthenticationResponse 验证 signature 和 clientDataJSON 是否与存储的
 publicKey 匹配，确认登录成功。&lt;/p&gt;
-&lt;section data-footnotes=&quot;&quot; class=&quot;footnotes&quot;&gt;&lt;h2 class=&quot;sr-only&quot; id=&quot;footnote-label&quot;&gt;Footnotes&lt;/h2&gt;
+&lt;section data-footnotes class=&quot;footnotes&quot;&gt;&lt;h2 class=&quot;sr-only&quot; id=&quot;footnote-label&quot;&gt;Footnotes&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li id=&quot;user-content-fn-1&quot;&gt;
 &lt;p&gt;&lt;a href=&quot;https://fidoalliance.org/specs/cx/cxf-v1.0-wd-20240522.html&quot;&gt;Credential Exchange Format&lt;/a&gt; &lt;a href=&quot;#user-content-fnref-1&quot; data-footnote-backref=&quot;&quot; aria-label=&quot;Back to reference 1&quot; class=&quot;data-footnote-backref&quot;&gt;↩&lt;/a&gt;&lt;/p&gt;
@@ -792,8 +850,9 @@ publicKey 匹配，确认登录成功。&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://www.reddit.com/r/Bitwarden/comments/1819doj/passkeys_and_the_signature_counter/&quot;&gt;Passkeys and the signature counter : r/Bitwarden&lt;/a&gt; &lt;a href=&quot;#user-content-fnref-3&quot; data-footnote-backref=&quot;&quot; aria-label=&quot;Back to reference 3&quot; class=&quot;data-footnote-backref&quot;&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/section&gt;</content:encoded></item><item><title>给运行在局域网内的服务添加 https</title><link>https://kururin.cc/blog/https-lan/</link><guid isPermaLink="true">https://kururin.cc/blog/https-lan/</guid><description>使用 Tailscale 实现</description><pubDate>Mon, 06 May 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;这是一个很奇怪的需求，在大多数情况下，局域网内的设备是相互信任的，https 似乎是件没有什么必要的事情。&lt;/p&gt;
-&lt;p&gt;但是有些软件要求必须使用 HTTPS，比如 Vaultwarden，因为它依赖大多数浏览器仅在 HTTPS 才可用的 &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto&quot;&gt;SubtleCrypto API&lt;/a&gt;。&lt;sup&gt;&lt;a href=&quot;#user-content-fn-1&quot; id=&quot;user-content-fnref-1&quot; data-footnote-ref=&quot;&quot; aria-describedby=&quot;footnote-label&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; 此外，一些软件在未开启 HTTPS 时，会在页面上显示不安全的提示。还有一些软件若不开启 https ，则会在页面上显示不安全的提示。这时候 https 就有必要了。&lt;/p&gt;
+&lt;/section&gt;
+</content:encoded></item><item><title>给运行在局域网内的服务添加 https</title><link>https://kururin.cc/blog/https-lan/</link><guid isPermaLink="true">https://kururin.cc/blog/https-lan/</guid><description>使用 Tailscale 实现</description><pubDate>Mon, 06 May 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;这是一个很奇怪的需求，在大多数情况下，局域网内的设备是相互信任的，https 似乎是件没有什么必要的事情。&lt;/p&gt;
+&lt;p&gt;但是有些软件要求必须使用 HTTPS，比如 Vaultwarden，因为它依赖大多数浏览器仅在 HTTPS 才可用的 &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto&quot;&gt;SubtleCrypto API&lt;/a&gt;。&lt;sup&gt;&lt;a href=&quot;#user-content-fn-1&quot; id=&quot;user-content-fnref-1&quot; data-footnote-ref aria-describedby=&quot;footnote-label&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; 此外，一些软件在未开启 HTTPS 时，会在页面上显示不安全的提示。还有一些软件若不开启 https ，则会在页面上显示不安全的提示。这时候 https 就有必要了。&lt;/p&gt;
 &lt;p&gt;之后我用搜索引擎搜了下有关这方面的内容，大部分都是用通过自签证书实现的。这确实是实现 HTTPS 的一种常见方法，但在多台机器上配置自签证书比较繁琐。&lt;/p&gt;
 &lt;p&gt;对于 Tailscale 用户来说，只需要少量配置即可实现 HTTPS。Tailscale 的 Tailnet 提供域名和证书生成功能，通过 &lt;code&gt;tailscale serve&lt;/code&gt; 命令，可以轻松反向代理服务并提供 HTTPS 支持。如果需要更复杂的配置，可以使用 Caddy。Caddy 遇到 &lt;code&gt;*.ts.net&lt;/code&gt; 域名时，会自动从 Tailscale 获取证书。我的个人设备几乎都连接了 Tailscale。&lt;/p&gt;
 &lt;h2 id=&quot;如何配置&quot;&gt;如何配置&lt;/h2&gt;
@@ -801,7 +860,7 @@ publicKey 匹配，确认登录成功。&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;打开 console 的 &lt;a href=&quot;https://login.tailscale.com/admin/dns&quot;&gt;&lt;strong&gt;DNS&lt;/strong&gt;&lt;/a&gt; 页面。&lt;/li&gt;
 &lt;li&gt;确保 MagicDNS 和 HTTPS Certificates 都为开启状态
-&lt;img alt=&quot;DNS Settings&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;  width=&quot;712&quot; height=&quot;405&quot; src=&quot;/assets/image_Z1IloB0.webp&quot; &gt;&lt;/li&gt;
+&lt;img alt=&quot;DNS Settings&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; width=&quot;712&quot; height=&quot;405&quot; src=&quot;/assets/image_Z1IloB0.webp&quot; srcset=&quot;&quot;&gt;&lt;/li&gt;
 &lt;li&gt;执行以下命令：
 &lt;pre class=&quot;astro-code monokai&quot; style=&quot;background-color:#272822;color:#F8F8F2; overflow-x: auto;&quot; tabindex=&quot;0&quot; data-language=&quot;sh&quot;&gt;&lt;code&gt;&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt;tailscale&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt; serve&lt;/span&gt;&lt;span style=&quot;color:#AE81FF&quot;&gt; --bg&lt;/span&gt;&lt;span style=&quot;color:#AE81FF&quot;&gt; --https=443&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt; localhost:&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;&amp;#x3C;&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt;por&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;t&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
@@ -824,13 +883,14 @@ publicKey 匹配，确认登录成功。&lt;/p&gt;
 &lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;  }&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;line&quot;&gt;&lt;/span&gt;
 &lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;section data-footnotes=&quot;&quot; class=&quot;footnotes&quot;&gt;&lt;h2 class=&quot;sr-only&quot; id=&quot;footnote-label&quot;&gt;Footnotes&lt;/h2&gt;
+&lt;section data-footnotes class=&quot;footnotes&quot;&gt;&lt;h2 class=&quot;sr-only&quot; id=&quot;footnote-label&quot;&gt;Footnotes&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li id=&quot;user-content-fn-1&quot;&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/dani-garcia/vaultwarden/wiki/Enabling-HTTPS&quot;&gt;Enabling HTTPS · dani-garcia/vaultwarden Wiki · GitHub&lt;/a&gt; &lt;a href=&quot;#user-content-fnref-1&quot; data-footnote-backref=&quot;&quot; aria-label=&quot;Back to reference 1&quot; class=&quot;data-footnote-backref&quot;&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/section&gt;</content:encoded></item><item><title>终究还是用回了 Syncthing</title><link>https://kururin.cc/blog/syncthing/</link><guid isPermaLink="true">https://kururin.cc/blog/syncthing/</guid><description>主要是吐槽 Dropbox</description><pubDate>Wed, 10 Apr 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;我使用过的同步软件&quot;&gt;我使用过的同步软件&lt;/h2&gt;
+&lt;/section&gt;
+</content:encoded></item><item><title>终究还是用回了 Syncthing</title><link>https://kururin.cc/blog/syncthing/</link><guid isPermaLink="true">https://kururin.cc/blog/syncthing/</guid><description>主要是吐槽 Dropbox</description><pubDate>Wed, 10 Apr 2024 00:00:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;我使用过的同步软件&quot;&gt;我使用过的同步软件&lt;/h2&gt;
 &lt;p&gt;我在很长一段时间里一直使用 Dropbox，MegaSync 也用过一段时间。至于为什么选择这两个，是因为主流网盘中提供 Linux 客户端的除了 PCloud 就只有这两个了。&lt;/p&gt;
 &lt;p&gt;起初我在用 Mega，因为我将密码管理器从 Bitwarden 更换为 KeePassXC，我想将密码库同步到手机上，但当时 KeePass2Android 不支持。现在虽然支持了，但还没完全支持，例如无法登录开启 &lt;a href=&quot;https://github.com/PhilippC/keepass2android/issues/2415&quot;&gt;2FA&lt;/a&gt; 的账号，而 KeePassDX 也用不了。Dropbox 支持在系统的文件选择器中选择文件，因此手机上的两个软件都可以支持。&lt;/p&gt;
 &lt;p&gt;不过我最终还是放弃了这两个云同步软件，只留下了 Syncthing。Syncthing 我其实一直在用，但之前都只是在电脑上使用。对于在手机上使用，我曾担心它会耗电，但后来发现这个担心是多余的。&lt;/p&gt;
@@ -854,7 +914,8 @@ publicKey 匹配，确认登录成功。&lt;/p&gt;
 &lt;p&gt;我使用同步软件的其中一个原因是希望实现 3-2-1 备份，以避免本地机器故障。所谓 3-2-1 备份策略，即保存三份数据备份，使用两种不同的存储介质，并确保至少有一份备份存储在异地。&lt;/p&gt;
 &lt;p&gt;为了实现这个策略，我采用了 Restic 进行定期备份。它支持数据加密和压缩快照。还可以调用 rclone 的服务作为远程 repo。&lt;/p&gt;
 &lt;p&gt;具体来说，我编写了一个定期执行的脚本，通过 Restic 进行备份操作。为了确保备份的安全性，我将备份库（repo）的密码存储在 Gnome Keyring 中。脚本会调用 &lt;code&gt;secret-tool&lt;/code&gt; 从 Gnome Keyring 中取出密码，并用来解密备份库进行备份。&lt;/p&gt;
-&lt;pre class=&quot;astro-code monokai&quot; style=&quot;background-color:#272822;color:#F8F8F2; overflow-x: auto;&quot; tabindex=&quot;0&quot; data-language=&quot;sh&quot;&gt;&lt;code&gt;&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt;restic&lt;/span&gt;&lt;span style=&quot;color:#AE81FF&quot;&gt; -r&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt; rclone:&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;&amp;#x3C;&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt;remot&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;e&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;&gt;&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt;:/path/to/repo&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt; backup&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt; /path/to/data&lt;/span&gt;&lt;span style=&quot;color:#AE81FF&quot;&gt; --password-command&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt; &apos;secret-tool lookup restic pass&apos;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;</content:encoded></item><item><title>我又回来了</title><link>https://kururin.cc/blog/first-post/</link><guid isPermaLink="true">https://kururin.cc/blog/first-post/</guid><description>这次要徒手搓博客</description><pubDate>Thu, 21 Sep 2023 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;曾经几度对自己的博客开了又关，最初一个博客应该是在读初中的时候建起来的，使用的是 wordpress。但都没写什么文章，每次想写点什么，就觉得没什么好写的，或者写不出来。。等域名过期或是vps过期，然后也就这么丢掉了。比起写博客还是建博客比较好玩😊况且有了生成式人工智能，写作负担会小很多。&lt;/p&gt;
+&lt;pre class=&quot;astro-code monokai&quot; style=&quot;background-color:#272822;color:#F8F8F2; overflow-x: auto;&quot; tabindex=&quot;0&quot; data-language=&quot;sh&quot;&gt;&lt;code&gt;&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#A6E22E&quot;&gt;restic&lt;/span&gt;&lt;span style=&quot;color:#AE81FF&quot;&gt; -r&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt; rclone:&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;&amp;#x3C;&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt;remot&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;e&lt;/span&gt;&lt;span style=&quot;color:#F92672&quot;&gt;&gt;&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt;:/path/to/repo&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt; backup&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt; /path/to/data&lt;/span&gt;&lt;span style=&quot;color:#AE81FF&quot;&gt; --password-command&lt;/span&gt;&lt;span style=&quot;color:#E6DB74&quot;&gt; &apos;secret-tool lookup restic pass&apos;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+</content:encoded></item><item><title>我又回来了</title><link>https://kururin.cc/blog/first-post/</link><guid isPermaLink="true">https://kururin.cc/blog/first-post/</guid><description>这次要徒手搓博客</description><pubDate>Thu, 21 Sep 2023 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;曾经几度对自己的博客开了又关，最初一个博客应该是在读初中的时候建起来的，使用的是 wordpress。但都没写什么文章，每次想写点什么，就觉得没什么好写的，或者写不出来。。等域名过期或是vps过期，然后也就这么丢掉了。比起写博客还是建博客比较好玩😊况且有了生成式人工智能，写作负担会小很多。&lt;/p&gt;
 &lt;h2 id=&quot;框架选择&quot;&gt;框架选择&lt;/h2&gt;
 &lt;p&gt;我对前端不是很熟悉，SSG(Static Site Generator) 框架除了主流的 Hexo, Hugo, Jekyll 之外，我几乎不认识其他的。这几个框架在我看来都不是很灵活（不好整活）。&lt;/p&gt;
 &lt;p&gt;正好我发现某位页面仔群友也在用重写博客，使用了 Astro。之后我也去了解一下关于这框架的 features，令我比较感兴趣的是 &lt;a href=&quot;https://docs.astro.build/en/concepts/islands/&quot;&gt;Component Islands&lt;/a&gt;，它可以使用任何被支持的UI框架（比如 React, Svelte, Vue）作为组件，还有 MDX，这就相当有利于整活。SSR 的支持也是有的，以后可能会用来显示动态内容，比如评论。于是就选择了 Astro。&lt;/p&gt;
@@ -872,9 +933,10 @@ publicKey 匹配，确认登录成功。&lt;/p&gt;
 &lt;p&gt;起初，我打算根据 Material You 的风格来设计我的博客，也就是现在(2023) Google 的设计语言。我模仿了 Material 官网的超大的R角(Radius: 40px)，但后来我发现，过大的圆角严重影响了内容的展示。这里的逻辑是，为了看起来更协调，大圆角需要足够的留白，这就导致了内容展示的空间变少了。有空我一定要写一篇《圆角批判》!&lt;/p&gt;
 &lt;p&gt;色彩方面使用了 &lt;a href=&quot;https://m3.material.io/theme-builder&quot;&gt;Material Theme Builder&lt;/a&gt; 进行调色。后面为了方便使用了 &lt;a href=&quot;https://github.com/JavierM42/tailwind-material-colors&quot;&gt;tailwind-material-colors&lt;/a&gt; 作为插件，只要设定一个 primary color 就能计算出其他的颜色，DarkMode 也自动适配好了。 写这篇博客的时候，使用了 &lt;span style=&quot;background-color: #405e0d; color:white&quot;&gt;#405e0d&lt;/span&gt; 作为主题色。以后看心情换。&lt;/p&gt;
 &lt;h3 id=&quot;css&quot;&gt;CSS&lt;/h3&gt;
-&lt;p&gt;初版使用纯正的 CSS 进行页面布局，写着写着越来越乱了，第一次写规模稍大的页面，不知怎么管理 CSS。后面使用 Tailwind CSS 负担小了很多，首先不用 template 和 css 来回切，不知不觉找不着 tab 了。如果要问为什么不写在 &lt;code&gt;&amp;#x3C;style&gt;&lt;/code&gt;，因为我不想看到 Network 里一大堆 stylesheet（这什么强迫症），实际上对加载速度也没很大影响。&lt;/p&gt;
+&lt;p&gt;初版使用纯正的 CSS 进行页面布局，写着写着越来越乱了，第一次写规模稍大的页面，不知怎么管理 CSS。后面使用 Tailwind CSS 负担小了很多，首先不用 template 和 css 来回切，不知不觉找不着 tab 了。如果要问为什么不写在 &lt;code&gt;&amp;lt;style&amp;gt;&lt;/code&gt;，因为我不想看到 Network 里一大堆 stylesheet（这什么强迫症），实际上对加载速度也没很大影响。&lt;/p&gt;
 &lt;h2 id=&quot;最后的话&quot;&gt;最后的话&lt;/h2&gt;
-&lt;p&gt;接下来，我将继续优化和完善这个博客，还有很多想法没实现呢。就这样。&lt;/p&gt;</content:encoded></item><item><title>折腾日记：尝试将影片库到云端</title><link>https://kururin.cc/blog/cloud-jellyfin/</link><guid isPermaLink="true">https://kururin.cc/blog/cloud-jellyfin/</guid><description>简单的说下我迁移影片到云端的过程，还有坑。使用的是 alist 和天翼盘。</description><pubDate>Mon, 13 Feb 2023 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;最近，我偶然发现了一个名为 alist 的项目，它能挂载多款国内的网盘，并支持 WebDav 协议。然后我想到了祖传的 10T 天翼网盘。于是，我产生了一个令人兴奋的想法：将 NAS 中的影片移动到网盘上，并使用 webdav 协议在 kodi 中进行播放。在这篇文章中，我将记录下我如何实现这个想法和坑。&lt;/p&gt;
+&lt;p&gt;接下来，我将继续优化和完善这个博客，还有很多想法没实现呢。就这样。&lt;/p&gt;
+</content:encoded></item><item><title>折腾日记：尝试将影片库到云端</title><link>https://kururin.cc/blog/cloud-jellyfin/</link><guid isPermaLink="true">https://kururin.cc/blog/cloud-jellyfin/</guid><description>简单的说下我迁移影片到云端的过程，还有坑。使用的是 alist 和天翼盘。</description><pubDate>Mon, 13 Feb 2023 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;最近，我偶然发现了一个名为 alist 的项目，它能挂载多款国内的网盘，并支持 WebDav 协议。然后我想到了祖传的 10T 天翼网盘。于是，我产生了一个令人兴奋的想法：将 NAS 中的影片移动到网盘上，并使用 webdav 协议在 kodi 中进行播放。在这篇文章中，我将记录下我如何实现这个想法和坑。&lt;/p&gt;
 &lt;h2 id=&quot;准备工作&quot;&gt;准备工作&lt;/h2&gt;
 &lt;p&gt;首先，我们需要安装 Alist。这是一个非常简单的过程，只需遵循安装说明并进行操作即可。作为安装的方法，我选择了使用 docker compose 进行安装。&lt;/p&gt;
 &lt;p&gt;天翼网盘免费版一天只有 2G 上传，想要更大的上传只能购买会员。电信用户可以到积分商城兑换，1000 积分一个月。&lt;/p&gt;
@@ -889,7 +951,8 @@ publicKey 匹配，确认登录成功。&lt;/p&gt;
 &lt;h2 id=&quot;总结&quot;&gt;总结&lt;/h2&gt;
 &lt;p&gt;总的来说，使用网盘作为影片库与 kodi 观看的体验很不错，但是天翼盘不付费的上传体验糟糕。迁移后 NAS 硬盘空间非常充裕，可以不用买新硬盘了。但 alist 通过 WebDav 进行某些操作文件时不是很稳定，除了视频播放。&lt;/p&gt;
 &lt;h2 id=&quot;后记&quot;&gt;后记&lt;/h2&gt;
-&lt;p&gt;之后换了 Rclone + Jellyfin，Kodi 每次要等打开电视才扫描片库。使用 rclone mount 将 WebDav 挂载到其中一个目录，然后添加到 Jellyfin，体验要远远好于 kodi。&lt;/p&gt;</content:encoded></item><item><title>Linux 下使用 gpg 作为 Mailvelope 的后端</title><link>https://kururin.cc/blog/mailvelope/</link><guid isPermaLink="true">https://kururin.cc/blog/mailvelope/</guid><pubDate>Sun, 15 Aug 2021 17:22:41 GMT</pubDate><content:encoded>&lt;p&gt;Mailvelope 是一个开源的浏览器扩展，可以为网页版电子邮箱提供加密和签名。&lt;/p&gt;
+&lt;p&gt;之后换了 Rclone + Jellyfin，Kodi 每次要等打开电视才扫描片库。使用 rclone mount 将 WebDav 挂载到其中一个目录，然后添加到 Jellyfin，体验要远远好于 kodi。&lt;/p&gt;
+</content:encoded></item><item><title>Linux 下使用 gpg 作为 Mailvelope 的后端</title><link>https://kururin.cc/blog/mailvelope/</link><guid isPermaLink="true">https://kururin.cc/blog/mailvelope/</guid><pubDate>Sun, 15 Aug 2021 17:22:41 GMT</pubDate><content:encoded>&lt;p&gt;Mailvelope 是一个开源的浏览器扩展，可以为网页版电子邮箱提供加密和签名。&lt;/p&gt;
 &lt;p&gt;软件默认使用自己的Keyring，后端也不是gpg，使用起来很不方便。这也意味着不能用硬件 Key 进行操作。&lt;/p&gt;
 &lt;p&gt;如果要在 Mailvelope 使用 gpg，Windows 下可以开箱即用，Linux 下的浏览器安装完是调用不了 gpg 的，就需要手动配置下了。
 安装 gpgme&lt;/p&gt;
@@ -918,7 +981,8 @@ publicKey 匹配，确认登录成功。&lt;/p&gt;
 &lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#66D9EF;font-style:italic&quot;&gt;  &quot;allowed_origins&quot;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;: [&lt;/span&gt;&lt;span style=&quot;color:#CFCFC2&quot;&gt;&quot;chrome-extension://kajibbejlbohfaggdiogboambcijhkke/&quot;&lt;/span&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;]&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#F8F8F2&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;参考&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/mailvelope/mailvelope/wiki/Mailvelope-GnuPG-integration&quot;&gt;https://github.com/mailvelope/mailvelope/wiki/Mailvelope-GnuPG-integration&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title>CanoKey NFC-A 开箱体验</title><link>https://kururin.cc/blog/canokey-unboxing/</link><guid isPermaLink="true">https://kururin.cc/blog/canokey-unboxing/</guid><description>Yubikey 平替</description><pubDate>Tue, 02 Feb 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;strong&gt;这是 eraly bird，不是 pigeon。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/mailvelope/mailvelope/wiki/Mailvelope-GnuPG-integration&quot;&gt;https://github.com/mailvelope/mailvelope/wiki/Mailvelope-GnuPG-integration&lt;/a&gt;&lt;/p&gt;
+</content:encoded></item><item><title>CanoKey NFC-A 开箱体验</title><link>https://kururin.cc/blog/canokey-unboxing/</link><guid isPermaLink="true">https://kururin.cc/blog/canokey-unboxing/</guid><description>Yubikey 平替</description><pubDate>Tue, 02 Feb 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;strong&gt;这是 eraly bird，不是 pigeon。&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;说下购买的原因，我一直想买一个替代Key，无奈Yubikey售价太高，然后恰好在某群组看到Canokey发售的消息。&lt;/p&gt;
 &lt;p&gt;目前发售的CanoKey拥有Yubikey 5 NFC大部分功能，早起的鸟儿只需要79+10（运费），价格不到Yubikey的四分一。正式版据说也不会太贵。&lt;/p&gt;
 &lt;h2 id=&quot;开箱&quot;&gt;开箱&lt;/h2&gt;
@@ -942,4 +1006,5 @@ publicKey 匹配，确认登录成功。&lt;/p&gt;
 &lt;p&gt;OpenSSH 8.2版本开始支持FIDO/U2F安全密钥。但Canokey只支持ecdsa-sk，不支持ed25519-sk。有点遗憾，但也还好。&lt;/p&gt;
 &lt;p&gt;NFC灵敏度要比Yubikey低很多，偶尔会出现失败的现象。&lt;/p&gt;
 &lt;h2 id=&quot;总结&quot;&gt;总结&lt;/h2&gt;
-&lt;p&gt;目前市面上在单个硬件实现多种协议的Key并不多，而且价格对比Yubikey也没有优势。CanoKey能够支持其大部分核心功能，日常使用基本能够满足需求，后续正式版价格不高的话非常值得入手。&lt;/p&gt;</content:encoded></item></channel></rss>
+&lt;p&gt;目前市面上在单个硬件实现多种协议的Key并不多，而且价格对比Yubikey也没有优势。CanoKey能够支持其大部分核心功能，日常使用基本能够满足需求，后续正式版价格不高的话非常值得入手。&lt;/p&gt;
+</content:encoded></item></channel></rss>
